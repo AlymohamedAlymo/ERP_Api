@@ -1,0 +1,1009 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using ERP_Data.Interfaces;
+using ERP_Data.Database_Models;
+
+namespace ERP_Api.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class POSController : ControllerBase
+    {
+        private ISales Sales;
+
+        private IStores Stores;
+        private ISafes Safes;
+        private IBranchs Branchs;
+        private IKeepers Keepers;
+        private IDelevery Delevery;
+        private IDeliveryAreas DeleveryAreas;
+        private IDiscounts Discounts;
+        private IOffers Offers;
+        private ITaxs Taxs;
+        private IItems Items;
+
+        public POSController(ISales _Sales, IStores _Stores, ISafes _Safes, IBranchs _Branchs, IKeepers _Keepers,
+            IDelevery _Delevery, IDeliveryAreas _DeleveryAreas, IDiscounts _Discounts, IOffers _Offers,
+            ITaxs _Taxs, IItems _Items)
+        {
+            this.Sales = _Sales;
+            this.Stores = _Stores;
+            this.Safes = _Safes;
+            this.Branchs = _Branchs;
+            this.Keepers = _Keepers;
+            this.Delevery = _Delevery;
+            this.DeleveryAreas = _DeleveryAreas;
+            this.Discounts = _Discounts;
+            this.Offers = _Offers;
+            this.Taxs = _Taxs;
+            this.Items = _Items;
+
+
+        }
+
+
+
+        [HttpGet]
+        [Route("GetWaitInvoiceData")]
+        public ActionResult<string> GetWaitInvoiceData()
+        {
+            try
+            {
+                object dt = new object();
+                dt = Sales.GetWaitInvoiceData();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        [Route("AddtoWaitInvoice")]
+        public ActionResult<string> AddtoWaitInvoice([FromBody] ERP_Data.Database_Models.WaitInvoice WaitInvoice)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.AddtoWaitInvoice(WaitInvoice));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("AddNewInvoice")]
+        public ActionResult<string> AddNewInvoice([FromBody] ERP_Data.Database_Models.Invoice Invoice)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.AddNewInvoice(Invoice));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpPost]
+        [Route("AddNewReturnInvoice/{Code}")]
+        public ActionResult<string> AddNewReturnInvoice(int Code, [FromBody] ERP_Data.Database_Models.ReturnsInvoice ReturnsInvoice)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.AddNewReturnInvoice(Code, ReturnsInvoice));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpGet]
+        [Route("GetInvoiceData/{IDInvoice}")]
+        public ActionResult<object> GetInvoiceData(int IDInvoice)
+        {
+            try
+            {
+               var dt = Sales.GetInvoiceData(IDInvoice);
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+        [HttpPost]
+        [Route("AddNewItemToInvoice")]
+        public ActionResult<string> AddNewItemToInvoice([FromBody] ERP_Data.Database_Models.Sales SalesData)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.AddNewItemToInvoice(SalesData));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpPost]
+        [Route("AddNewItemToReturns/{Code}")]
+        public ActionResult<string> AddNewItemToReturns(int Code, [FromBody] ERP_Data.Database_Models.Returns ReturnsData)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.AddNewItemToReturns(Code, ReturnsData));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateItemOfInvoice/{Code}")]
+        public ActionResult<string> UpdateItemOfInvoice(int Code,[FromBody] ERP_Data.Database_Models.Sales SalesData)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.UpdateItemOfInvoice(Code, SalesData));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpPost]
+        [Route("UpdateWaitInvoice/{Code}")]
+        public ActionResult<string> UpdateWaitInvoice(int Code, [FromBody] ERP_Data.Database_Models.WaitInvoice WaitInvoice)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.UpdateWaitInvoice(Code, WaitInvoice));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpDelete]
+        [Route("DeleteSaleMove/{Code}")]
+        public ActionResult<string> DeleteSaleMove(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.DeleteSaleMove(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteSaleInvoice/{Code}")]
+        public ActionResult<string> DeleteSaleInvoice(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.DeleteSaleInvoice(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpDelete]
+        [Route("DeleteWaitInvoice/{Code}")]
+        public ActionResult<string> DeleteWaitInvoice(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.DeleteWaitInvoice(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpGet]
+        [Route("GetCustomerLastOrder/{Customer}")]
+        public ActionResult<string> GetCustomerLastOrder(int Customer)
+        {
+            try
+            {
+                object dt = new object();
+                dt = Sales.GetCustomerLastOrder(Customer);
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+        [HttpGet]
+        [Route("GetNewIDInvoice")]
+        public ActionResult<int> GetNewIDInvoice()
+        {
+            try
+            {
+                int dt;
+                dt = Sales.GetNewIDInvoice();
+
+                return dt;
+            }
+            catch
+            {
+                return 1;
+            }
+
+        }
+
+
+
+
+        [HttpPost]
+        [Route("UpdateItemPrice")]
+        public ActionResult<string> UpdateItemPrice([FromBody] ERP_Data.Database_Models.pricing PricingList)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.UpdateItemPrice(PricingList));
+            }
+            catch 
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+
+        [HttpGet]
+        [Route("GetStoresData")]
+        public ActionResult<string> GetStoresData()
+        {
+            try
+            {
+                object dt = new object();
+                dt = Stores.GetStoresData();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch 
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        [Route("AddNewStore")]
+        public ActionResult<string> AddNewStore([FromBody] ERP_Data.Database_Models.Stores Store)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Stores.AddNewStore(Store));
+            }
+            catch 
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateStore")]
+        public ActionResult<string> UpdateStore([FromBody] ERP_Data.Database_Models.Stores Store)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Stores.UpdateStore(Store));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteStore/{Code}")]
+        public ActionResult<string> DeleteStore(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Stores.DeleteStore(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+        [HttpGet]
+        [Route("GetSafesData")]
+        public ActionResult<string> GetSafesData()
+        {
+            try
+            {
+                object dt = new object();
+                dt = Safes.GetSafesData();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        [Route("AddNewSafe")]
+        public ActionResult<string> AddNewSafe([FromBody] ERP_Data.Database_Models.Safes safe)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Safes.AddNewSafe(safe));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateSafe")]
+        public ActionResult<string> UpdateSafe([FromBody] ERP_Data.Database_Models.Safes safe)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Safes.UpdateSafe(safe));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteSafe/{Code}")]
+        public ActionResult<string> DeleteSafe(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Safes.DeleteSafe(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        [Route("GetBranchsData")]
+        public ActionResult<string> GetBranchsData()
+        {
+            try
+            {
+                object dt = new object();
+                dt = Branchs.GetBranchsData();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        [Route("AddNewBranch")]
+        public ActionResult<string> AddNewBranch([FromBody] ERP_Data.Database_Models.Branches BNR)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Branchs.AddNewBranch(BNR));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateBranch")]
+        public ActionResult<string> UpdateBranch([FromBody] ERP_Data.Database_Models.Branches BNR)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Branchs.UpdateBranch(BNR));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteBranch/{Code}")]
+        public ActionResult<string> DeleteBranch(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Branchs.DeleteBranch(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        [Route("GetKeepersData")]
+        public ActionResult<string> GetKeepersData()
+        {
+            try
+            {
+                object dt = new object();
+                dt = Keepers.GetKeepersData();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        [Route("AddNewKeeper")]
+        public ActionResult<string> AddNewKeeper([FromBody] ERP_Data.Database_Models.Keepers Kp)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Keepers.AddNewKeeper(Kp));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateKeeper")]
+        public ActionResult<string> UpdateKeeper([FromBody] ERP_Data.Database_Models.Keepers Kp)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Keepers.UpdateKeeper(Kp));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteKeeper/{Code}")]
+        public ActionResult<string> DeleteKeeper(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Keepers.DeleteKeeper(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+
+
+        [HttpGet]
+        [Route("GetDeleverysData")]
+        public ActionResult<string> GetDeleverysData()
+        {
+            try
+            {
+                object dt = new object();
+                dt = Delevery.GetDeleverysData();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        [Route("AddNewDelevery")]
+        public ActionResult<string> AddNewDelevery([FromBody] ERP_Data.Database_Models.Deleverys Delv)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Delevery.AddNewDelevery(Delv));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateDelevery")]
+        public ActionResult<string> UpdateDelevery([FromBody] ERP_Data.Database_Models.Deleverys Delv)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Delevery.UpdateDelevery(Delv));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteDelevery/{Code}")]
+        public ActionResult<string> DeleteDelevery(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Delevery.DeleteDelevery(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        [Route("GetDeleveryAreasData")]
+        public ActionResult<string> GetDeleveryAreasData()
+        {
+            try
+            {
+                object dt = new object();
+                dt = DeleveryAreas.GetDeleveryAreasData();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        [Route("AddNewArea")]
+        public ActionResult<string> AddNewArea([FromBody] ERP_Data.Database_Models.DeliveryAreas Area)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(DeleveryAreas.AddNewArea(Area));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateArea")]
+        public ActionResult<string> UpdateArea([FromBody] ERP_Data.Database_Models.DeliveryAreas Area)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(DeleveryAreas.UpdateArea(Area));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteArea/{Code}")]
+        public ActionResult<string> DeleteArea(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(DeleveryAreas.DeleteArea(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        [Route("GetDiscountsData")]
+        public ActionResult<string> GetDiscountsData()
+        {
+            try
+            {
+                object dt = new object();
+                dt = Discounts.GetDiscountsData();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        [Route("AddNewDiscount")]
+        public ActionResult<string> AddNewDiscount([FromBody] ERP_Data.Database_Models.Discounts Disc)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Discounts.AddNewDiscount(Disc));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateDiscount")]
+        public ActionResult<string> UpdateDiscount([FromBody] ERP_Data.Database_Models.Discounts Disc)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Discounts.UpdateDiscount(Disc));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteDiscount/{Code}")]
+        public ActionResult<string> DeleteDiscount(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Discounts.DeleteDiscount(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+
+
+
+
+        [HttpGet]
+        [Route("GetOffersData")]
+        public ActionResult<string> GetOffersData()
+        {
+            try
+            {
+                object dt = new object();
+                dt = Offers.GetOffersData();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        [Route("AddNewOffer")]
+        public ActionResult<string> AddNewOffer([FromBody] ERP_Data.Database_Models.Offers Offer)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Offers.AddNewOffer(Offer));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateOffer")]
+        public ActionResult<string> UpdateOffer([FromBody] ERP_Data.Database_Models.Offers Offer)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Offers.UpdateOffer(Offer));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteOffer/{Code}")]
+        public ActionResult<string> DeleteOffer(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Offers.DeleteOffer(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        [Route("GetTaxsData")]
+        public ActionResult<string> GetTaxsData()
+        {
+            try
+            {
+                object dt = new object();
+                dt = Taxs.GetTaxsData();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        [HttpPost]
+        [Route("AddNewTax")]
+        public ActionResult<string> AddNewTax([FromBody] ERP_Data.Database_Models.Taxs Tax)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Taxs.AddNewTax(Tax));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateTax")]
+        public ActionResult<string> UpdateTax([FromBody] ERP_Data.Database_Models.Taxs Tax)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Taxs.UpdateTax(Tax));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteTax/{Code}")]
+        public ActionResult<string> DeleteTax(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Taxs.DeleteTax(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        [Route("GetItemsOfGroupData/{ItemsGroupID}")]
+        public ActionResult<string> GetItemsOfGroupData(int ItemsGroupID)
+        {
+            try
+            {
+                object dt = new object();
+                dt = Items.GetItemsOfGroupData(ItemsGroupID);
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+        [HttpGet]
+        [Route("GetItemsSearchData/{SearchContext}")]
+        public ActionResult<string> GetItemsData(string SearchContext)
+        {
+            try
+            {
+                object dt = new object();
+                dt = Items.GetItemsSearchData(SearchContext);
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+        [HttpGet]
+        [Route("GetItemsData/{Code}")]
+        public ActionResult<string> GetItemsData(int Code)
+        {
+            try
+            {
+                object dt = new object();
+                dt = Items.GetItemsData(Code);
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+    }
+
+}

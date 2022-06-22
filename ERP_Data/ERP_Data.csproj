@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD604333-DC67-4B71-B57D-5A3F382FED8F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP_Data</RootNamespace>
+    <AssemblyName>ERP_Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomExceptions\InvalidDataException.cs" />
+    <Compile Include="CustomExceptions\RecordNotFoundException.cs" />
+    <Compile Include="Database Models\Branches.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Customer.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Deleverys.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\DeliveryAreas.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Discounts.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\ERP_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERP_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\ERP_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\ERP_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERP_Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Invoice.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\ItemGroup.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Items.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Keepers.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Offers.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\OutofStore.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\pricing.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Returns.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\ReturnsInvoice.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Safes.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Sales.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Stores.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Supply.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Taxs.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\Users.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\WaitInvoice.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ERP_Setting\IERP_Setting.cs" />
+    <Compile Include="Interfaces\POS\IBranchs.cs" />
+    <Compile Include="Interfaces\POS\IDelevery.cs" />
+    <Compile Include="Interfaces\POS\IDeliveryAreas.cs" />
+    <Compile Include="Interfaces\POS\IDiscounts.cs" />
+    <Compile Include="Interfaces\POS\IItems.cs" />
+    <Compile Include="Interfaces\POS\IKeepers.cs" />
+    <Compile Include="Interfaces\POS\IOffers.cs" />
+    <Compile Include="Interfaces\POS\ISafes.cs" />
+    <Compile Include="Interfaces\POS\ISales.cs" />
+    <Compile Include="Interfaces\POS\IStores.cs" />
+    <Compile Include="Interfaces\POS\ITaxs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ERP_SettingRep\ERP_SettingRep.cs" />
+    <Compile Include="Repositories\POSRep\BranchsRep.cs" />
+    <Compile Include="Repositories\POSRep\DeleveryAreasRep.cs" />
+    <Compile Include="Repositories\POSRep\DeleverysRep.cs" />
+    <Compile Include="Repositories\POSRep\DiscountsRep.cs" />
+    <Compile Include="Repositories\POSRep\ItemsRep.cs" />
+    <Compile Include="Repositories\POSRep\KeepersRep.cs" />
+    <Compile Include="Repositories\POSRep\OffersRep.cs" />
+    <Compile Include="Repositories\POSRep\SafesRep.cs" />
+    <Compile Include="Repositories\POSRep\SalesRep.cs" />
+    <Compile Include="Repositories\POSRep\StoresRep.cs" />
+    <Compile Include="Repositories\POSRep\TaxsRep.cs" />
+    <Compile Include="ViewModels\InvoiceData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Database Models\ERP_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ERP_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Database Models\ERP_Model.edmx.diagram">
+      <DependentUpon>ERP_Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Database Models\ERP_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ERP_Model.edmx</DependentUpon>
+      <LastGenOutput>ERP_Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Database Models\ERP_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ERP_Model.edmx</DependentUpon>
+      <LastGenOutput>ERP_Model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
