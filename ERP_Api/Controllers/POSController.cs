@@ -1004,6 +1004,52 @@ namespace ERP_Api.Controllers
         }
 
 
+        [HttpPost]
+        [Route("AddNewItem")]
+        public ActionResult<string> AddNewItem([FromBody] ERP_Data.Database_Models.Items Item)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Items.AddNewItem(Item));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateItem")]
+        public ActionResult<string> UpdateItem([FromBody] ERP_Data.Database_Models.Items Item)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Items.UpdateItem(Item));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteItem/{Code}")]
+        public ActionResult<string> DeleteItem(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Items.DeleteItem(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
     }
 
 }

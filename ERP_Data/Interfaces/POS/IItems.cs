@@ -15,6 +15,12 @@ namespace ERP_Data.Interfaces
 
         object GetItemsOfGroupData(int ItemsGroupID);
 
+        int DeleteItem(int Code);
+
+        int UpdateItem(Database_Models.Items Item);
+
+        int AddNewItem(Database_Models.Items Item);
+
 
     }
 }

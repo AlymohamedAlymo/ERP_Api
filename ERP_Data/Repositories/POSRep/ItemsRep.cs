@@ -106,5 +106,99 @@ namespace ERP_Data.Repositories
         }
 
 
+
+
+        public int DeleteItem(int Code)
+        {
+            try
+            {
+                using (var context = new ERPEntities())
+                {
+                    Items Item = context.Items.Where(u => u.IDItem == Code).SingleOrDefault();
+                    if (Item == null)
+                    {
+                        return 2;
+                    }
+                    context.Items.Remove(Item);
+                    int res = context.SaveChanges();
+                    if (res > 0)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
+
+
+        public int UpdateItem(Database_Models.Items Item)
+        {
+
+            try
+            {
+                using (var context = new ERPEntities())
+                {
+                    Items UpdateItem = context.Items.Where(u => u.IDItem == Item.IDItem).FirstOrDefault(); ;
+
+                    UpdateItem.BrcoIt = Item.BrcoIt;
+                    UpdateItem.GroupIt = Item.GroupIt;
+                    UpdateItem.ItDet = Item.ItDet;
+                    UpdateItem.NameIt = Item.NameIt;
+                    UpdateItem.TypiT = Item.TypiT;
+                    UpdateItem.UnitIt = Item.UnitIt;
+
+                    int result = context.SaveChanges();
+                    return result;
+                }
+            }
+            catch
+            {
+                return 0;
+            }
+
+
+        }
+
+
+
+        public int AddNewItem(Database_Models.Items Item)
+        {
+            try
+            {
+                using (var context = new ERPEntities())
+                {
+                    context.Items.Add(Item);
+                    int res = context.SaveChanges();
+                    if (res > 0)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+
+                    }
+                }
+
+            }
+
+            catch
+            {
+                throw new InvalidDataException();
+            }
+
+        }
+
+
+
+
     }
 }
