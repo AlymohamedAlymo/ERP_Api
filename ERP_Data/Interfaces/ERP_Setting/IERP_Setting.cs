@@ -9,11 +9,11 @@ namespace ERP_Data.Interfaces
 {
     public interface IERP_Setting
     {
-        object GetCustomerData(int Code);
+
         List<pricing> GetPricingList();
 
-        object GetCustomerSearchData(string SearchContext);
         decimal GetQuantityoftheItem(int IDItem);
+
         object GetStoragePlaceData(int IDItem);
 
 

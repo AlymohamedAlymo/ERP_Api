@@ -130,6 +130,7 @@
     </Compile>
     <Compile Include="Interfaces\ERP_Setting\IERP_Setting.cs" />
     <Compile Include="Interfaces\POS\IBranchs.cs" />
+    <Compile Include="Interfaces\POS\ICustomer.cs" />
     <Compile Include="Interfaces\POS\IDelevery.cs" />
     <Compile Include="Interfaces\POS\IDeliveryAreas.cs" />
     <Compile Include="Interfaces\POS\IDiscounts.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ERP_SettingRep\ERP_SettingRep.cs" />
     <Compile Include="Repositories\POSRep\BranchsRep.cs" />
+    <Compile Include="Repositories\POSRep\CustomerRep.cs" />
     <Compile Include="Repositories\POSRep\DeleveryAreasRep.cs" />
     <Compile Include="Repositories\POSRep\DeleverysRep.cs" />
     <Compile Include="Repositories\POSRep\DiscountsRep.cs" />

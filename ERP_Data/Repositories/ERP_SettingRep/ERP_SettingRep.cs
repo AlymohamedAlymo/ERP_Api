@@ -40,71 +40,9 @@ namespace ERP_Data.Repositories
         }
 
 
-        public object GetCustomerSearchData(string SearchContext)
-        {
-            try
-            {
-                string Fields = " * ";
-                string connectionString = ERP_SettingRep.ConnectionStrings;
-
-                SqlConnection CN = new SqlConnection(connectionString);
-                CN.Open();
-                string SQL = "";
-
-                SearchContext = SearchContext.Replace(" ", "%");
-
-                SQL = "select " + Fields + " from Customer where NameCust like '%" + getMatchName(SearchContext) + "%' or MobileCust like '%" + SearchContext + "%' " +
-                "or PhoneCust like '%" + SearchContext + "%'" + " or MobilePlus like '%" + SearchContext + "%' or AddrCust like '%" + SearchContext + "%' order by IDCust ";
 
 
-                SqlDataAdapter Da = new SqlDataAdapter(SQL, CN);
-                DataSet Ds = new DataSet();
-
-                Da.Fill(Ds, "table");
-
-                if (CN.State == System.Data.ConnectionState.Open)
-                    CN.Close();
-                CN = null;
-                if (Ds.Tables["table"] == null || Ds.Tables["table"].Rows.Count == 0)
-                {
-                    throw new RecordNotFoundException();
-                }
-
-                return Ds.Tables["table"];
-
-            }
-            catch (Exception c)
-            {
-                throw new InvalidDataException();
-            }
-
-
-        }
-
-
-        public object GetCustomerData(int Code)
-        {
-            try
-            {
-                object Dt = null;
-                var Db = new ERPEntities();
-
-                if (Code == 0)
-                    Dt = Db.Customer.ToList();
-                else
-                    Dt = Db.Customer.Where(u => u.IDCust == Code).ToList();
-
-                return Dt;
-            }
-            catch
-            {
-
-                return null;
-            }
-        }
-
-
-        string getMatchName(string SearchContext)
+        public static string getMatchName(string SearchContext)
         {
             string chr = "";
             string cstname = "";

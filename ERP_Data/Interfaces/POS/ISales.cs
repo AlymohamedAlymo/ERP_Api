@@ -11,7 +11,7 @@ namespace ERP_Data.Interfaces
     public interface ISales
     {
         int GetNewIDInvoice();
-        object GetCustomerLastOrder(int Customer);
+
         int AddNewItemToInvoice(Database_Models.Sales Sales);
 
         int AddNewItemToReturns(int Code, Database_Models.Returns Returns);
@@ -37,6 +37,7 @@ namespace ERP_Data.Interfaces
 
         int UpdateItemPrice(Database_Models.pricing PricingList);
 
+        object GetCustomerLastOrder(int Customer);
 
     }
 }

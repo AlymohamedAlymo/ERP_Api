@@ -59,60 +59,8 @@ namespace ERP_Api.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("GetCustomerSearchData/{SearchContext}")]
-        public ActionResult<string> GetCustomerData(string SearchContext)
-        {
-
-            try
-            {
-                object dt = new object();
-                dt = Setting.GetCustomerSearchData(SearchContext);
-
-                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
-            }
-            catch
-            {
-                return null;
-            }
-        }
 
 
-
-
-        [HttpGet]
-        [Route("GetCustomerData/{Code}")]
-        public ActionResult<string> GetCustomerData(int Code)
-        {
-            try
-            {
-                object dt = new object();
-                dt = Setting.GetCustomerData(Code);
-                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
-
-            }
-            catch
-            {
-                return null;
-            }
-
-        }
-
-        //[HttpGet]
-        //[Route("GetDeliveryfData")]
-        //public ActionResult<object> GetDeliveryfData()
-        //{
-        //    try
-        //    {
-        //        return Setting.GetDeliveryfData();
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return null;
-        //    }
-
-        //}
 
         [HttpGet]
         [Route("GetPricingList")]

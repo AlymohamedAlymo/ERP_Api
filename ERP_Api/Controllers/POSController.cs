@@ -25,10 +25,11 @@ namespace ERP_Api.Controllers
         private IOffers Offers;
         private ITaxs Taxs;
         private IItems Items;
+        private ICustomer Customer;
 
         public POSController(ISales _Sales, IStores _Stores, ISafes _Safes, IBranchs _Branchs, IKeepers _Keepers,
             IDelevery _Delevery, IDeliveryAreas _DeleveryAreas, IDiscounts _Discounts, IOffers _Offers,
-            ITaxs _Taxs, IItems _Items)
+            ITaxs _Taxs, IItems _Items, ICustomer _Customer)
         {
             this.Sales = _Sales;
             this.Stores = _Stores;
@@ -41,6 +42,7 @@ namespace ERP_Api.Controllers
             this.Offers = _Offers;
             this.Taxs = _Taxs;
             this.Items = _Items;
+            this.Customer = _Customer;
 
 
         }
@@ -1040,6 +1042,100 @@ namespace ERP_Api.Controllers
             try
             {
                 return Newtonsoft.Json.JsonConvert.SerializeObject(Items.DeleteItem(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        [Route("GetCustomerSearchData/{SearchContext}")]
+        public ActionResult<string> GetCustomerSearchData(string SearchContext)
+        {
+            try
+            {
+                object dt = new object();
+                dt = Customer.GetCustomerSearchData(SearchContext);
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+        [HttpGet]
+        [Route("GetCustomerData/{Code}")]
+        public ActionResult<string> GetCustomerData(int Code)
+        {
+            try
+            {
+                object dt = new object();
+                dt = Customer.GetCustomerData(Code);
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+        [HttpPost]
+        [Route("AddNewCustomer")]
+        public ActionResult<string> AddNewCustomer([FromBody] ERP_Data.Database_Models.Customer customer)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Customer.AddNewCustomer(customer));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateCustomer")]
+        public ActionResult<string> UpdateCustomer([FromBody] ERP_Data.Database_Models.Customer customer)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Customer.UpdateCustomer(customer));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteCustomer/{Code}")]
+        public ActionResult<string> DeleteCustomer(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Customer.DeleteCustomer(Code));
             }
             catch
             {
