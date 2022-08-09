@@ -49,7 +49,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="A_Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="A_Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="A_Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Note" Type="text" />
         </EntityType>
         <EntityType Name="Discounts">
@@ -58,7 +58,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Dis_Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Dis_Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Dis_Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Note" Type="text" />
         </EntityType>
         <EntityType Name="Invoice">
@@ -69,13 +69,13 @@
           <Property Name="DateInv" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CustID" Type="int" Nullable="false" />
           <Property Name="TypInv" Type="varchar" MaxLength="50" />
-          <Property Name="NetBill" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Discount" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="additional" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="ShipPrice" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TotalInvo" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Paid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="TherRest" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="NetBill" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="additional" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ShipPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalInvo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Paid" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TherRest" Type="decimal" Precision="18" Scale="2" />
           <Property Name="DelvID" Type="varchar" MaxLength="50" />
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="DetailsBill" Type="text" />
@@ -101,6 +101,7 @@
           <Property Name="UnitIt" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="BrcoIt" Type="varchar" MaxLength="50" />
           <Property Name="ItDet" Type="text" />
+          <Property Name="Imag" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Keepers">
           <Key>
@@ -119,10 +120,10 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="O_Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="P_Quantity" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="F_Quantity" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="P_Quantity" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="F_Quantity" Type="decimal" Precision="18" Scale="2" />
           <Property Name="IsFree" Type="bit" Nullable="false" />
-          <Property Name="CashBack" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CashBack" Type="decimal" Precision="18" Scale="2" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="Note" Type="text" />
         </EntityType>
@@ -136,7 +137,7 @@
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="CustID" Type="int" />
           <Property Name="ItemID" Type="int" Nullable="false" />
-          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="TypeMove" Type="varchar" MaxLength="50" />
           <Property Name="DetailsMove" Type="text" />
         </EntityType>
@@ -147,10 +148,10 @@
           <Property Name="IDMove" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDItem" Type="int" Nullable="false" />
           <Property Name="DateMove" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="SupplyPrice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="WholesPrice" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="HalfWhoPr" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="SellingPr" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="SupplyPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="WholesPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="HalfWhoPr" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SellingPr" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="DetMove" Type="text" />
         </EntityType>
         <EntityType Name="Returns">
@@ -167,11 +168,11 @@
           <Property Name="DateMove" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DaINT" Type="float" />
           <Property Name="ItemID" Type="int" Nullable="false" />
-          <Property Name="Quant" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Quant" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="UnitItem" Type="varchar" MaxLength="50" />
           <Property Name="UnitPrice" Type="varchar" MaxLength="50" />
-          <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Total" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="DetiMove" Type="text" />
         </EntityType>
         <EntityType Name="ReturnsInvoice">
@@ -183,13 +184,13 @@
           <Property Name="DateInv" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CustID" Type="int" Nullable="false" />
           <Property Name="TypInv" Type="varchar" MaxLength="50" />
-          <Property Name="NetBill" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Discount" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="additional" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="ShipPrice" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TotalInvo" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Paid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="TherRest" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="NetBill" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="additional" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ShipPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalInvo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Paid" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TherRest" Type="decimal" Precision="18" Scale="2" />
           <Property Name="DelvID" Type="varchar" MaxLength="50" />
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="DetailsBill" Type="text" />
@@ -218,11 +219,11 @@
           <Property Name="DateMove" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DaINT" Type="float" />
           <Property Name="ItemID" Type="int" Nullable="false" />
-          <Property Name="Quant" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Quant" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="UnitItem" Type="varchar" MaxLength="50" />
           <Property Name="UnitPrice" Type="varchar" MaxLength="50" />
-          <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Total" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="DetiMove" Type="text" />
           <Property Name="Return" Type="bit" Nullable="false" />
         </EntityType>
@@ -249,8 +250,8 @@
           <Property Name="StoreID" Type="int" Nullable="false" />
           <Property Name="TypMove" Type="varchar" MaxLength="50" />
           <Property Name="ItemID" Type="int" Nullable="false" />
-          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="PurPrice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PurPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="validity" Type="int" />
           <Property Name="limitItem" Type="int" />
           <Property Name="DetailsMove" Type="text" />
@@ -261,7 +262,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="T_Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="T_Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="T_Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Note" Type="text" />
         </EntityType>
         <EntityType Name="Users">
@@ -285,13 +286,13 @@
           <Property Name="DateInv" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CustID" Type="int" />
           <Property Name="TypInv" Type="varchar" MaxLength="50" />
-          <Property Name="NetBill" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Discount" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="additional" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="ShipPrice" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TotalInvo" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Paid" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TherRest" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="NetBill" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="additional" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ShipPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalInvo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TherRest" Type="decimal" Precision="18" Scale="2" />
           <Property Name="DelvID" Type="int" />
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="DetailsBill" Type="text" />
@@ -347,13 +348,13 @@
           <Property Name="DateInv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CustID" Type="Int32" Nullable="false" />
           <Property Name="TypInv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NetBill" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Discount" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="additional" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="ShipPrice" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TotalInvo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Paid" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="TherRest" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="NetBill" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="additional" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ShipPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalInvo" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TherRest" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="DelvID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="DetailsBill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -379,6 +380,7 @@
           <Property Name="UnitIt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="BrcoIt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ItDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Imag" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="pricing">
           <Key>
@@ -387,10 +389,10 @@
           <Property Name="IDMove" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDItem" Type="Int32" Nullable="false" />
           <Property Name="DateMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SupplyPrice" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="WholesPrice" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="HalfWhoPr" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="SellingPr" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="SupplyPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="WholesPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="HalfWhoPr" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SellingPr" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="DetMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Users">
@@ -414,13 +416,13 @@
           <Property Name="DateInv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CustID" Type="Int32" />
           <Property Name="TypInv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NetBill" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Discount" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="additional" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="ShipPrice" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TotalInvo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Paid" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TherRest" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="NetBill" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="additional" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ShipPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalInvo" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TherRest" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="DelvID" Type="Int32" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="DetailsBill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -458,7 +460,7 @@
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="CustID" Type="Int32" />
           <Property Name="ItemID" Type="Int32" Nullable="false" />
-          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="TypeMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DetailsMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -474,8 +476,8 @@
           <Property Name="StoreID" Type="Int32" Nullable="false" />
           <Property Name="TypMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ItemID" Type="Int32" Nullable="false" />
-          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="PurPrice" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PurPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="validity" Type="Int32" />
           <Property Name="limitItem" Type="Int32" />
           <Property Name="DetailsMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -489,13 +491,13 @@
           <Property Name="DateInv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CustID" Type="Int32" Nullable="false" />
           <Property Name="TypInv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NetBill" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="Discount" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="additional" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="ShipPrice" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TotalInvo" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="Paid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="TherRest" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="NetBill" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="additional" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ShipPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalInvo" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TherRest" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="DelvID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="DetailsBill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -514,11 +516,11 @@
           <Property Name="DateMove" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DaINT" Type="Double" />
           <Property Name="ItemID" Type="Int32" Nullable="false" />
-          <Property Name="Quant" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Quant" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="UnitItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UnitPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="DetiMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Stores">
@@ -582,7 +584,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="A_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="A_Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="A_Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Discounts">
@@ -591,7 +593,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Dis_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Dis_Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Dis_Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Offers">
@@ -600,10 +602,10 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="O_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="P_Quantity" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="F_Quantity" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="P_Quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="F_Quantity" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="IsFree" Type="Boolean" Nullable="false" />
-          <Property Name="CashBack" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CashBack" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -613,7 +615,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="T_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="T_Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="T_Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Sales">
@@ -629,11 +631,11 @@
           <Property Name="DateMove" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DaINT" Type="Double" />
           <Property Name="ItemID" Type="Int32" Nullable="false" />
-          <Property Name="Quant" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Quant" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="UnitItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UnitPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="DetiMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Return" Type="Boolean" Nullable="false" />
         </EntityType>
@@ -694,6 +696,7 @@
           <EntitySetMapping Name="Items">
             <EntityTypeMapping TypeName="ERPModel.Items">
               <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="Imag" ColumnName="Imag" />
                 <ScalarProperty Name="IDItem" ColumnName="IDItem" />
                 <ScalarProperty Name="NameIt" ColumnName="NameIt" />
                 <ScalarProperty Name="GroupIt" ColumnName="GroupIt" />

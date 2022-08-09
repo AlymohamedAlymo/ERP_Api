@@ -137,9 +137,11 @@
     <Compile Include="Interfaces\POS\IItems.cs" />
     <Compile Include="Interfaces\POS\IKeepers.cs" />
     <Compile Include="Interfaces\POS\IOffers.cs" />
+    <Compile Include="Interfaces\POS\IPricing.cs" />
     <Compile Include="Interfaces\POS\ISafes.cs" />
     <Compile Include="Interfaces\POS\ISales.cs" />
     <Compile Include="Interfaces\POS\IStores.cs" />
+    <Compile Include="Interfaces\POS\ISupply.cs" />
     <Compile Include="Interfaces\POS\ITaxs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ERP_SettingRep\ERP_SettingRep.cs" />
@@ -151,9 +153,11 @@
     <Compile Include="Repositories\POSRep\ItemsRep.cs" />
     <Compile Include="Repositories\POSRep\KeepersRep.cs" />
     <Compile Include="Repositories\POSRep\OffersRep.cs" />
+    <Compile Include="Repositories\POSRep\PricingRep.cs" />
     <Compile Include="Repositories\POSRep\SafesRep.cs" />
     <Compile Include="Repositories\POSRep\SalesRep.cs" />
     <Compile Include="Repositories\POSRep\StoresRep.cs" />
+    <Compile Include="Repositories\POSRep\SupplyRep.cs" />
     <Compile Include="Repositories\POSRep\TaxsRep.cs" />
     <Compile Include="ViewModels\InvoiceData.cs" />
   </ItemGroup>

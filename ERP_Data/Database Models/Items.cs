@@ -21,5 +21,6 @@ namespace ERP_Data.Database_Models
         public string UnitIt { get; set; }
         public string BrcoIt { get; set; }
         public string ItDet { get; set; }
+        public byte[] Imag { get; set; }
     }
 }

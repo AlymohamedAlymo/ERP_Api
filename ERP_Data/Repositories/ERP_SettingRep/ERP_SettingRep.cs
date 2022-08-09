@@ -23,21 +23,6 @@ namespace ERP_Data.Repositories
 
 
 
-        public List<pricing> GetPricingList()
-        {
-            try
-            {
-                var db = new ERPEntities();
-                return db.pricing.ToList();
-
-            }
-            catch
-            {
-
-                return null;
-            }
-
-        }
 
 
 

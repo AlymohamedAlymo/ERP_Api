@@ -62,21 +62,6 @@ namespace ERP_Api.Controllers
 
 
 
-        [HttpGet]
-        [Route("GetPricingList")]
-        public ActionResult<IEnumerable<pricing>> GetPricingList()
-        {
-            try
-            {
-                return Setting.GetPricingList();
-
-            }
-            catch
-            {
-                return null;
-            }
-
-        }
 
 
 

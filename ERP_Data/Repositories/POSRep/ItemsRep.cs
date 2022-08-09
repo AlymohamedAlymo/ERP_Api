@@ -27,6 +27,7 @@ namespace ERP_Data.Repositories
                                             u.NameIt,
                                             u.TypiT,
                                             u.UnitIt,
+                                            u.Imag
                                         }).OrderBy(u => u.IDItem)
                                         .ToList();
                     if (DataItemsOfGroup == null || DataItemsOfGroup.Count == 0)
@@ -85,6 +86,7 @@ namespace ERP_Data.Repositories
                     u.NameIt,
                     u.TypiT,
                     u.UnitIt,
+                    u.Imag
                 }).OrderBy(u => u.IDItem)
                 .ToList();
 
@@ -154,7 +156,7 @@ namespace ERP_Data.Repositories
                     UpdateItem.NameIt = Item.NameIt;
                     UpdateItem.TypiT = Item.TypiT;
                     UpdateItem.UnitIt = Item.UnitIt;
-
+                    UpdateItem.Imag = Item.Imag;
                     int result = context.SaveChanges();
                     return result;
                 }

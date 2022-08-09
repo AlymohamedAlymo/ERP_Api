@@ -266,7 +266,7 @@ namespace ERP_Data.Repositories
                 CN.Open();
                 string SQL = "";
                 string Fields = " IDMove, ItemID, Quant, UnitItem, Price, Total, [Return] ";
-                string DbName = "Sells";
+                string DbName = "Sales";
                 string Query = " where InvoiceID =";
                 SQL = "select " + Fields + " from " + DbName + Query + IDInvoice;
                 string Ord = " Order By IDMove ";
@@ -504,51 +504,6 @@ namespace ERP_Data.Repositories
 
         }
 
-
-        public int UpdateItemPrice(Database_Models.pricing PricingList)
-        {
-
-            try
-            {
-                using (var context = new ERPEntities())
-                {
-                    pricing UpdatePricingList = context.pricing.Where(u => u.IDItem == PricingList.IDItem).FirstOrDefault(); ;
-
-                    if (UpdatePricingList == null)
-                    {
-                        context.pricing.Add(PricingList);
-
-                    }
-
-                    else
-                    {
-                        //if (TypePrice == "جملة") UpdatePricingList.WholesPrice = PricingList.WholesPrice;
-
-                        //else if (TypePrice == "نص جملة") UpdatePricingList.HalfWhoPr = PricingList.HalfWhoPr;
-                        //else UpdatePricingList.SellingPr = PricingList.SellingPr;
-
-                        UpdatePricingList.DateMove = PricingList.DateMove;
-                        UpdatePricingList.DetMove = PricingList.DetMove;
-                        UpdatePricingList.HalfWhoPr = PricingList.HalfWhoPr;
-                        UpdatePricingList.IDItem = PricingList.IDItem;
-                        UpdatePricingList.SellingPr = PricingList.SellingPr;
-                        UpdatePricingList.SupplyPrice = PricingList.SupplyPrice;
-                        UpdatePricingList.WholesPrice = PricingList.WholesPrice;
-
-                    }
-
-
-                    int result = context.SaveChanges();
-                    return result;
-                }
-            }
-            catch
-            {
-                return 0;
-            }
-
-
-        }
 
 
     }

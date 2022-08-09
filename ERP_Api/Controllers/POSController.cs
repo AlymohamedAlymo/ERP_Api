@@ -26,10 +26,12 @@ namespace ERP_Api.Controllers
         private ITaxs Taxs;
         private IItems Items;
         private ICustomer Customer;
+        private IPricing  Pricing;
+        private ISupply Supply;
 
         public POSController(ISales _Sales, IStores _Stores, ISafes _Safes, IBranchs _Branchs, IKeepers _Keepers,
             IDelevery _Delevery, IDeliveryAreas _DeleveryAreas, IDiscounts _Discounts, IOffers _Offers,
-            ITaxs _Taxs, IItems _Items, ICustomer _Customer)
+            ITaxs _Taxs, IItems _Items, ICustomer _Customer, IPricing _Pricing, ISupply _Supply)
         {
             this.Sales = _Sales;
             this.Stores = _Stores;
@@ -43,6 +45,8 @@ namespace ERP_Api.Controllers
             this.Taxs = _Taxs;
             this.Items = _Items;
             this.Customer = _Customer;
+            this.Pricing = _Pricing;
+            this.Supply = _Supply;
 
 
         }
@@ -274,21 +278,14 @@ namespace ERP_Api.Controllers
 
 
 
-        [HttpPost]
-        [Route("UpdateItemPrice")]
-        public ActionResult<string> UpdateItemPrice([FromBody] ERP_Data.Database_Models.pricing PricingList)
-        {
-            try
-            {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(Sales.UpdateItemPrice(PricingList));
-            }
-            catch 
-            {
-                return "حدث خطأ";
-            }
-        }
 
 
+
+        /// <summary>
+        /// Stores Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
 
 
 
@@ -355,6 +352,11 @@ namespace ERP_Api.Controllers
         }
 
 
+        /// <summary>
+        /// Safes Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
 
 
         [HttpGet]
@@ -425,6 +427,11 @@ namespace ERP_Api.Controllers
 
 
 
+        /// <summary>
+        /// Branchs Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
 
 
         [HttpGet]
@@ -494,6 +501,12 @@ namespace ERP_Api.Controllers
 
 
 
+        /// <summary>
+        /// Keepers Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
+
 
 
 
@@ -561,6 +574,11 @@ namespace ERP_Api.Controllers
 
 
 
+        /// <summary>
+        /// Deleverys Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
 
 
 
@@ -630,6 +648,11 @@ namespace ERP_Api.Controllers
 
 
 
+        /// <summary>
+        /// DeleveryAreas Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
 
 
 
@@ -700,6 +723,11 @@ namespace ERP_Api.Controllers
 
 
 
+        /// <summary>
+        /// Discounts Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
 
 
 
@@ -772,6 +800,11 @@ namespace ERP_Api.Controllers
 
 
 
+        /// <summary>
+        /// Offers Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
 
 
 
@@ -868,6 +901,11 @@ namespace ERP_Api.Controllers
 
 
 
+        /// <summary>
+        /// Taxs Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
 
 
 
@@ -944,6 +982,11 @@ namespace ERP_Api.Controllers
 
 
 
+        /// <summary>
+        /// Items Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
 
 
 
@@ -1055,7 +1098,11 @@ namespace ERP_Api.Controllers
 
 
 
-
+        /// <summary>
+        /// Customer Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
 
 
 
@@ -1144,6 +1191,119 @@ namespace ERP_Api.Controllers
             }
         }
 
+
+
+
+        [HttpPost]
+        [Route("PricingItem")]
+        public ActionResult<string> PricingItem([FromBody] ERP_Data.Database_Models.pricing PricingList)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Pricing.PricingItem(PricingList));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpDelete]
+        [Route("ClearPricing/{Code}")]
+        public ActionResult<string> ClearPricing(int Code)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Pricing.ClearPricing(Code));
+            }
+            catch
+            {
+
+                return "حدث خطأ";
+            }
+        }
+
+        [HttpPost]
+        [Route("UpdateItemPrice")]
+        public ActionResult<string> UpdateItemPrice([FromBody] ERP_Data.Database_Models.pricing PricingList)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Pricing.UpdateItemPrice(PricingList));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+
+        [HttpGet]
+        [Route("GetPricingList")]
+        public ActionResult<object> GetPricingList()
+        {
+            try
+            {
+                return Pricing.GetPricingList();
+
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+
+
+        [HttpPost]
+        [Route("SupplyItem")]
+        public ActionResult<string> SupplyItem([FromBody] ERP_Data.Database_Models.Supply SupplyList)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Supply.SupplyItem(SupplyList));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateSupply")]
+        public ActionResult<string> UpdateSupply([FromBody] ERP_Data.Database_Models.Supply SupplyList)
+        {
+            try
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Supply.UpdateSupply(SupplyList));
+            }
+            catch
+            {
+                return "حدث خطأ";
+            }
+        }
+
+
+
+        [HttpGet]
+        [Route("GetSupplyList")]
+        public ActionResult<object> GetSupplyList()
+        {
+            try
+            {
+                return Supply.GetSupplyList();
+
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
 
 
     }

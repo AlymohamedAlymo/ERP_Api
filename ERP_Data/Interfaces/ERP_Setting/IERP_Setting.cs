@@ -10,7 +10,6 @@ namespace ERP_Data.Interfaces
     public interface IERP_Setting
     {
 
-        List<pricing> GetPricingList();
 
         decimal GetQuantityoftheItem(int IDItem);
 

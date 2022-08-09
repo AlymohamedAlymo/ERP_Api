@@ -35,8 +35,6 @@ namespace ERP_Data.Interfaces
 
         int DeleteWaitInvoice(int Code);
 
-        int UpdateItemPrice(Database_Models.pricing PricingList);
-
         object GetCustomerLastOrder(int Customer);
 
     }
