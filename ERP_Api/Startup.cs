@@ -43,6 +43,9 @@ namespace ERP_Api
             services.AddTransient<ICustomer, CustomerRep>();
             services.AddTransient<IPricing , PricingRep>();
             services.AddTransient<ISupply, SupplyRep>();
+            services.AddTransient<IItemsGroups, ItemsGroupsRep>();
+            services.AddTransient<IUnitItems, UnitItemsRep>();
+            services.AddTransient<ITypeItems, TypeItemsRep>();
 
             //services.AddCors(c =>
             //{

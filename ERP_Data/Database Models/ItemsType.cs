@@ -12,15 +12,10 @@ namespace ERP_Data.Database_Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Items
+    public partial class ItemsType
     {
-        public int IDItem { get; set; }
-        public byte[] Imag { get; set; }
-        public string NameIt { get; set; }
-        public int GroupIt { get; set; }
-        public string TypiT { get; set; }
-        public string UnitIt { get; set; }
-        public string BrcoIt { get; set; }
-        public string ItDet { get; set; }
+        public int IdType { get; set; }
+        public string NameType { get; set; }
+        public string Details { get; set; }
     }
 }

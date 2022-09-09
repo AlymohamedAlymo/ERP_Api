@@ -13,25 +13,29 @@ namespace ERP_Api.Controllers
     [ApiController]
     public class POSController : ControllerBase
     {
-        private ISales Sales;
+        private readonly ISales Sales;
 
-        private IStores Stores;
-        private ISafes Safes;
-        private IBranchs Branchs;
-        private IKeepers Keepers;
-        private IDelevery Delevery;
-        private IDeliveryAreas DeleveryAreas;
-        private IDiscounts Discounts;
-        private IOffers Offers;
-        private ITaxs Taxs;
-        private IItems Items;
-        private ICustomer Customer;
-        private IPricing  Pricing;
-        private ISupply Supply;
+        private readonly IStores Stores;
+        private readonly ISafes Safes;
+        private readonly IBranchs Branchs;
+        private readonly IKeepers Keepers;
+        private readonly IDelevery Delevery;
+        private readonly IDeliveryAreas DeleveryAreas;
+        private readonly IDiscounts Discounts;
+        private readonly IOffers Offers;
+        private readonly ITaxs Taxs;
+        private readonly IItems Items;
+        private readonly ICustomer Customer;
+        private readonly IPricing  Pricing;
+        private readonly ISupply Supply;
+        private readonly IItemsGroups ItemsGroups;
+        private readonly ITypeItems TypeItems;
+        private readonly IUnitItems UnitItems;
 
         public POSController(ISales _Sales, IStores _Stores, ISafes _Safes, IBranchs _Branchs, IKeepers _Keepers,
             IDelevery _Delevery, IDeliveryAreas _DeleveryAreas, IDiscounts _Discounts, IOffers _Offers,
-            ITaxs _Taxs, IItems _Items, ICustomer _Customer, IPricing _Pricing, ISupply _Supply)
+            ITaxs _Taxs, IItems _Items, ICustomer _Customer, IPricing _Pricing, ISupply _Supply,
+            IItemsGroups _ItemsGroups, ITypeItems _TypeItems, IUnitItems _UnitItems)
         {
             this.Sales = _Sales;
             this.Stores = _Stores;
@@ -47,6 +51,9 @@ namespace ERP_Api.Controllers
             this.Customer = _Customer;
             this.Pricing = _Pricing;
             this.Supply = _Supply;
+            this.ItemsGroups = _ItemsGroups;
+            this.TypeItems = _TypeItems;
+            this.UnitItems = _UnitItems;
 
 
         }
@@ -59,7 +66,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Sales.GetWaitInvoiceData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -244,7 +251,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Sales.GetCustomerLastOrder(Customer);
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -295,7 +302,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Stores.GetStoresData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -365,7 +372,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Safes.GetSafesData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -440,7 +447,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Branchs.GetBranchsData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -516,7 +523,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Keepers.GetKeepersData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -588,7 +595,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Delevery.GetDeleverysData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -663,7 +670,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = DeleveryAreas.GetDeleveryAreasData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -740,7 +747,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Discounts.GetDiscountsData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -814,7 +821,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Offers.GetOffersData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -917,7 +924,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Taxs.GetTaxsData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -999,7 +1006,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Items.GetItemsOfGroupData(ItemsGroupID);
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -1018,7 +1025,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Items.GetItemsSearchData(SearchContext);
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -1037,7 +1044,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Items.GetItemsData(Code);
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -1116,7 +1123,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Customer.GetCustomerSearchData(SearchContext);
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
@@ -1135,7 +1142,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new object();
+                object dt = new();
                 dt = Customer.GetCustomerData(Code);
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -1304,6 +1311,76 @@ namespace ERP_Api.Controllers
             }
 
         }
+
+
+
+
+
+
+        /// <summary>
+        /// Items Group Control
+        /// </summary>
+        /// <param name="SearchContext"></param>
+        /// <returns></returns>
+
+
+
+
+
+
+        [HttpGet]
+        [Route("GetItemsGroups")]
+        public ActionResult<string> GetItemsGroups()
+        {
+            try
+            {
+                object dt = new();
+                dt = ItemsGroups.GetItemsGroups();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+        [HttpGet]
+        [Route("GetItemsUnits")]
+        public ActionResult<string> GetItemsUnits()
+        {
+            try
+            {
+                object dt = new();
+                dt = UnitItems.GetItemsUnits();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch { return null; }
+
+        }
+
+
+
+
+
+        [HttpGet]
+        [Route("GetItemsTypes")]
+        public ActionResult<string> GetItemsTypes()
+        {
+            try
+            {
+                object dt = new();
+                dt = TypeItems.GetItemsTypes();
+
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch { return null; }
+
+        }
+
 
 
     }

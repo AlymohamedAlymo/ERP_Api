@@ -12,7 +12,7 @@ namespace ERP_Data.Repositories
 {
     public class StoresRep : IStores
     {
-        string connectionString = ERP_SettingRep.ConnectionStrings;
+        //readonly string connectionString = ERP_SettingRep.ConnectionStrings;
 
 
         public int DeleteStore(int Code)
@@ -97,7 +97,7 @@ namespace ERP_Data.Repositories
 
             }
 
-            catch (Exception c)
+            catch
             {
                 throw new InvalidDataException();
             }

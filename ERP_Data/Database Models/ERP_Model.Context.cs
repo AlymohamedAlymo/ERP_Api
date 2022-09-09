@@ -28,7 +28,6 @@ namespace ERP_Data.Database_Models
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Invoice> Invoice { get; set; }
         public virtual DbSet<ItemGroup> ItemGroup { get; set; }
-        public virtual DbSet<Items> Items { get; set; }
         public virtual DbSet<pricing> pricing { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<WaitInvoice> WaitInvoice { get; set; }
@@ -46,5 +45,8 @@ namespace ERP_Data.Database_Models
         public virtual DbSet<Offers> Offers { get; set; }
         public virtual DbSet<Taxs> Taxs { get; set; }
         public virtual DbSet<Sales> Sales { get; set; }
+        public virtual DbSet<Items> Items { get; set; }
+        public virtual DbSet<ItemsType> ItemsType { get; set; }
+        public virtual DbSet<ItemsUnit> ItemsUnit { get; set; }
     }
 }

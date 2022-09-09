@@ -27,27 +27,26 @@ namespace ERP_Data.Repositories
 
 
 
-        public static string getMatchName(string SearchContext)
+        public static string GetMatchName(string SearchContext)
         {
-            string chr = "";
             string cstname = "";
             for (int a = 0; a < SearchContext.Length; a++)
             {
-                chr = SearchContext.Substring(a, 1);
+                string chr = SearchContext.Substring(a, 1);
                 if (chr == "ا" || chr == "أ" || chr == "آ" || chr == "إ")
-                    cstname = cstname + "[اأآإ]";
+                    cstname += "[اأآإ]";
                 else if (chr == "ه" || chr == "ة")
-                    cstname = cstname + "[ةه]";
+                    cstname += "[ةه]";
                 else if (chr == "لأ" || chr == "لا" || chr == "لآ" || chr == "لإ")
-                    cstname = cstname + "[لإلالألآ]";
+                    cstname += "[لإلالألآ]";
                 else if (chr == "ى" || chr == "ي" || chr == "ئ")
-                    cstname = cstname + "[ىيئ]";
+                    cstname += "[ىيئ]";
                 else if (chr == "ء" || chr == "ئ")
-                    cstname = cstname + "[ءئ]";
+                    cstname += "[ءئ]";
                 else if (chr == "ء" || chr == "ؤ" || chr == "و")
-                    cstname = cstname + "[ءؤو]";
+                    cstname += "[ءؤو]";
                 else
-                    cstname = cstname + chr;
+                    cstname += chr;
 
             }
 
@@ -76,7 +75,7 @@ namespace ERP_Data.Repositories
                 }
             }
 
-            catch (Exception c)
+            catch
             {
                 throw new InvalidDataException();
             }
@@ -108,7 +107,7 @@ namespace ERP_Data.Repositories
                 }
             }
 
-            catch (Exception c)
+            catch
             {
                 throw new InvalidDataException();
             }

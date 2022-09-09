@@ -89,6 +89,12 @@
     <Compile Include="Database Models\Items.cs">
       <DependentUpon>ERP_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database Models\ItemsType.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database Models\ItemsUnit.cs">
+      <DependentUpon>ERP_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database Models\Keepers.cs">
       <DependentUpon>ERP_Model.tt</DependentUpon>
     </Compile>
@@ -135,6 +141,7 @@
     <Compile Include="Interfaces\POS\IDeliveryAreas.cs" />
     <Compile Include="Interfaces\POS\IDiscounts.cs" />
     <Compile Include="Interfaces\POS\IItems.cs" />
+    <Compile Include="Interfaces\POS\IItemsGroups.cs" />
     <Compile Include="Interfaces\POS\IKeepers.cs" />
     <Compile Include="Interfaces\POS\IOffers.cs" />
     <Compile Include="Interfaces\POS\IPricing.cs" />
@@ -143,6 +150,8 @@
     <Compile Include="Interfaces\POS\IStores.cs" />
     <Compile Include="Interfaces\POS\ISupply.cs" />
     <Compile Include="Interfaces\POS\ITaxs.cs" />
+    <Compile Include="Interfaces\POS\ITypeItems.cs" />
+    <Compile Include="Interfaces\POS\IUnitItems.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ERP_SettingRep\ERP_SettingRep.cs" />
     <Compile Include="Repositories\POSRep\BranchsRep.cs" />
@@ -150,6 +159,7 @@
     <Compile Include="Repositories\POSRep\DeleveryAreasRep.cs" />
     <Compile Include="Repositories\POSRep\DeleverysRep.cs" />
     <Compile Include="Repositories\POSRep\DiscountsRep.cs" />
+    <Compile Include="Repositories\POSRep\ItemsGroupsRep.cs" />
     <Compile Include="Repositories\POSRep\ItemsRep.cs" />
     <Compile Include="Repositories\POSRep\KeepersRep.cs" />
     <Compile Include="Repositories\POSRep\OffersRep.cs" />
@@ -159,6 +169,8 @@
     <Compile Include="Repositories\POSRep\StoresRep.cs" />
     <Compile Include="Repositories\POSRep\SupplyRep.cs" />
     <Compile Include="Repositories\POSRep\TaxsRep.cs" />
+    <Compile Include="Repositories\POSRep\TypeItemsRep.cs" />
+    <Compile Include="Repositories\POSRep\UnitItemsRep.cs" />
     <Compile Include="ViewModels\InvoiceData.cs" />
   </ItemGroup>
   <ItemGroup>

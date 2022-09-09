@@ -122,7 +122,7 @@ namespace ERP_Data.Repositories
 
                 SearchContext = SearchContext.Replace(" ", "%");
 
-                SQL = "select " + Fields + " from Customer where NameCust like '%" + ERP_SettingRep.getMatchName(SearchContext) + "%' or MobileCust like '%" + SearchContext + "%' " +
+                SQL = "select " + Fields + " from Customer where NameCust like '%" + ERP_SettingRep.GetMatchName(SearchContext) + "%' or MobileCust like '%" + SearchContext + "%' " +
                 "or PhoneCust like '%" + SearchContext + "%'" + " or MobilePlus like '%" + SearchContext + "%' or AddrCust like '%" + SearchContext + "%' order by IDCust ";
 
 

@@ -95,13 +95,29 @@
             <PropertyRef Name="IDItem" />
           </Key>
           <Property Name="IDItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imag" Type="image" />
           <Property Name="NameIt" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="GroupIt" Type="int" Nullable="false" />
           <Property Name="TypiT" Type="varchar" MaxLength="50" />
           <Property Name="UnitIt" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="BrcoIt" Type="varchar" MaxLength="50" />
           <Property Name="ItDet" Type="text" />
-          <Property Name="Imag" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="ItemsType">
+          <Key>
+            <PropertyRef Name="IdType" />
+          </Key>
+          <Property Name="IdType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Details" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ItemsUnit">
+          <Key>
+            <PropertyRef Name="Idunit" />
+          </Key>
+          <Property Name="Idunit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameUnit" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Details" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Keepers">
           <Key>
@@ -306,6 +322,8 @@
           <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ItemGroup" EntityType="Self.ItemGroup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemsType" EntityType="Self.ItemsType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemsUnit" EntityType="Self.ItemsUnit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Keepers" EntityType="Self.Keepers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Offers" EntityType="Self.Offers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OutofStore" EntityType="Self.OutofStore" Schema="dbo" store:Type="Tables" />
@@ -369,19 +387,6 @@
           <Property Name="TypGr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="GrDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Items">
-          <Key>
-            <PropertyRef Name="IDItem" />
-          </Key>
-          <Property Name="IDItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NameIt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="GroupIt" Type="Int32" Nullable="false" />
-          <Property Name="TypiT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UnitIt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="BrcoIt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ItDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Imag" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="pricing">
           <Key>
             <PropertyRef Name="IDMove" />
@@ -431,7 +436,6 @@
           <EntitySet Name="Customer" EntityType="Self.Customer" />
           <EntitySet Name="Invoice" EntityType="Self.Invoice" />
           <EntitySet Name="ItemGroup" EntityType="Self.ItemGroup" />
-          <EntitySet Name="Items" EntityType="Self.Items" />
           <EntitySet Name="pricing" EntityType="Self.pricing" />
           <EntitySet Name="Users" EntityType="Self.Users" />
           <EntitySet Name="WaitInvoice" EntityType="Self.WaitInvoice" />
@@ -449,6 +453,9 @@
           <EntitySet Name="Offers" EntityType="ERPModel.Offers" />
           <EntitySet Name="Taxs" EntityType="ERPModel.Taxs" />
           <EntitySet Name="Sales" EntityType="ERPModel.Sales" />
+          <EntitySet Name="Items" EntityType="ERPModel.Items" />
+          <EntitySet Name="ItemsType" EntityType="ERPModel.ItemsType" />
+          <EntitySet Name="ItemsUnit" EntityType="ERPModel.ItemsUnit" />
         </EntityContainer>
         <EntityType Name="OutofStore">
           <Key>
@@ -639,6 +646,35 @@
           <Property Name="DetiMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Return" Type="Boolean" Nullable="false" />
         </EntityType>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="IDItem" />
+          </Key>
+          <Property Name="IDItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imag" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="NameIt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GroupIt" Type="Int32" Nullable="false" />
+          <Property Name="TypiT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UnitIt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BrcoIt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ItDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ItemsType">
+          <Key>
+            <PropertyRef Name="IdType" />
+          </Key>
+          <Property Name="IdType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ItemsUnit">
+          <Key>
+            <PropertyRef Name="Idunit" />
+          </Key>
+          <Property Name="Idunit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameUnit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -690,20 +726,6 @@
                 <ScalarProperty Name="NameGr" ColumnName="NameGr" />
                 <ScalarProperty Name="TypGr" ColumnName="TypGr" />
                 <ScalarProperty Name="GrDet" ColumnName="GrDet" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Items">
-            <EntityTypeMapping TypeName="ERPModel.Items">
-              <MappingFragment StoreEntitySet="Items">
-                <ScalarProperty Name="Imag" ColumnName="Imag" />
-                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
-                <ScalarProperty Name="NameIt" ColumnName="NameIt" />
-                <ScalarProperty Name="GroupIt" ColumnName="GroupIt" />
-                <ScalarProperty Name="TypiT" ColumnName="TypiT" />
-                <ScalarProperty Name="UnitIt" ColumnName="UnitIt" />
-                <ScalarProperty Name="BrcoIt" ColumnName="BrcoIt" />
-                <ScalarProperty Name="ItDet" ColumnName="ItDet" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -955,6 +977,38 @@
                 <ScalarProperty Name="WaitID" ColumnName="WaitID" />
                 <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
                 <ScalarProperty Name="IDMove" ColumnName="IDMove" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="ERPModel.Items">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="ItDet" ColumnName="ItDet" />
+                <ScalarProperty Name="BrcoIt" ColumnName="BrcoIt" />
+                <ScalarProperty Name="UnitIt" ColumnName="UnitIt" />
+                <ScalarProperty Name="TypiT" ColumnName="TypiT" />
+                <ScalarProperty Name="GroupIt" ColumnName="GroupIt" />
+                <ScalarProperty Name="NameIt" ColumnName="NameIt" />
+                <ScalarProperty Name="Imag" ColumnName="Imag" />
+                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemsType">
+            <EntityTypeMapping TypeName="ERPModel.ItemsType">
+              <MappingFragment StoreEntitySet="ItemsType">
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="NameType" ColumnName="NameType" />
+                <ScalarProperty Name="IdType" ColumnName="IdType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemsUnit">
+            <EntityTypeMapping TypeName="ERPModel.ItemsUnit">
+              <MappingFragment StoreEntitySet="ItemsUnit">
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="NameUnit" ColumnName="NameUnit" />
+                <ScalarProperty Name="Idunit" ColumnName="Idunit" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
