@@ -15,37 +15,37 @@ namespace ERP_Data.Repositories
     {
 
 
-        //public object GetItemsOfGroupData(int ItemsGroupID)
-        //{
-        //    try
-        //    {
-        //        using (var context = new ERPEntities())
-        //        {
-        //            var DataItemsOfGroup = context.Items.Where(u => u.GroupIt == ItemsGroupID)
-        //                                .Select(u => new
-        //                                {
-        //                                    u.IDItem,
-        //                                    u.ItDet,
-        //                                    u.NameIt,
-        //                                    u.TypiT,
-        //                                    u.UnitIt,
-        //                                    u.Imag
-        //                                }).OrderBy(u => u.IDItem)
-        //                                .ToList();
-        //            if (DataItemsOfGroup == null || DataItemsOfGroup.Count == 0)
-        //            {
-        //                throw new RecordNotFoundException();
-        //            }
-        //            return DataItemsOfGroup;
+        public object GetItemsOfGroupData(int ItemsGroupID)
+        {
+            try
+            {
+                using (var context = new ERPEntities())
+                {
+                    var DataItemsOfGroup = context.Items.Where(u => u.GroupIt == ItemsGroupID)
+                                        .Select(u => new
+                                        {
+                                            u.IDItem,
+                                            u.ItDet,
+                                            u.NameIt,
+                                            u.TypiT,
+                                            u.UnitIt,
+                                            u.Imag
+                                        }).OrderBy(u => u.IDItem)
+                                        .ToList();
+                    if (DataItemsOfGroup == null || DataItemsOfGroup.Count == 0)
+                    {
+                        throw new RecordNotFoundException();
+                    }
+                    return DataItemsOfGroup;
 
-        //        }
-        //    }
+                }
+            }
 
-        //    catch
-        //    {
-        //        throw new InvalidDataException();
-        //    }
-        //}
+            catch
+            {
+                throw new InvalidDataException();
+            }
+        }
 
         public object GetItemsData(int Code)
         {

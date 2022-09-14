@@ -1050,22 +1050,22 @@ namespace ERP_Api.Controllers
 
         }
 
-        //[HttpGet]
-        //[Route("GetItemsData/{Code}")]
-        //public ActionResult<string> GetItemsData(int Code)
-        //{
-        //    try
-        //    {
-        //        object dt = new();
-        //        dt = Items.GetItemsData(Code);
-        //        return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
+        [HttpGet]
+        [Route("GetItemsData/{Code}")]
+        public ActionResult<string> GetItemsData(int Code)
+        {
+            try
+            {
+                object dt = new();
+                dt = Items.GetItemsData(Code);
+                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+            }
+            catch
+            {
+                return null;
+            }
 
-        //}
+        }
 
 
         [HttpPost]
