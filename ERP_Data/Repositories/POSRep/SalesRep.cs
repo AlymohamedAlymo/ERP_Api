@@ -16,7 +16,7 @@ namespace ERP_Data.Repositories
     public class SalesRep : ISales
     {
 
-        string connectionString = ERP_SettingRep.ConnectionStrings;
+        readonly string connectionString = ERP_SettingRep.ConnectionStrings;
 
 
         public int AddtoWaitInvoice(Database_Models.WaitInvoice WaitInvoice)
@@ -270,7 +270,7 @@ namespace ERP_Data.Repositories
                 string Query = " where InvoiceID =";
                 SQL = "select " + Fields + " from " + DbName + Query + IDInvoice;
                 string Ord = " Order By IDMove ";
-                SQL = SQL + Ord;
+                SQL += Ord;
                 //SqlCommand cmd = new SqlCommand(SQL, CN);
                 SqlDataAdapter Ra = new SqlDataAdapter(SQL, CN);
 
