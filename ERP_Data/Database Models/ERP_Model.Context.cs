@@ -45,8 +45,8 @@ namespace ERP_Data.Database_Models
         public virtual DbSet<Offers> Offers { get; set; }
         public virtual DbSet<Taxs> Taxs { get; set; }
         public virtual DbSet<Sales> Sales { get; set; }
-        public virtual DbSet<Items> Items { get; set; }
         public virtual DbSet<ItemsType> ItemsType { get; set; }
         public virtual DbSet<ItemsUnit> ItemsUnit { get; set; }
+        public virtual DbSet<Items> Items { get; set; }
     }
 }

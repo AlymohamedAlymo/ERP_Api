@@ -9,7 +9,7 @@ namespace ERP_Data.Interfaces
     public interface IItems
     {
 
-        object GetItemsData(int Code);
+        //object GetItemsData(int Code);
 
         object GetItemsSearchData(string SearchContext);
 
@@ -20,6 +20,8 @@ namespace ERP_Data.Interfaces
         int UpdateItem(Database_Models.Items Item);
 
         int AddNewItem(Database_Models.Items Item);
+
+        object GetItemsAdvancedSearch(string SearchContext);
 
 
     }

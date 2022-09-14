@@ -15,11 +15,12 @@ namespace ERP_Data.Database_Models
     public partial class Items
     {
         public int IDItem { get; set; }
+        public int AddDate { get; set; }
         public byte[] Imag { get; set; }
         public string NameIt { get; set; }
         public int GroupIt { get; set; }
-        public string TypiT { get; set; }
-        public string UnitIt { get; set; }
+        public Nullable<int> TypiT { get; set; }
+        public int UnitIt { get; set; }
         public string BrcoIt { get; set; }
         public string ItDet { get; set; }
     }

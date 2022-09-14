@@ -1037,23 +1037,35 @@ namespace ERP_Api.Controllers
 
         }
 
-
         [HttpGet]
-        [Route("GetItemsData/{Code}")]
-        public ActionResult<string> GetItemsData(int Code)
+        [Route("GetItemsAdvancedSearch/{SearchContext}")]
+        public ActionResult<string> GetItemsAdvancedSearch(string SearchContext)
         {
             try
             {
-                object dt = new();
-                dt = Items.GetItemsData(Code);
-                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+               var Dt = Items.GetItemsAdvancedSearch(SearchContext);
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Dt);
             }
-            catch
-            {
-                return null;
-            }
+            catch { return null; }
 
         }
+
+        //[HttpGet]
+        //[Route("GetItemsData/{Code}")]
+        //public ActionResult<string> GetItemsData(int Code)
+        //{
+        //    try
+        //    {
+        //        object dt = new();
+        //        dt = Items.GetItemsData(Code);
+        //        return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+
+        //}
 
 
         [HttpPost]

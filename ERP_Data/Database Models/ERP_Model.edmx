@@ -95,12 +95,13 @@
             <PropertyRef Name="IDItem" />
           </Key>
           <Property Name="IDItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AddDate" Type="int" Nullable="false" />
           <Property Name="Imag" Type="image" />
           <Property Name="NameIt" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="GroupIt" Type="int" Nullable="false" />
-          <Property Name="TypiT" Type="varchar" MaxLength="50" />
-          <Property Name="UnitIt" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="BrcoIt" Type="varchar" MaxLength="50" />
+          <Property Name="TypiT" Type="int" />
+          <Property Name="UnitIt" Type="int" Nullable="false" />
+          <Property Name="BrcoIt" Type="nvarchar" MaxLength="50" />
           <Property Name="ItDet" Type="text" />
         </EntityType>
         <EntityType Name="ItemsType">
@@ -453,9 +454,9 @@
           <EntitySet Name="Offers" EntityType="ERPModel.Offers" />
           <EntitySet Name="Taxs" EntityType="ERPModel.Taxs" />
           <EntitySet Name="Sales" EntityType="ERPModel.Sales" />
-          <EntitySet Name="Items" EntityType="ERPModel.Items" />
           <EntitySet Name="ItemsType" EntityType="ERPModel.ItemsType" />
           <EntitySet Name="ItemsUnit" EntityType="ERPModel.ItemsUnit" />
+          <EntitySet Name="Items" EntityType="ERPModel.Items" />
         </EntityContainer>
         <EntityType Name="OutofStore">
           <Key>
@@ -646,19 +647,6 @@
           <Property Name="DetiMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Return" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="Items">
-          <Key>
-            <PropertyRef Name="IDItem" />
-          </Key>
-          <Property Name="IDItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Imag" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="NameIt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="GroupIt" Type="Int32" Nullable="false" />
-          <Property Name="TypiT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UnitIt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="BrcoIt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ItDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="ItemsType">
           <Key>
             <PropertyRef Name="IdType" />
@@ -674,6 +662,20 @@
           <Property Name="Idunit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameUnit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="IDItem" />
+          </Key>
+          <Property Name="IDItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AddDate" Type="Int32" Nullable="false" />
+          <Property Name="Imag" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="NameIt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GroupIt" Type="Int32" Nullable="false" />
+          <Property Name="TypiT" Type="Int32" />
+          <Property Name="UnitIt" Type="Int32" Nullable="false" />
+          <Property Name="BrcoIt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -980,20 +982,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Items">
-            <EntityTypeMapping TypeName="ERPModel.Items">
-              <MappingFragment StoreEntitySet="Items">
-                <ScalarProperty Name="ItDet" ColumnName="ItDet" />
-                <ScalarProperty Name="BrcoIt" ColumnName="BrcoIt" />
-                <ScalarProperty Name="UnitIt" ColumnName="UnitIt" />
-                <ScalarProperty Name="TypiT" ColumnName="TypiT" />
-                <ScalarProperty Name="GroupIt" ColumnName="GroupIt" />
-                <ScalarProperty Name="NameIt" ColumnName="NameIt" />
-                <ScalarProperty Name="Imag" ColumnName="Imag" />
-                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ItemsType">
             <EntityTypeMapping TypeName="ERPModel.ItemsType">
               <MappingFragment StoreEntitySet="ItemsType">
@@ -1009,6 +997,21 @@
                 <ScalarProperty Name="Details" ColumnName="Details" />
                 <ScalarProperty Name="NameUnit" ColumnName="NameUnit" />
                 <ScalarProperty Name="Idunit" ColumnName="Idunit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="ERPModel.Items">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="ItDet" ColumnName="ItDet" />
+                <ScalarProperty Name="BrcoIt" ColumnName="BrcoIt" />
+                <ScalarProperty Name="UnitIt" ColumnName="UnitIt" />
+                <ScalarProperty Name="TypiT" ColumnName="TypiT" />
+                <ScalarProperty Name="GroupIt" ColumnName="GroupIt" />
+                <ScalarProperty Name="NameIt" ColumnName="NameIt" />
+                <ScalarProperty Name="Imag" ColumnName="Imag" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
