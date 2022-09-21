@@ -19,9 +19,9 @@ namespace ERP_Data.Database_Models
         public byte[] Imag { get; set; }
         public string NameIt { get; set; }
         public int GroupIt { get; set; }
-        public Nullable<int> TypiT { get; set; }
+        public int TypiT { get; set; }
         public int UnitIt { get; set; }
-        public string BrcoIt { get; set; }
+        public Nullable<int> BrcoIt { get; set; }
         public string ItDet { get; set; }
     }
 }

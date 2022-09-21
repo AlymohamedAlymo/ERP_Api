@@ -15,37 +15,37 @@ namespace ERP_Data.Repositories
     {
 
 
-        public object GetItemsOfGroupData(int ItemsGroupID)
-        {
-            try
-            {
-                using (var context = new ERPEntities())
-                {
-                    var DataItemsOfGroup = context.Items.Where(u => u.GroupIt == ItemsGroupID)
-                                        .Select(u => new
-                                        {
-                                            u.IDItem,
-                                            u.ItDet,
-                                            u.NameIt,
-                                            u.TypiT,
-                                            u.UnitIt,
-                                            u.Imag
-                                        }).OrderBy(u => u.IDItem)
-                                        .ToList();
-                    if (DataItemsOfGroup == null || DataItemsOfGroup.Count == 0)
-                    {
-                        throw new RecordNotFoundException();
-                    }
-                    return DataItemsOfGroup;
+        //public object GetItemsOfGroupData(int ItemsGroupID)
+        //{
+        //    try
+        //    {
+        //        using (var context = new ERPEntities())
+        //        {
+        //            var DataItemsOfGroup = context.Items.Where(u => u.GroupIt == ItemsGroupID)
+        //                                .Select(u => new
+        //                                {
+        //                                    u.IDItem,
+        //                                    u.ItDet,
+        //                                    u.NameIt,
+        //                                    u.TypiT,
+        //                                    u.UnitIt,
+        //                                    u.Imag
+        //                                }).OrderBy(u => u.IDItem)
+        //                                .ToList();
+        //            if (DataItemsOfGroup == null || DataItemsOfGroup.Count == 0)
+        //            {
+        //                throw new RecordNotFoundException();
+        //            }
+        //            return DataItemsOfGroup;
 
-                }
-            }
+        //        }
+        //    }
 
-            catch
-            {
-                throw new InvalidDataException();
-            }
-        }
+        //    catch
+        //    {
+        //        throw new InvalidDataException();
+        //    }
+        //}
 
         public object GetItemsData(int Code)
         {
@@ -60,35 +60,35 @@ namespace ERP_Data.Repositories
             catch { return null; }
         }
 
-        public object GetItemsSearchData(string SearchContext)
-        {
-            try
-            {
-                using (var Db = new ERPEntities())
-                {
-                    var DataBySearchItems = Db.Items.Where(u => u.NameIt.Contains(SearchContext) || u.BrcoIt == SearchContext)
-                        .Select(u => new
-                        {
-                            u.BrcoIt,
-                            u.GroupIt,
-                            u.IDItem,
-                            u.ItDet,
-                            u.NameIt,
-                            u.TypiT,
-                            u.UnitIt,
-                            u.Imag
-                        }).OrderBy(u => u.IDItem).ToList();
+        //public object GetItemsSearchData(string SearchContext)
+        //{
+        //    try
+        //    {
+        //        using (var Db = new ERPEntities())
+        //        {
+        //            var DataBySearchItems = Db.Items.Where(u => u.NameIt.Contains(SearchContext) || u.BrcoIt == int.Parse(SearchContext))
+        //                .Select(u => new
+        //                {
+        //                    u.BrcoIt,
+        //                    u.GroupIt,
+        //                    u.IDItem,
+        //                    u.ItDet,
+        //                    u.NameIt,
+        //                    u.TypiT,
+        //                    u.UnitIt,
+        //                    u.Imag
+        //                }).OrderBy(u => u.IDItem).ToList();
 
-                    if (DataBySearchItems == null) { throw new RecordNotFoundException(); }
+        //            if (DataBySearchItems == null) { throw new RecordNotFoundException(); }
 
-                    return DataBySearchItems;
+        //            return DataBySearchItems;
 
-                }
-            }
+        //        }
+        //    }
 
-            catch { throw new InvalidDataException(); }
+        //    catch { throw new InvalidDataException(); }
 
-        }
+        //}
 
         public int DeleteItem(int Code)
         {
@@ -155,7 +155,7 @@ namespace ERP_Data.Repositories
         }
 
 
-        public object GetItemsAdvancedSearch(string SearchContext)
+        public object GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool WithNote)
         {
             try
             {
@@ -163,9 +163,86 @@ namespace ERP_Data.Repositories
                 string connectionString = ERP_SettingRep.ConnectionStrings;
                 SqlConnection CN = new SqlConnection(connectionString);
                 CN.Open();
-                string Query = "";
-                SearchContext = SearchContext.Replace(" ", "%");
-                Query = " SELECT " + Fields + " FROM Items WHERE NameIt like '%" + ERP_SettingRep.GetMatchName(SearchContext) + "%' order by IDItem ";
+                string Query = " SELECT " + Fields + " FROM Items WHERE ";
+
+                bool ANDCase = false;
+                if (NameItem != "-1")
+                {
+                    
+                    if (!Match) 
+                    {
+                        NameItem = NameItem.Replace(" ", "%");
+                        Query += " NameIt like '%" + ERP_SettingRep.GetMatchName(NameItem) + "%' ";
+                    } 
+                    else if (Match) Query += " NameIt = '" + NameItem + "' ";
+
+                    ANDCase = true;
+                }
+                if (Group != 0) 
+                {
+
+                    if (ANDCase) Query += " AND ";
+
+                    Query += " GroupIt = " + Group;
+
+                    ANDCase = true;
+
+                }
+                if (Type != 0)
+                {
+                    if (ANDCase) Query += " AND ";
+
+                    Query += " TypiT = " + Type;
+
+                    ANDCase = true;
+
+                }
+                if (Unit != 0)
+                {
+                    if (ANDCase) Query += " AND ";
+
+                    Query += " UnitIt = " + Unit;
+
+                    ANDCase = true;
+
+                }
+                if (Barcode != 0)
+                {
+                    if (ANDCase) Query += " AND ";
+
+                    Query += " BrcoIt = " + Barcode;
+
+                    ANDCase = true;
+
+                }
+                if (AddDate != 0)
+                {
+                    if (ANDCase) Query += " AND ";
+
+                    Query += " AddDate = " + AddDate;
+
+                    ANDCase = true;
+
+                }
+                if (NoBarcode)
+                {
+                    if (ANDCase) Query += " AND ";
+
+                    Query += " BrcoIt = NULL ";
+
+                    ANDCase = true;
+
+                }
+                if (WithNote)
+                {
+                    if (ANDCase) Query += " AND ";
+
+                    Query += " ItDet <> NULL ";
+
+                }
+
+                Query += " ORDER BY IDItem ";
+
                 SqlDataAdapter Da = new SqlDataAdapter(Query, CN);
                 DataSet Ds = new DataSet();
                 Da.Fill(Ds);

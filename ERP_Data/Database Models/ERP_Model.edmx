@@ -96,12 +96,12 @@
           </Key>
           <Property Name="IDItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AddDate" Type="int" Nullable="false" />
-          <Property Name="Imag" Type="image" />
+          <Property Name="Imag" Type="varbinary(max)" />
           <Property Name="NameIt" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="GroupIt" Type="int" Nullable="false" />
-          <Property Name="TypiT" Type="int" />
+          <Property Name="TypiT" Type="int" Nullable="false" />
           <Property Name="UnitIt" Type="int" Nullable="false" />
-          <Property Name="BrcoIt" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrcoIt" Type="int" />
           <Property Name="ItDet" Type="text" />
         </EntityType>
         <EntityType Name="ItemsType">
@@ -672,9 +672,9 @@
           <Property Name="Imag" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="NameIt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="GroupIt" Type="Int32" Nullable="false" />
-          <Property Name="TypiT" Type="Int32" />
+          <Property Name="TypiT" Type="Int32" Nullable="false" />
           <Property Name="UnitIt" Type="Int32" Nullable="false" />
-          <Property Name="BrcoIt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrcoIt" Type="Int32" />
           <Property Name="ItDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>

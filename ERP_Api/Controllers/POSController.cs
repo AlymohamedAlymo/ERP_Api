@@ -1000,51 +1000,52 @@ namespace ERP_Api.Controllers
 
 
 
+        //[HttpGet]
+        //[Route("GetItemsOfGroupData/{ItemsGroupID}")]
+        //public ActionResult<string> GetItemsOfGroupData(int ItemsGroupID)
+        //{
+        //    try
+        //    {
+        //        object dt = new();
+        //        dt = Items.GetItemsOfGroupData(ItemsGroupID);
+
+        //        return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+
+        //}
+
+
+        //[HttpGet]
+        //[Route("GetItemsSearchData/{SearchContext}")]
+        //public ActionResult<string> GetItemsData(string SearchContext)
+        //{
+        //    try
+        //    {
+        //        object dt = new();
+        //        dt = Items.GetItemsSearchData(SearchContext);
+
+        //        return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+
+        //}
+
         [HttpGet]
-        [Route("GetItemsOfGroupData/{ItemsGroupID}")]
-        public ActionResult<string> GetItemsOfGroupData(int ItemsGroupID)
+        [Route("GetItemsAdvancedSearch/{NameItem}/{Match}/{Group}/{Type}/{Unit}/{Barcode}/{AddDate}/{NoBarcode}/{WithNote}")]
+        public ActionResult<string> GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool WithNote)
         {
             try
             {
-                object dt = new();
-                dt = Items.GetItemsOfGroupData(ItemsGroupID);
+               var Dt = Items.GetItemsAdvancedSearch(NameItem, Match, Group, Type, Unit, Barcode, AddDate, NoBarcode, WithNote);
+               return Newtonsoft.Json.JsonConvert.SerializeObject(Dt);
 
-                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
-            }
-            catch
-            {
-                return null;
-            }
-
-        }
-
-
-        [HttpGet]
-        [Route("GetItemsSearchData/{SearchContext}")]
-        public ActionResult<string> GetItemsData(string SearchContext)
-        {
-            try
-            {
-                object dt = new();
-                dt = Items.GetItemsSearchData(SearchContext);
-
-                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
-            }
-            catch
-            {
-                return null;
-            }
-
-        }
-
-        [HttpGet]
-        [Route("GetItemsAdvancedSearch/{SearchContext}")]
-        public ActionResult<string> GetItemsAdvancedSearch(string SearchContext)
-        {
-            try
-            {
-               var Dt = Items.GetItemsAdvancedSearch(SearchContext);
-                return Newtonsoft.Json.JsonConvert.SerializeObject(Dt);
             }
             catch { return null; }
 
