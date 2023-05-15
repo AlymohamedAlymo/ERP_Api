@@ -12,13 +12,11 @@ namespace ERP_Data.Database_Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Stores
+    public partial class DeliveryArea
     {
-        public int id { get; set; }
-        public string S_Name { get; set; }
-        public string S_Phone { get; set; }
-        public string S_Addr { get; set; }
-        public string S_Keeper { get; set; }
+        public int ID { get; set; }
+        public string A_Name { get; set; }
+        public decimal A_Price { get; set; }
         public string Note { get; set; }
     }
 }

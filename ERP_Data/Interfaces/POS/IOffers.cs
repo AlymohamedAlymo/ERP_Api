@@ -11,9 +11,9 @@ namespace ERP_Data.Interfaces
 
         int DeleteOffer(int Code);
 
-        int UpdateOffer(Database_Models.Offers Offer);
+        int UpdateOffer(Database_Models.Offer Offer);
 
-        int AddNewOffer(Database_Models.Offers Offer);
+        int AddNewOffer(Database_Models.Offer Offer);
 
         object GetOffersData();
 

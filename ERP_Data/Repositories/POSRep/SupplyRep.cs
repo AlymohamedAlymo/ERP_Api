@@ -19,11 +19,11 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Supply UpdateSupply = context.Supply.Where(u => u.IDMove == supply.IDMove).FirstOrDefault(); ;
+                    Supply UpdateSupply = context.Supplies.Where(u => u.IDMove == supply.IDMove).FirstOrDefault(); ;
 
                     if (UpdateSupply == null)
                     {
-                        context.Supply.Add(UpdateSupply);
+                        context.Supplies.Add(UpdateSupply);
 
                     }
 
@@ -69,7 +69,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    context.Supply.Add(supply);
+                    context.Supplies.Add(supply);
                     int res = context.SaveChanges();
                     if (res > 0)
                     {
@@ -98,7 +98,7 @@ namespace ERP_Data.Repositories
             try
             {
                 var db = new ERPEntities();
-                return db.Supply.ToList();
+                return db.Supplies.ToList();
 
             }
             catch

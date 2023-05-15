@@ -22,7 +22,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Taxs Tax = context.Taxs.Where(u => u.ID == Code).SingleOrDefault();
+                    Tax Tax = context.Taxs.Where(u => u.ID == Code).SingleOrDefault();
                     if (Tax == null)
                     {
                         return 2;
@@ -47,14 +47,14 @@ namespace ERP_Data.Repositories
         }
 
 
-        public int UpdateTax(Database_Models.Taxs Tax)
+        public int UpdateTax(Database_Models.Tax Tax)
         {
 
             try
             {
                 using (var context = new ERPEntities())
                 {
-                    Taxs UpdateTax = context.Taxs.Where(u => u.ID == Tax.ID).FirstOrDefault(); ;
+                    Tax UpdateTax = context.Taxs.Where(u => u.ID == Tax.ID).FirstOrDefault(); ;
 
                     UpdateTax.Note = Tax.Note;
                     UpdateTax.T_Name = Tax.T_Name;
@@ -74,7 +74,7 @@ namespace ERP_Data.Repositories
 
 
 
-        public int AddNewTax(Database_Models.Taxs Tax)
+        public int AddNewTax(Database_Models.Tax Tax)
         {
             try
             {

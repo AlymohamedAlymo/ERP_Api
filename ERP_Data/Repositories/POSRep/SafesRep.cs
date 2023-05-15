@@ -21,7 +21,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Safes safe = context.Safes.Where(u => u.id == Code).SingleOrDefault();
+                    Safe safe = context.Safes.Where(u => u.id == Code).SingleOrDefault();
                     if (safe == null)
                     {
                         return 2;
@@ -46,14 +46,14 @@ namespace ERP_Data.Repositories
         }
 
 
-        public int UpdateSafe(Database_Models.Safes safe)
+        public int UpdateSafe(Database_Models.Safe safe)
         {
 
             try
             {
                 using (var context = new ERPEntities())
                 {
-                    Safes Updatesafe = context.Safes.Where(u => u.id == safe.id).FirstOrDefault(); ;
+                    Safe Updatesafe = context.Safes.Where(u => u.id == safe.id).FirstOrDefault(); ;
 
                     Updatesafe.Note = safe.Note;
                     Updatesafe.K_Addr = safe.K_Addr;
@@ -76,7 +76,7 @@ namespace ERP_Data.Repositories
 
 
 
-        public int AddNewSafe(Database_Models.Safes safe)
+        public int AddNewSafe(Database_Models.Safe safe)
         {
             try
             {

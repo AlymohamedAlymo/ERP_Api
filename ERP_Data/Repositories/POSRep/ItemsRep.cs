@@ -49,15 +49,15 @@ namespace ERP_Data.Repositories
 
         public object GetItemsData(int Code)
         {
-            try
-            {
+            //try
+            //{
                 object Dt = null;
                 var Db = new ERPEntities();
                 if (Code == 0) Dt = Db.Items.ToList();
                 else Dt = Db.Items.Where(u => u.IDItem == Code).ToList();
                 return Dt;
-            }
-            catch { return null; }
+            //}
+            //catch { return null; }
         }
 
         //public object GetItemsSearchData(string SearchContext)
@@ -96,7 +96,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Items Item = context.Items.Where(u => u.IDItem == Code).SingleOrDefault();
+                    Item Item = context.Items.Where(u => u.IDItem == Code).SingleOrDefault();
 
                     if (Item == null) return 2;
 
@@ -112,14 +112,14 @@ namespace ERP_Data.Repositories
 
         }
 
-        public int UpdateItem(Database_Models.Items Item)
+        public int UpdateItem(Item Item)
         {
 
             try
             {
                 using (var context = new ERPEntities())
                 {
-                    Items UpdateItem = context.Items.Where(u => u.IDItem == Item.IDItem).FirstOrDefault(); ;
+                    Item UpdateItem = context.Items.Where(u => u.IDItem == Item.IDItem).FirstOrDefault(); ;
                     UpdateItem.BrcoIt = Item.BrcoIt;
                     UpdateItem.GroupIt = Item.GroupIt;
                     UpdateItem.ItDet = Item.ItDet;
@@ -137,7 +137,7 @@ namespace ERP_Data.Repositories
         }
 
 
-        public int AddNewItem(Database_Models.Items Item)
+        public int AddNewItem(Item Item)
         {
             try
             {
@@ -155,7 +155,7 @@ namespace ERP_Data.Repositories
         }
 
 
-        public object GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool WithNote)
+        public object GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool DuplicateBarcode, bool WithNote)
         {
             try
             {
@@ -228,7 +228,7 @@ namespace ERP_Data.Repositories
                 {
                     if (ANDCase) Query += " AND ";
 
-                    Query += " BrcoIt = NULL ";
+                    Query += " BrcoIt IS NULL ";
 
                     ANDCase = true;
 
@@ -237,7 +237,14 @@ namespace ERP_Data.Repositories
                 {
                     if (ANDCase) Query += " AND ";
 
-                    Query += " ItDet <> NULL ";
+                    Query += " ItDet IS NOT NULL ";
+
+                }
+                if (DuplicateBarcode)
+                {
+                    if (ANDCase) Query += " AND ";
+
+                    Query += " BrcoIt in(" + GetDublicateBarcode(Query) + ") ";
 
                 }
 
@@ -253,6 +260,62 @@ namespace ERP_Data.Repositories
             }
             catch { throw new InvalidDataException(); }
 
+        }
+
+
+        string GetDublicateBarcode(string Query)
+        {
+
+            string connectionString = ERP_SettingRep.ConnectionStrings;
+            SqlConnection CN = new SqlConnection(connectionString);
+            CN.Open();
+
+            Query = Query.Substring(Query.IndexOf("FROM"));
+
+           string DuplicateBarcode_Query = " SELECT BrcoIt " + Query + " BrcoIt IS NOT NULL GROUP BY BrcoIt HAVING COUNT(*) > 1 ";
+
+            List<string> BarCode = new List<string>();
+            SqlCommand cmd = new SqlCommand(DuplicateBarcode_Query, CN);
+            SqlDataReader RD = cmd.ExecuteReader();
+            if (RD.HasRows)
+            {
+                while (RD.Read())
+                {
+                    BarCode.Add(RD[0].ToString());
+                }
+            }
+
+            RD.Close();
+            CN.Close();
+
+            string str = "";
+
+            for (int a = 0; a < BarCode.Count(); a++)
+            {
+                str += BarCode[a].ToString();
+
+                if (BarCode.Count() != a + 1)
+                    str += " , ";
+            }
+
+            return str;
+
+        }
+
+        public int GetUnpricedItems()
+        {
+            string connectionString = ERP_SettingRep.ConnectionStrings;
+            SqlConnection CN = new SqlConnection(connectionString);
+            CN.Open();
+            int ItemsCount = 0;
+            string Query = " SELECT COUNT(IDItem) FROM Items WHERE NOT EXISTS (SELECT IDItem FROM pricing WHERE Items.IDItem = pricing.IDItem) ";
+            SqlCommand cmd = new SqlCommand(Query, CN);
+            SqlDataReader RD = cmd.ExecuteReader();
+            RD.Read();
+            ItemsCount = int.Parse(RD[0].ToString());
+            RD.Close();
+            CN.Close();
+            return ItemsCount;
         }
 
     }

@@ -16,7 +16,7 @@ namespace ERP_Data.Repositories
             try
             {
                 var DB = new ERPEntities();
-                return DB.ItemsType.ToList();
+                return DB.ItemsTypes.ToList();
 
             }
             catch { return null; }

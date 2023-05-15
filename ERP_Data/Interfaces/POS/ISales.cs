@@ -12,9 +12,9 @@ namespace ERP_Data.Interfaces
     {
         int GetNewIDInvoice();
 
-        int AddNewItemToInvoice(Database_Models.Sales Sales);
+        int AddNewItemToInvoice(Database_Models.Sale Sales);
 
-        int AddNewItemToReturns(int Code, Database_Models.Returns Returns);
+        int AddNewItemToReturns(int Code, Database_Models.Return Returns);
 
         DataTable GetInvoiceData(int IDInvoice);
         int AddNewInvoice(Database_Models.Invoice Invoice);
@@ -25,7 +25,7 @@ namespace ERP_Data.Interfaces
 
         object GetWaitInvoiceData();
 
-        int UpdateItemOfInvoice(int Code,Database_Models.Sales Sales);
+        int UpdateItemOfInvoice(int Code,Database_Models.Sale Sales);
 
         int UpdateWaitInvoice(int Code, Database_Models.WaitInvoice WaitInvoice);
 

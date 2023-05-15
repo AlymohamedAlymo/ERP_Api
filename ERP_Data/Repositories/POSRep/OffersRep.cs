@@ -22,7 +22,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Offers Offer = context.Offers.Where(u => u.ID == Code).SingleOrDefault();
+                    Offer Offer = context.Offers.Where(u => u.ID == Code).SingleOrDefault();
                     if (Offer == null)
                     {
                         return 2;
@@ -47,14 +47,14 @@ namespace ERP_Data.Repositories
         }
 
 
-        public int UpdateOffer(Database_Models.Offers Offer)
+        public int UpdateOffer(Database_Models.Offer Offer)
         {
 
             try
             {
                 using (var context = new ERPEntities())
                 {
-                    Offers UpdateOffer = context.Offers.Where(u => u.ID == Offer.ID).FirstOrDefault(); ;
+                    Offer UpdateOffer = context.Offers.Where(u => u.ID == Offer.ID).FirstOrDefault(); ;
 
                     UpdateOffer.Note = Offer.Note;
                     UpdateOffer.CashBack = Offer.CashBack;
@@ -78,7 +78,7 @@ namespace ERP_Data.Repositories
 
 
 
-        public int AddNewOffer(Database_Models.Offers Offer)
+        public int AddNewOffer(Database_Models.Offer Offer)
         {
             try
             {

@@ -11,9 +11,9 @@ namespace ERP_Data.Interfaces
 
         int DeleteKeeper(int Code);
 
-        int UpdateKeeper(Database_Models.Keepers Kp);
+        int UpdateKeeper(Database_Models.Keeper Kp);
 
-        int AddNewKeeper(Database_Models.Keepers Kp);
+        int AddNewKeeper(Database_Models.Keeper Kp);
 
         object GetKeepersData();
 

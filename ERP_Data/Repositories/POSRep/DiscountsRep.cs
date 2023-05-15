@@ -21,7 +21,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Discounts Disc = context.Discounts.Where(u => u.ID == Code).SingleOrDefault();
+                    Discount Disc = context.Discounts.Where(u => u.ID == Code).SingleOrDefault();
                     if (Disc == null)
                     {
                         return 2;
@@ -46,14 +46,14 @@ namespace ERP_Data.Repositories
         }
 
 
-        public int UpdateDiscount(Database_Models.Discounts Disc)
+        public int UpdateDiscount(Database_Models.Discount Disc)
         {
 
             try
             {
                 using (var context = new ERPEntities())
                 {
-                    Discounts UpdateDisc = context.Discounts.Where(u => u.ID == Disc.ID).FirstOrDefault(); ;
+                    Discount UpdateDisc = context.Discounts.Where(u => u.ID == Disc.ID).FirstOrDefault(); ;
 
                     UpdateDisc.Note = Disc.Note;
                     UpdateDisc.Dis_Name = Disc.Dis_Name;
@@ -73,7 +73,7 @@ namespace ERP_Data.Repositories
 
 
 
-        public int AddNewDiscount(Database_Models.Discounts Disc)
+        public int AddNewDiscount(Database_Models.Discount Disc)
         {
             try
             {

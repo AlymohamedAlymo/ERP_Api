@@ -15,7 +15,12 @@ namespace ERP_Data.Interfaces
 
         object GetStoragePlaceData(int IDItem);
 
-
+        /// <summary>
+        /// Get Printing Setting
+        /// </summary>
+        /// <param name="IDReport">Report ID</param>
+        /// <returns>object</returns>
+        object GetPrintingSetting(int IDReport);
 
     }
 }

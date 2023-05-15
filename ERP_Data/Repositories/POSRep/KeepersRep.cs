@@ -21,7 +21,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Keepers Kp = context.Keepers.Where(u => u.id == Code).SingleOrDefault();
+                    Keeper Kp = context.Keepers.Where(u => u.id == Code).SingleOrDefault();
                     if (Kp == null)
                     {
                         return 2;
@@ -46,14 +46,14 @@ namespace ERP_Data.Repositories
         }
 
 
-        public int UpdateKeeper(Database_Models.Keepers Kp)
+        public int UpdateKeeper(Database_Models.Keeper Kp)
         {
 
             try
             {
                 using (var context = new ERPEntities())
                 {
-                    Keepers UpdateKp = context.Keepers.Where(u => u.id == Kp.id).FirstOrDefault(); ;
+                    Keeper UpdateKp = context.Keepers.Where(u => u.id == Kp.id).FirstOrDefault(); ;
 
                     UpdateKp.Note = Kp.Note;
                     UpdateKp.Kp_Addr = Kp.Kp_Addr;
@@ -75,7 +75,7 @@ namespace ERP_Data.Repositories
 
 
 
-        public int AddNewKeeper(Database_Models.Keepers Kp)
+        public int AddNewKeeper(Database_Models.Keeper Kp)
         {
             try
             {

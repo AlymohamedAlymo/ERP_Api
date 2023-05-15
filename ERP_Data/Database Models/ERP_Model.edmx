@@ -171,6 +171,16 @@
           <Property Name="SellingPr" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="DetMove" Type="text" />
         </EntityType>
+        <EntityType Name="PrintSetting">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ReportName" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="PaperSize" Type="nchar" MaxLength="5" />
+          <Property Name="NofCopies" Type="nchar" MaxLength="3" />
+          <Property Name="PrinterName" Type="nchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="Returns">
           <Key>
             <PropertyRef Name="IDMove" />
@@ -329,6 +339,7 @@
           <EntitySet Name="Offers" EntityType="Self.Offers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OutofStore" EntityType="Self.OutofStore" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="pricing" EntityType="Self.pricing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrintSetting" EntityType="Self.PrintSetting" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Returns" EntityType="Self.Returns" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ReturnsInvoice" EntityType="Self.ReturnsInvoice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Safes" EntityType="Self.Safes" Schema="dbo" store:Type="Tables" />
@@ -343,6 +354,17 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ERPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="B_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="B_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="B_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="B_Maneger" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="IDCust" />
@@ -358,6 +380,35 @@
           <Property Name="MobilePlus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="TypeCust" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DetailsCust" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Delevery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="D_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="D_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="D_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="D_NaID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DeliveryArea">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="A_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="A_Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dis_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dis_Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
@@ -388,6 +439,74 @@
           <Property Name="TypGr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="GrDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="IDItem" />
+          </Key>
+          <Property Name="IDItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AddDate" Type="Int32" Nullable="false" />
+          <Property Name="Imag" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="NameIt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GroupIt" Type="Int32" Nullable="false" />
+          <Property Name="TypiT" Type="Int32" Nullable="false" />
+          <Property Name="UnitIt" Type="Int32" Nullable="false" />
+          <Property Name="BrcoIt" Type="Int32" />
+          <Property Name="ItDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ItemsType">
+          <Key>
+            <PropertyRef Name="IdType" />
+          </Key>
+          <Property Name="IdType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ItemsUnit">
+          <Key>
+            <PropertyRef Name="Idunit" />
+          </Key>
+          <Property Name="Idunit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Keeper">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kp_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kp_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kp_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Kp_NaID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Offer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="O_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="P_Quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="F_Quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsFree" Type="Boolean" Nullable="false" />
+          <Property Name="CashBack" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OutofStore">
+          <Key>
+            <PropertyRef Name="IDMove" />
+          </Key>
+          <Property Name="IDMove" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDSell" Type="Int32" />
+          <Property Name="DateMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="CustID" Type="Int32" />
+          <Property Name="ItemID" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TypeMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DetailsMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="pricing">
           <Key>
             <PropertyRef Name="IDMove" />
@@ -401,7 +520,118 @@
           <Property Name="SellingPr" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="DetMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Users">
+        <EntityType Name="Return">
+          <Key>
+            <PropertyRef Name="IDMove" />
+          </Key>
+          <Property Name="IDMove" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDReturn" Type="Int32" Nullable="false" />
+          <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+          <Property Name="WaitID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="CustID" Type="Int32" />
+          <Property Name="DateMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DaINT" Type="Double" />
+          <Property Name="ItemID" Type="Int32" Nullable="false" />
+          <Property Name="Quant" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UnitItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UnitPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DetiMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ReturnsInvoice">
+          <Key>
+            <PropertyRef Name="IDReturn" />
+          </Key>
+          <Property Name="IDReturn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDInvoice" Type="Int32" Nullable="false" />
+          <Property Name="DateInv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustID" Type="Int32" Nullable="false" />
+          <Property Name="TypInv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NetBill" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="additional" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ShipPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalInvo" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TherRest" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DelvID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="DetailsBill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Safe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="K_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="K_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="K_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="K_Keeper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="IDMove" />
+          </Key>
+          <Property Name="IDMove" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+          <Property Name="WaitID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="CustID" Type="Int32" />
+          <Property Name="DateMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DaINT" Type="Double" />
+          <Property Name="ItemID" Type="Int32" Nullable="false" />
+          <Property Name="Quant" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UnitItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UnitPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DetiMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Return" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="S_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="S_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="S_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="S_Keeper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Supply">
+          <Key>
+            <PropertyRef Name="IDMove" />
+          </Key>
+          <Property Name="IDMove" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDBill" Type="Int32" />
+          <Property Name="IDSupplier" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="StoreID" Type="Int32" Nullable="false" />
+          <Property Name="TypMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ItemID" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PurPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="validity" Type="Int32" />
+          <Property Name="limitItem" Type="Int32" />
+          <Property Name="DetailsMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tax">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="T_Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="User">
           <Key>
             <PropertyRef Name="IDUser" />
           </Key>
@@ -434,248 +664,40 @@
           <Property Name="DetailsBill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="ERPEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Customer" EntityType="Self.Customer" />
-          <EntitySet Name="Invoice" EntityType="Self.Invoice" />
-          <EntitySet Name="ItemGroup" EntityType="Self.ItemGroup" />
-          <EntitySet Name="pricing" EntityType="Self.pricing" />
-          <EntitySet Name="Users" EntityType="Self.Users" />
-          <EntitySet Name="WaitInvoice" EntityType="Self.WaitInvoice" />
-          <EntitySet Name="OutofStore" EntityType="ERPModel.OutofStore" />
-          <EntitySet Name="Supply" EntityType="ERPModel.Supply" />
-          <EntitySet Name="ReturnsInvoice" EntityType="ERPModel.ReturnsInvoice" />
-          <EntitySet Name="Returns" EntityType="ERPModel.Returns" />
-          <EntitySet Name="Stores" EntityType="ERPModel.Stores" />
-          <EntitySet Name="Safes" EntityType="ERPModel.Safes" />
-          <EntitySet Name="Branches" EntityType="ERPModel.Branches" />
-          <EntitySet Name="Deleverys" EntityType="ERPModel.Deleverys" />
-          <EntitySet Name="Keepers" EntityType="ERPModel.Keepers" />
-          <EntitySet Name="DeliveryAreas" EntityType="ERPModel.DeliveryAreas" />
-          <EntitySet Name="Discounts" EntityType="ERPModel.Discounts" />
-          <EntitySet Name="Offers" EntityType="ERPModel.Offers" />
-          <EntitySet Name="Taxs" EntityType="ERPModel.Taxs" />
-          <EntitySet Name="Sales" EntityType="ERPModel.Sales" />
-          <EntitySet Name="ItemsType" EntityType="ERPModel.ItemsType" />
-          <EntitySet Name="ItemsUnit" EntityType="ERPModel.ItemsUnit" />
-          <EntitySet Name="Items" EntityType="ERPModel.Items" />
+          <EntitySet Name="Branches" EntityType="Self.Branch" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Deleverys" EntityType="Self.Delevery" />
+          <EntitySet Name="DeliveryAreas" EntityType="Self.DeliveryArea" />
+          <EntitySet Name="Discounts" EntityType="Self.Discount" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+          <EntitySet Name="ItemGroups" EntityType="Self.ItemGroup" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="ItemsTypes" EntityType="Self.ItemsType" />
+          <EntitySet Name="ItemsUnits" EntityType="Self.ItemsUnit" />
+          <EntitySet Name="Keepers" EntityType="Self.Keeper" />
+          <EntitySet Name="Offers" EntityType="Self.Offer" />
+          <EntitySet Name="OutofStores" EntityType="Self.OutofStore" />
+          <EntitySet Name="pricings" EntityType="Self.pricing" />
+          <EntitySet Name="Returns" EntityType="Self.Return" />
+          <EntitySet Name="ReturnsInvoices" EntityType="Self.ReturnsInvoice" />
+          <EntitySet Name="Safes" EntityType="Self.Safe" />
+          <EntitySet Name="Sales" EntityType="Self.Sale" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="Supplies" EntityType="Self.Supply" />
+          <EntitySet Name="Taxs" EntityType="Self.Tax" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="WaitInvoices" EntityType="Self.WaitInvoice" />
+          <EntitySet Name="PrintSettings" EntityType="ERPModel.PrintSetting" />
         </EntityContainer>
-        <EntityType Name="OutofStore">
-          <Key>
-            <PropertyRef Name="IDMove" />
-          </Key>
-          <Property Name="IDMove" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDSell" Type="Int32" />
-          <Property Name="DateMove" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UserID" Type="Int32" Nullable="false" />
-          <Property Name="CustID" Type="Int32" />
-          <Property Name="ItemID" Type="Int32" Nullable="false" />
-          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="TypeMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DetailsMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Supply">
-          <Key>
-            <PropertyRef Name="IDMove" />
-          </Key>
-          <Property Name="IDMove" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DateMove" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IDBill" Type="Int32" />
-          <Property Name="IDSupplier" Type="Int32" Nullable="false" />
-          <Property Name="UserID" Type="Int32" Nullable="false" />
-          <Property Name="StoreID" Type="Int32" Nullable="false" />
-          <Property Name="TypMove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ItemID" Type="Int32" Nullable="false" />
-          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="PurPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="validity" Type="Int32" />
-          <Property Name="limitItem" Type="Int32" />
-          <Property Name="DetailsMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="ReturnsInvoice">
-          <Key>
-            <PropertyRef Name="IDReturn" />
-          </Key>
-          <Property Name="IDReturn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDInvoice" Type="Int32" Nullable="false" />
-          <Property Name="DateInv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustID" Type="Int32" Nullable="false" />
-          <Property Name="TypInv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NetBill" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="additional" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="ShipPrice" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="TotalInvo" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Paid" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="TherRest" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="DelvID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UserID" Type="Int32" Nullable="false" />
-          <Property Name="DetailsBill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Returns">
-          <Key>
-            <PropertyRef Name="IDMove" />
-          </Key>
-          <Property Name="IDMove" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDReturn" Type="Int32" Nullable="false" />
-          <Property Name="InvoiceID" Type="Int32" Nullable="false" />
-          <Property Name="WaitID" Type="Int32" />
-          <Property Name="UserID" Type="Int32" Nullable="false" />
-          <Property Name="OrderID" Type="Int32" />
-          <Property Name="CustID" Type="Int32" />
-          <Property Name="DateMove" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DaINT" Type="Double" />
-          <Property Name="ItemID" Type="Int32" Nullable="false" />
-          <Property Name="Quant" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="UnitItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UnitPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="DetiMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Stores">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="S_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="S_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="S_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="S_Keeper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Safes">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="K_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="K_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="K_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="K_Keeper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Branches">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="B_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="B_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="B_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="B_Maneger" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Deleverys">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="D_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="D_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="D_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="D_NaID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Keepers">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Kp_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Kp_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Kp_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Kp_NaID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="DeliveryAreas">
+        <EntityType Name="PrintSetting">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="A_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="A_Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Discounts">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Dis_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Dis_Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Offers">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="O_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="P_Quantity" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="F_Quantity" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="IsFree" Type="Boolean" Nullable="false" />
-          <Property Name="CashBack" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Taxs">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="T_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="T_Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Sales">
-          <Key>
-            <PropertyRef Name="IDMove" />
-          </Key>
-          <Property Name="IDMove" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="InvoiceID" Type="Int32" Nullable="false" />
-          <Property Name="WaitID" Type="Int32" />
-          <Property Name="UserID" Type="Int32" Nullable="false" />
-          <Property Name="OrderID" Type="Int32" />
-          <Property Name="CustID" Type="Int32" />
-          <Property Name="DateMove" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DaINT" Type="Double" />
-          <Property Name="ItemID" Type="Int32" Nullable="false" />
-          <Property Name="Quant" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="UnitItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UnitPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="DetiMove" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Return" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ItemsType">
-          <Key>
-            <PropertyRef Name="IdType" />
-          </Key>
-          <Property Name="IdType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NameType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="ItemsUnit">
-          <Key>
-            <PropertyRef Name="Idunit" />
-          </Key>
-          <Property Name="Idunit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NameUnit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Items">
-          <Key>
-            <PropertyRef Name="IDItem" />
-          </Key>
-          <Property Name="IDItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AddDate" Type="Int32" Nullable="false" />
-          <Property Name="Imag" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="NameIt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="GroupIt" Type="Int32" Nullable="false" />
-          <Property Name="TypiT" Type="Int32" Nullable="false" />
-          <Property Name="UnitIt" Type="Int32" Nullable="false" />
-          <Property Name="BrcoIt" Type="Int32" />
-          <Property Name="ItDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ReportName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PaperSize" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="NofCopies" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="PrinterName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -683,7 +705,19 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ERPModelStoreContainer" CdmEntityContainer="ERPEntities">
-          <EntitySetMapping Name="Customer">
+          <EntitySetMapping Name="Branches">
+            <EntityTypeMapping TypeName="ERPModel.Branch">
+              <MappingFragment StoreEntitySet="Branches">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="B_Name" ColumnName="B_Name" />
+                <ScalarProperty Name="B_Phone" ColumnName="B_Phone" />
+                <ScalarProperty Name="B_Addr" ColumnName="B_Addr" />
+                <ScalarProperty Name="B_Maneger" ColumnName="B_Maneger" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="ERPModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="IDCust" ColumnName="IDCust" />
@@ -700,10 +734,183 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Invoice">
+          <EntitySetMapping Name="Deleverys">
+            <EntityTypeMapping TypeName="ERPModel.Delevery">
+              <MappingFragment StoreEntitySet="Deleverys">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="D_Name" ColumnName="D_Name" />
+                <ScalarProperty Name="D_Phone" ColumnName="D_Phone" />
+                <ScalarProperty Name="D_Addr" ColumnName="D_Addr" />
+                <ScalarProperty Name="D_NaID" ColumnName="D_NaID" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryAreas">
+            <EntityTypeMapping TypeName="ERPModel.DeliveryArea">
+              <MappingFragment StoreEntitySet="DeliveryAreas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="A_Name" ColumnName="A_Name" />
+                <ScalarProperty Name="A_Price" ColumnName="A_Price" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Discounts">
+            <EntityTypeMapping TypeName="ERPModel.Discount">
+              <MappingFragment StoreEntitySet="Discounts">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Dis_Name" ColumnName="Dis_Name" />
+                <ScalarProperty Name="Dis_Price" ColumnName="Dis_Price" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
             <EntityTypeMapping TypeName="ERPModel.Invoice">
               <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="IDInvoice" ColumnName="IDInvoice" />
+                <ScalarProperty Name="DateInv" ColumnName="DateInv" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+                <ScalarProperty Name="TypInv" ColumnName="TypInv" />
+                <ScalarProperty Name="NetBill" ColumnName="NetBill" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="additional" ColumnName="additional" />
+                <ScalarProperty Name="ShipPrice" ColumnName="ShipPrice" />
+                <ScalarProperty Name="TotalInvo" ColumnName="TotalInvo" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="TherRest" ColumnName="TherRest" />
+                <ScalarProperty Name="DelvID" ColumnName="DelvID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="DetailsBill" ColumnName="DetailsBill" />
                 <ScalarProperty Name="Return" ColumnName="Return" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemGroups">
+            <EntityTypeMapping TypeName="ERPModel.ItemGroup">
+              <MappingFragment StoreEntitySet="ItemGroup">
+                <ScalarProperty Name="IDGr" ColumnName="IDGr" />
+                <ScalarProperty Name="NameGr" ColumnName="NameGr" />
+                <ScalarProperty Name="TypGr" ColumnName="TypGr" />
+                <ScalarProperty Name="GrDet" ColumnName="GrDet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="ERPModel.Item">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="Imag" ColumnName="Imag" />
+                <ScalarProperty Name="NameIt" ColumnName="NameIt" />
+                <ScalarProperty Name="GroupIt" ColumnName="GroupIt" />
+                <ScalarProperty Name="TypiT" ColumnName="TypiT" />
+                <ScalarProperty Name="UnitIt" ColumnName="UnitIt" />
+                <ScalarProperty Name="BrcoIt" ColumnName="BrcoIt" />
+                <ScalarProperty Name="ItDet" ColumnName="ItDet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemsTypes">
+            <EntityTypeMapping TypeName="ERPModel.ItemsType">
+              <MappingFragment StoreEntitySet="ItemsType">
+                <ScalarProperty Name="IdType" ColumnName="IdType" />
+                <ScalarProperty Name="NameType" ColumnName="NameType" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemsUnits">
+            <EntityTypeMapping TypeName="ERPModel.ItemsUnit">
+              <MappingFragment StoreEntitySet="ItemsUnit">
+                <ScalarProperty Name="Idunit" ColumnName="Idunit" />
+                <ScalarProperty Name="NameUnit" ColumnName="NameUnit" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Keepers">
+            <EntityTypeMapping TypeName="ERPModel.Keeper">
+              <MappingFragment StoreEntitySet="Keepers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Kp_Name" ColumnName="Kp_Name" />
+                <ScalarProperty Name="Kp_Phone" ColumnName="Kp_Phone" />
+                <ScalarProperty Name="Kp_Addr" ColumnName="Kp_Addr" />
+                <ScalarProperty Name="Kp_NaID" ColumnName="Kp_NaID" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Offers">
+            <EntityTypeMapping TypeName="ERPModel.Offer">
+              <MappingFragment StoreEntitySet="Offers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="O_Name" ColumnName="O_Name" />
+                <ScalarProperty Name="P_Quantity" ColumnName="P_Quantity" />
+                <ScalarProperty Name="F_Quantity" ColumnName="F_Quantity" />
+                <ScalarProperty Name="IsFree" ColumnName="IsFree" />
+                <ScalarProperty Name="CashBack" ColumnName="CashBack" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutofStores">
+            <EntityTypeMapping TypeName="ERPModel.OutofStore">
+              <MappingFragment StoreEntitySet="OutofStore">
+                <ScalarProperty Name="IDMove" ColumnName="IDMove" />
+                <ScalarProperty Name="IDSell" ColumnName="IDSell" />
+                <ScalarProperty Name="DateMove" ColumnName="DateMove" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="TypeMove" ColumnName="TypeMove" />
+                <ScalarProperty Name="DetailsMove" ColumnName="DetailsMove" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pricings">
+            <EntityTypeMapping TypeName="ERPModel.pricing">
+              <MappingFragment StoreEntitySet="pricing">
+                <ScalarProperty Name="IDMove" ColumnName="IDMove" />
+                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+                <ScalarProperty Name="DateMove" ColumnName="DateMove" />
+                <ScalarProperty Name="SupplyPrice" ColumnName="SupplyPrice" />
+                <ScalarProperty Name="WholesPrice" ColumnName="WholesPrice" />
+                <ScalarProperty Name="HalfWhoPr" ColumnName="HalfWhoPr" />
+                <ScalarProperty Name="SellingPr" ColumnName="SellingPr" />
+                <ScalarProperty Name="DetMove" ColumnName="DetMove" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Returns">
+            <EntityTypeMapping TypeName="ERPModel.Return">
+              <MappingFragment StoreEntitySet="Returns">
+                <ScalarProperty Name="IDMove" ColumnName="IDMove" />
+                <ScalarProperty Name="IDReturn" ColumnName="IDReturn" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="WaitID" ColumnName="WaitID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+                <ScalarProperty Name="DateMove" ColumnName="DateMove" />
+                <ScalarProperty Name="DaINT" ColumnName="DaINT" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="Quant" ColumnName="Quant" />
+                <ScalarProperty Name="UnitItem" ColumnName="UnitItem" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="DetiMove" ColumnName="DetiMove" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReturnsInvoices">
+            <EntityTypeMapping TypeName="ERPModel.ReturnsInvoice">
+              <MappingFragment StoreEntitySet="ReturnsInvoice">
+                <ScalarProperty Name="IDReturn" ColumnName="IDReturn" />
                 <ScalarProperty Name="IDInvoice" ColumnName="IDInvoice" />
                 <ScalarProperty Name="DateInv" ColumnName="DateInv" />
                 <ScalarProperty Name="CustID" ColumnName="CustID" />
@@ -721,32 +928,83 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ItemGroup">
-            <EntityTypeMapping TypeName="ERPModel.ItemGroup">
-              <MappingFragment StoreEntitySet="ItemGroup">
-                <ScalarProperty Name="IDGr" ColumnName="IDGr" />
-                <ScalarProperty Name="NameGr" ColumnName="NameGr" />
-                <ScalarProperty Name="TypGr" ColumnName="TypGr" />
-                <ScalarProperty Name="GrDet" ColumnName="GrDet" />
+          <EntitySetMapping Name="Safes">
+            <EntityTypeMapping TypeName="ERPModel.Safe">
+              <MappingFragment StoreEntitySet="Safes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="K_Name" ColumnName="K_Name" />
+                <ScalarProperty Name="K_Phone" ColumnName="K_Phone" />
+                <ScalarProperty Name="K_Addr" ColumnName="K_Addr" />
+                <ScalarProperty Name="K_Keeper" ColumnName="K_Keeper" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="pricing">
-            <EntityTypeMapping TypeName="ERPModel.pricing">
-              <MappingFragment StoreEntitySet="pricing">
+          <EntitySetMapping Name="Sales">
+            <EntityTypeMapping TypeName="ERPModel.Sale">
+              <MappingFragment StoreEntitySet="Sales">
                 <ScalarProperty Name="IDMove" ColumnName="IDMove" />
-                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="WaitID" ColumnName="WaitID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
                 <ScalarProperty Name="DateMove" ColumnName="DateMove" />
-                <ScalarProperty Name="SupplyPrice" ColumnName="SupplyPrice" />
-                <ScalarProperty Name="WholesPrice" ColumnName="WholesPrice" />
-                <ScalarProperty Name="HalfWhoPr" ColumnName="HalfWhoPr" />
-                <ScalarProperty Name="SellingPr" ColumnName="SellingPr" />
-                <ScalarProperty Name="DetMove" ColumnName="DetMove" />
+                <ScalarProperty Name="DaINT" ColumnName="DaINT" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="Quant" ColumnName="Quant" />
+                <ScalarProperty Name="UnitItem" ColumnName="UnitItem" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="DetiMove" ColumnName="DetiMove" />
+                <ScalarProperty Name="Return" ColumnName="Return" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="ERPModel.Store">
+              <MappingFragment StoreEntitySet="Stores">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="S_Name" ColumnName="S_Name" />
+                <ScalarProperty Name="S_Phone" ColumnName="S_Phone" />
+                <ScalarProperty Name="S_Addr" ColumnName="S_Addr" />
+                <ScalarProperty Name="S_Keeper" ColumnName="S_Keeper" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supplies">
+            <EntityTypeMapping TypeName="ERPModel.Supply">
+              <MappingFragment StoreEntitySet="Supply">
+                <ScalarProperty Name="IDMove" ColumnName="IDMove" />
+                <ScalarProperty Name="DateMove" ColumnName="DateMove" />
+                <ScalarProperty Name="IDBill" ColumnName="IDBill" />
+                <ScalarProperty Name="IDSupplier" ColumnName="IDSupplier" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="TypMove" ColumnName="TypMove" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PurPrice" ColumnName="PurPrice" />
+                <ScalarProperty Name="validity" ColumnName="validity" />
+                <ScalarProperty Name="limitItem" ColumnName="limitItem" />
+                <ScalarProperty Name="DetailsMove" ColumnName="DetailsMove" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taxs">
+            <EntityTypeMapping TypeName="ERPModel.Tax">
+              <MappingFragment StoreEntitySet="Taxs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="T_Name" ColumnName="T_Name" />
+                <ScalarProperty Name="T_Price" ColumnName="T_Price" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="ERPModel.Users">
+            <EntityTypeMapping TypeName="ERPModel.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="IDUser" ColumnName="IDUser" />
                 <ScalarProperty Name="NameUser" ColumnName="NameUser" />
@@ -758,7 +1016,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="WaitInvoice">
+          <EntitySetMapping Name="WaitInvoices">
             <EntityTypeMapping TypeName="ERPModel.WaitInvoice">
               <MappingFragment StoreEntitySet="WaitInvoice">
                 <ScalarProperty Name="IDWait" ColumnName="IDWait" />
@@ -779,239 +1037,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="OutofStore">
-            <EntityTypeMapping TypeName="ERPModel.OutofStore">
-              <MappingFragment StoreEntitySet="OutofStore">
-                <ScalarProperty Name="DetailsMove" ColumnName="DetailsMove" />
-                <ScalarProperty Name="TypeMove" ColumnName="TypeMove" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-                <ScalarProperty Name="CustID" ColumnName="CustID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="DateMove" ColumnName="DateMove" />
-                <ScalarProperty Name="IDSell" ColumnName="IDSell" />
-                <ScalarProperty Name="IDMove" ColumnName="IDMove" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Supply">
-            <EntityTypeMapping TypeName="ERPModel.Supply">
-              <MappingFragment StoreEntitySet="Supply">
-                <ScalarProperty Name="DetailsMove" ColumnName="DetailsMove" />
-                <ScalarProperty Name="limitItem" ColumnName="limitItem" />
-                <ScalarProperty Name="validity" ColumnName="validity" />
-                <ScalarProperty Name="PurPrice" ColumnName="PurPrice" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-                <ScalarProperty Name="TypMove" ColumnName="TypMove" />
-                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="IDSupplier" ColumnName="IDSupplier" />
-                <ScalarProperty Name="IDBill" ColumnName="IDBill" />
-                <ScalarProperty Name="DateMove" ColumnName="DateMove" />
-                <ScalarProperty Name="IDMove" ColumnName="IDMove" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ReturnsInvoice">
-            <EntityTypeMapping TypeName="ERPModel.ReturnsInvoice">
-              <MappingFragment StoreEntitySet="ReturnsInvoice">
-                <ScalarProperty Name="DetailsBill" ColumnName="DetailsBill" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="DelvID" ColumnName="DelvID" />
-                <ScalarProperty Name="TherRest" ColumnName="TherRest" />
-                <ScalarProperty Name="Paid" ColumnName="Paid" />
-                <ScalarProperty Name="TotalInvo" ColumnName="TotalInvo" />
-                <ScalarProperty Name="ShipPrice" ColumnName="ShipPrice" />
-                <ScalarProperty Name="additional" ColumnName="additional" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="NetBill" ColumnName="NetBill" />
-                <ScalarProperty Name="TypInv" ColumnName="TypInv" />
-                <ScalarProperty Name="CustID" ColumnName="CustID" />
-                <ScalarProperty Name="DateInv" ColumnName="DateInv" />
-                <ScalarProperty Name="IDInvoice" ColumnName="IDInvoice" />
-                <ScalarProperty Name="IDReturn" ColumnName="IDReturn" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Returns">
-            <EntityTypeMapping TypeName="ERPModel.Returns">
-              <MappingFragment StoreEntitySet="Returns">
-                <ScalarProperty Name="DetiMove" ColumnName="DetiMove" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="UnitItem" ColumnName="UnitItem" />
-                <ScalarProperty Name="Quant" ColumnName="Quant" />
-                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-                <ScalarProperty Name="DaINT" ColumnName="DaINT" />
-                <ScalarProperty Name="DateMove" ColumnName="DateMove" />
-                <ScalarProperty Name="CustID" ColumnName="CustID" />
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="WaitID" ColumnName="WaitID" />
-                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
-                <ScalarProperty Name="IDReturn" ColumnName="IDReturn" />
-                <ScalarProperty Name="IDMove" ColumnName="IDMove" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Stores">
-            <EntityTypeMapping TypeName="ERPModel.Stores">
-              <MappingFragment StoreEntitySet="Stores">
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="S_Keeper" ColumnName="S_Keeper" />
-                <ScalarProperty Name="S_Addr" ColumnName="S_Addr" />
-                <ScalarProperty Name="S_Phone" ColumnName="S_Phone" />
-                <ScalarProperty Name="S_Name" ColumnName="S_Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Safes">
-            <EntityTypeMapping TypeName="ERPModel.Safes">
-              <MappingFragment StoreEntitySet="Safes">
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="K_Keeper" ColumnName="K_Keeper" />
-                <ScalarProperty Name="K_Addr" ColumnName="K_Addr" />
-                <ScalarProperty Name="K_Phone" ColumnName="K_Phone" />
-                <ScalarProperty Name="K_Name" ColumnName="K_Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Branches">
-            <EntityTypeMapping TypeName="ERPModel.Branches">
-              <MappingFragment StoreEntitySet="Branches">
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="B_Maneger" ColumnName="B_Maneger" />
-                <ScalarProperty Name="B_Addr" ColumnName="B_Addr" />
-                <ScalarProperty Name="B_Phone" ColumnName="B_Phone" />
-                <ScalarProperty Name="B_Name" ColumnName="B_Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Deleverys">
-            <EntityTypeMapping TypeName="ERPModel.Deleverys">
-              <MappingFragment StoreEntitySet="Deleverys">
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="D_NaID" ColumnName="D_NaID" />
-                <ScalarProperty Name="D_Addr" ColumnName="D_Addr" />
-                <ScalarProperty Name="D_Phone" ColumnName="D_Phone" />
-                <ScalarProperty Name="D_Name" ColumnName="D_Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Keepers">
-            <EntityTypeMapping TypeName="ERPModel.Keepers">
-              <MappingFragment StoreEntitySet="Keepers">
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="Kp_NaID" ColumnName="Kp_NaID" />
-                <ScalarProperty Name="Kp_Addr" ColumnName="Kp_Addr" />
-                <ScalarProperty Name="Kp_Phone" ColumnName="Kp_Phone" />
-                <ScalarProperty Name="Kp_Name" ColumnName="Kp_Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DeliveryAreas">
-            <EntityTypeMapping TypeName="ERPModel.DeliveryAreas">
-              <MappingFragment StoreEntitySet="DeliveryAreas">
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="A_Price" ColumnName="A_Price" />
-                <ScalarProperty Name="A_Name" ColumnName="A_Name" />
+          <EntitySetMapping Name="PrintSettings">
+            <EntityTypeMapping TypeName="ERPModel.PrintSetting">
+              <MappingFragment StoreEntitySet="PrintSetting">
+                <ScalarProperty Name="PrinterName" ColumnName="PrinterName" />
+                <ScalarProperty Name="NofCopies" ColumnName="NofCopies" />
+                <ScalarProperty Name="PaperSize" ColumnName="PaperSize" />
+                <ScalarProperty Name="ReportName" ColumnName="ReportName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Discounts">
-            <EntityTypeMapping TypeName="ERPModel.Discounts">
-              <MappingFragment StoreEntitySet="Discounts">
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="Dis_Price" ColumnName="Dis_Price" />
-                <ScalarProperty Name="Dis_Name" ColumnName="Dis_Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Offers">
-            <EntityTypeMapping TypeName="ERPModel.Offers">
-              <MappingFragment StoreEntitySet="Offers">
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="CashBack" ColumnName="CashBack" />
-                <ScalarProperty Name="IsFree" ColumnName="IsFree" />
-                <ScalarProperty Name="F_Quantity" ColumnName="F_Quantity" />
-                <ScalarProperty Name="P_Quantity" ColumnName="P_Quantity" />
-                <ScalarProperty Name="O_Name" ColumnName="O_Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Taxs">
-            <EntityTypeMapping TypeName="ERPModel.Taxs">
-              <MappingFragment StoreEntitySet="Taxs">
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="T_Price" ColumnName="T_Price" />
-                <ScalarProperty Name="T_Name" ColumnName="T_Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Sales">
-            <EntityTypeMapping TypeName="ERPModel.Sales">
-              <MappingFragment StoreEntitySet="Sales">
-                <ScalarProperty Name="Return" ColumnName="Return" />
-                <ScalarProperty Name="DetiMove" ColumnName="DetiMove" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="UnitItem" ColumnName="UnitItem" />
-                <ScalarProperty Name="Quant" ColumnName="Quant" />
-                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-                <ScalarProperty Name="DaINT" ColumnName="DaINT" />
-                <ScalarProperty Name="DateMove" ColumnName="DateMove" />
-                <ScalarProperty Name="CustID" ColumnName="CustID" />
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="WaitID" ColumnName="WaitID" />
-                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
-                <ScalarProperty Name="IDMove" ColumnName="IDMove" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ItemsType">
-            <EntityTypeMapping TypeName="ERPModel.ItemsType">
-              <MappingFragment StoreEntitySet="ItemsType">
-                <ScalarProperty Name="Details" ColumnName="Details" />
-                <ScalarProperty Name="NameType" ColumnName="NameType" />
-                <ScalarProperty Name="IdType" ColumnName="IdType" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ItemsUnit">
-            <EntityTypeMapping TypeName="ERPModel.ItemsUnit">
-              <MappingFragment StoreEntitySet="ItemsUnit">
-                <ScalarProperty Name="Details" ColumnName="Details" />
-                <ScalarProperty Name="NameUnit" ColumnName="NameUnit" />
-                <ScalarProperty Name="Idunit" ColumnName="Idunit" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Items">
-            <EntityTypeMapping TypeName="ERPModel.Items">
-              <MappingFragment StoreEntitySet="Items">
-                <ScalarProperty Name="ItDet" ColumnName="ItDet" />
-                <ScalarProperty Name="BrcoIt" ColumnName="BrcoIt" />
-                <ScalarProperty Name="UnitIt" ColumnName="UnitIt" />
-                <ScalarProperty Name="TypiT" ColumnName="TypiT" />
-                <ScalarProperty Name="GroupIt" ColumnName="GroupIt" />
-                <ScalarProperty Name="NameIt" ColumnName="NameIt" />
-                <ScalarProperty Name="Imag" ColumnName="Imag" />
-                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
-                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1029,7 +1062,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

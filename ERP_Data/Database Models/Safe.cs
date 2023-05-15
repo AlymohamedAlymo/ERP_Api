@@ -12,14 +12,13 @@ namespace ERP_Data.Database_Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Safe
     {
-        public int IDUser { get; set; }
-        public string NameUser { get; set; }
-        public string Pass { get; set; }
-        public int Prmession { get; set; }
-        public Nullable<int> LevelUser { get; set; }
-        public int ActiveUser { get; set; }
-        public string DetUser { get; set; }
+        public int id { get; set; }
+        public string K_Name { get; set; }
+        public string K_Phone { get; set; }
+        public string K_Addr { get; set; }
+        public string K_Keeper { get; set; }
+        public string Note { get; set; }
     }
 }

@@ -19,11 +19,11 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    pricing UpdatePricingList = context.pricing.Where(u => u.IDItem == PricingList.IDItem).FirstOrDefault(); ;
+                    pricing UpdatePricingList = context.pricings.Where(u => u.IDItem == PricingList.IDItem).FirstOrDefault(); ;
 
                     if (UpdatePricingList == null)
                     {
-                        context.pricing.Add(PricingList);
+                        context.pricings.Add(PricingList);
 
                     }
 
@@ -64,7 +64,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    context.pricing.Add(PricingList);
+                    context.pricings.Add(PricingList);
                     int res = context.SaveChanges();
                     if (res > 0)
                     {
@@ -93,12 +93,12 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    pricing pricing = context.pricing.Where(u => u.IDMove == Code).SingleOrDefault();
+                    pricing pricing = context.pricings.Where(u => u.IDMove == Code).SingleOrDefault();
                     if (pricing == null)
                     {
                         return 2;
                     }
-                    context.pricing.Remove(pricing);
+                    context.pricings.Remove(pricing);
                     int res = context.SaveChanges();
                     if (res > 0)
                     {
@@ -122,7 +122,7 @@ namespace ERP_Data.Repositories
             try
             {
                 var db = new ERPEntities();
-                return db.pricing.ToList();
+                return db.pricings.ToList();
 
             }
             catch

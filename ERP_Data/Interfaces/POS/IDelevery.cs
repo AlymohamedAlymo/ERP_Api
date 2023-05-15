@@ -11,9 +11,9 @@ namespace ERP_Data.Interfaces
 
         int DeleteDelevery(int Code);
 
-        int UpdateDelevery(Database_Models.Deleverys Delevery);
+        int UpdateDelevery(Database_Models.Delevery Delevery);
 
-        int AddNewDelevery(Database_Models.Deleverys Delevery);
+        int AddNewDelevery(Database_Models.Delevery Delevery);
 
         object GetDeleverysData();
 

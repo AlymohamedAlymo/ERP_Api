@@ -21,7 +21,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Stores store = context.Stores.Where(u => u.id == Code).SingleOrDefault();
+                    Store store = context.Stores.Where(u => u.id == Code).SingleOrDefault();
                     if (store == null)
                     {
                         return 2;
@@ -46,14 +46,14 @@ namespace ERP_Data.Repositories
         }
 
 
-        public int UpdateStore(Database_Models.Stores store)
+        public int UpdateStore(Database_Models.Store store)
         {
 
             try
             {
                 using (var context = new ERPEntities())
                 {
-                    Stores Updatestore = context.Stores.Where(u => u.id == store.id).FirstOrDefault(); ;
+                    Store Updatestore = context.Stores.Where(u => u.id == store.id).FirstOrDefault(); ;
 
                     Updatestore.Note = store.Note;
                     Updatestore.S_Addr = store.S_Addr;
@@ -76,7 +76,7 @@ namespace ERP_Data.Repositories
 
 
 
-        public int AddNewStore(Database_Models.Stores store)
+        public int AddNewStore(Database_Models.Store store)
         {
             try
             {

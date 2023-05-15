@@ -11,9 +11,9 @@ namespace ERP_Data.Interfaces
 
         int DeleteArea(int Code);
 
-        int UpdateArea(Database_Models.DeliveryAreas Area);
+        int UpdateArea(Database_Models.DeliveryArea Area);
 
-        int AddNewArea(Database_Models.DeliveryAreas Area);
+        int AddNewArea(Database_Models.DeliveryArea Area);
 
         object GetDeleveryAreasData();
 

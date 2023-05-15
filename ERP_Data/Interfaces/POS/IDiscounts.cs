@@ -11,9 +11,9 @@ namespace ERP_Data.Interfaces
 
         int DeleteDiscount(int Code);
 
-        int UpdateDiscount(Database_Models.Discounts Dis);
+        int UpdateDiscount(Database_Models.Discount Dis);
 
-        int AddNewDiscount(Database_Models.Discounts Dis);
+        int AddNewDiscount(Database_Models.Discount Dis);
 
         object GetDiscountsData();
 

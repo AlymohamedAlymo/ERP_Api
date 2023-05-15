@@ -21,7 +21,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Branches BRN = context.Branches.Where(u => u.id == Code).SingleOrDefault();
+                    Branch BRN = context.Branches.Where(u => u.id == Code).SingleOrDefault();
                     if (BRN == null)
                     {
                         return 2;
@@ -46,14 +46,14 @@ namespace ERP_Data.Repositories
         }
 
 
-        public int UpdateBranch(Database_Models.Branches BRN)
+        public int UpdateBranch(Database_Models.Branch BRN)
         {
 
             try
             {
                 using (var context = new ERPEntities())
                 {
-                    Branches UpdateBRN = context.Branches.Where(u => u.id == BRN.id).FirstOrDefault(); ;
+                    Branch UpdateBRN = context.Branches.Where(u => u.id == BRN.id).FirstOrDefault(); ;
 
                     UpdateBRN.Note = BRN.Note;
                     UpdateBRN.B_Addr = BRN.B_Addr;
@@ -75,7 +75,7 @@ namespace ERP_Data.Repositories
 
 
 
-        public int AddNewBranch(Database_Models.Branches BRN)
+        public int AddNewBranch(Database_Models.Branch BRN)
         {
             try
             {

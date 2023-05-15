@@ -11,9 +11,9 @@ namespace ERP_Data.Interfaces
 
         int DeleteStore(int Code);
 
-        int UpdateStore(Database_Models.Stores store);
+        int UpdateStore(Database_Models.Store store);
 
-        int AddNewStore(Database_Models.Stores store);
+        int AddNewStore(Database_Models.Store store);
 
         object GetStoresData();
 

@@ -21,7 +21,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    DeliveryAreas Area = context.DeliveryAreas.Where(u => u.ID == Code).SingleOrDefault();
+                    DeliveryArea Area = context.DeliveryAreas.Where(u => u.ID == Code).SingleOrDefault();
                     if (Area == null)
                     {
                         return 2;
@@ -46,14 +46,14 @@ namespace ERP_Data.Repositories
         }
 
 
-        public int UpdateArea(Database_Models.DeliveryAreas Area)
+        public int UpdateArea(Database_Models.DeliveryArea Area)
         {
 
             try
             {
                 using (var context = new ERPEntities())
                 {
-                    DeliveryAreas UpdateArea = context.DeliveryAreas.Where(u => u.ID == Area.ID).FirstOrDefault(); ;
+                    DeliveryArea UpdateArea = context.DeliveryAreas.Where(u => u.ID == Area.ID).FirstOrDefault(); ;
 
                     UpdateArea.Note = Area.Note;
                     UpdateArea.A_Name = Area.A_Name;
@@ -73,7 +73,7 @@ namespace ERP_Data.Repositories
 
 
 
-        public int AddNewArea(Database_Models.DeliveryAreas Area)
+        public int AddNewArea(Database_Models.DeliveryArea Area)
         {
             try
             {

@@ -25,7 +25,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    context.WaitInvoice.Add(WaitInvoice);
+                    context.WaitInvoices.Add(WaitInvoice);
                     int res = context.SaveChanges();
                     if (res > 0)
                     {
@@ -54,7 +54,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    context.Invoice.Add(Invoice);
+                    context.Invoices.Add(Invoice);
                     int res = context.SaveChanges();
                     if (res > 0)
                     {
@@ -82,9 +82,9 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Invoice invoice = context.Invoice.Where(u => u.IDInvoice == Code).FirstOrDefault();
+                    Invoice invoice = context.Invoices.Where(u => u.IDInvoice == Code).FirstOrDefault();
 
-                    context.ReturnsInvoice.Add(ReturnsInvoice);
+                    context.ReturnsInvoices.Add(ReturnsInvoice);
                     int result = context.SaveChanges();
 
                     if (invoice == null)
@@ -122,7 +122,7 @@ namespace ERP_Data.Repositories
             try
             {
                 var db = new ERPEntities();
-                return db.Invoice.Count() + 1;
+                return db.Invoices.Count() + 1;
 
             }
 
@@ -138,7 +138,7 @@ namespace ERP_Data.Repositories
             try
             {
                 var db = new ERPEntities();
-                return db.WaitInvoice.ToList();
+                return db.WaitInvoices.ToList();
 
             }
             catch
@@ -182,7 +182,7 @@ namespace ERP_Data.Repositories
             }
         }
 
-        public int AddNewItemToInvoice(Database_Models.Sales Addmby3t)
+        public int AddNewItemToInvoice(Database_Models.Sale Addmby3t)
         {
             try
             {
@@ -210,14 +210,14 @@ namespace ERP_Data.Repositories
 
         }
 
-        public int AddNewItemToReturns(int Code, Database_Models.Returns AddReturn)
+        public int AddNewItemToReturns(int Code, Database_Models.Return AddReturn)
         {
             try
             {
 
                 using (var context = new ERPEntities())
                 {
-                    Sales sells = context.Sales.Where(u => u.IDMove == Code).FirstOrDefault();
+                    Sale sells = context.Sales.Where(u => u.IDMove == Code).FirstOrDefault();
 
                     context.Returns.Add(AddReturn);
                     int result = context.SaveChanges();
@@ -317,7 +317,7 @@ namespace ERP_Data.Repositories
 
         }
 
-        public int UpdateItemOfInvoice(int Code, Database_Models.Sales Updatemby3t)
+        public int UpdateItemOfInvoice(int Code, Database_Models.Sale Updatemby3t)
         {
 
             try
@@ -325,7 +325,7 @@ namespace ERP_Data.Repositories
                 using (var context = new ERPEntities())
                 {
 
-                    Sales sell = context.Sales.Where(u => u.IDMove == Code).FirstOrDefault();
+                    Sale sell = context.Sales.Where(u => u.IDMove == Code).FirstOrDefault();
                     if (sell == null)
                     {
                         return 5;
@@ -373,7 +373,7 @@ namespace ERP_Data.Repositories
                 using (var context = new ERPEntities())
                 {
 
-                    WaitInvoice wait = context.WaitInvoice.Where(u => u.InvoiceID == Code).FirstOrDefault();
+                    WaitInvoice wait = context.WaitInvoices.Where(u => u.InvoiceID == Code).FirstOrDefault();
                     if (wait == null)
                     {
                         return 5;
@@ -419,7 +419,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Sales sell = context.Sales.Where(u => u.IDMove == Code).FirstOrDefault();
+                    Sale sell = context.Sales.Where(u => u.IDMove == Code).FirstOrDefault();
                     if (sell == null)
                     {
                         return 2;
@@ -448,7 +448,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Sales sell = context.Sales.Where(u => u.InvoiceID == Code).SingleOrDefault();
+                    Sale sell = context.Sales.Where(u => u.InvoiceID == Code).SingleOrDefault();
                     if (sell == null)
                     {
                         return 2;
@@ -480,12 +480,12 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    WaitInvoice wait = context.WaitInvoice.Where(u => u.InvoiceID == Code).SingleOrDefault();
+                    WaitInvoice wait = context.WaitInvoices.Where(u => u.InvoiceID == Code).SingleOrDefault();
                     if (wait == null)
                     {
                         return 2;
                     }
-                    context.WaitInvoice.Remove(wait);
+                    context.WaitInvoices.Remove(wait);
                     int res = context.SaveChanges();
                     if (res > 0)
                     {

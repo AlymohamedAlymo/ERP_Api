@@ -66,8 +66,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Sales.GetWaitInvoiceData();
+                object dt = Sales.GetWaitInvoiceData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -142,7 +141,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewItemToInvoice")]
-        public ActionResult<string> AddNewItemToInvoice([FromBody] ERP_Data.Database_Models.Sales SalesData)
+        public ActionResult<string> AddNewItemToInvoice([FromBody] ERP_Data.Database_Models.Sale SalesData)
         {
             try
             {
@@ -156,7 +155,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewItemToReturns/{Code}")]
-        public ActionResult<string> AddNewItemToReturns(int Code, [FromBody] ERP_Data.Database_Models.Returns ReturnsData)
+        public ActionResult<string> AddNewItemToReturns(int Code, [FromBody] ERP_Data.Database_Models.Return ReturnsData)
         {
             try
             {
@@ -171,7 +170,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateItemOfInvoice/{Code}")]
-        public ActionResult<string> UpdateItemOfInvoice(int Code,[FromBody] ERP_Data.Database_Models.Sales SalesData)
+        public ActionResult<string> UpdateItemOfInvoice(int Code,[FromBody] ERP_Data.Database_Models.Sale SalesData)
         {
             try
             {
@@ -251,8 +250,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Sales.GetCustomerLastOrder(Customer);
+                object dt = Sales.GetCustomerLastOrder(Customer);
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -302,8 +300,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Stores.GetStoresData();
+                object dt = Stores.GetStoresData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -316,7 +313,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewStore")]
-        public ActionResult<string> AddNewStore([FromBody] ERP_Data.Database_Models.Stores Store)
+        public ActionResult<string> AddNewStore([FromBody] ERP_Data.Database_Models.Store Store)
         {
             try
             {
@@ -331,7 +328,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateStore")]
-        public ActionResult<string> UpdateStore([FromBody] ERP_Data.Database_Models.Stores Store)
+        public ActionResult<string> UpdateStore([FromBody] ERP_Data.Database_Models.Store Store)
         {
             try
             {
@@ -372,8 +369,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Safes.GetSafesData();
+                object dt = Safes.GetSafesData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -386,7 +382,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewSafe")]
-        public ActionResult<string> AddNewSafe([FromBody] ERP_Data.Database_Models.Safes safe)
+        public ActionResult<string> AddNewSafe([FromBody] ERP_Data.Database_Models.Safe safe)
         {
             try
             {
@@ -401,7 +397,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateSafe")]
-        public ActionResult<string> UpdateSafe([FromBody] ERP_Data.Database_Models.Safes safe)
+        public ActionResult<string> UpdateSafe([FromBody] ERP_Data.Database_Models.Safe safe)
         {
             try
             {
@@ -447,8 +443,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Branchs.GetBranchsData();
+                object dt = Branchs.GetBranchsData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -461,7 +456,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewBranch")]
-        public ActionResult<string> AddNewBranch([FromBody] ERP_Data.Database_Models.Branches BNR)
+        public ActionResult<string> AddNewBranch([FromBody] ERP_Data.Database_Models.Branch BNR)
         {
             try
             {
@@ -476,7 +471,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateBranch")]
-        public ActionResult<string> UpdateBranch([FromBody] ERP_Data.Database_Models.Branches BNR)
+        public ActionResult<string> UpdateBranch([FromBody] ERP_Data.Database_Models.Branch BNR)
         {
             try
             {
@@ -523,8 +518,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Keepers.GetKeepersData();
+                object dt = Keepers.GetKeepersData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -537,7 +531,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewKeeper")]
-        public ActionResult<string> AddNewKeeper([FromBody] ERP_Data.Database_Models.Keepers Kp)
+        public ActionResult<string> AddNewKeeper([FromBody] ERP_Data.Database_Models.Keeper Kp)
         {
             try
             {
@@ -552,7 +546,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateKeeper")]
-        public ActionResult<string> UpdateKeeper([FromBody] ERP_Data.Database_Models.Keepers Kp)
+        public ActionResult<string> UpdateKeeper([FromBody] ERP_Data.Database_Models.Keeper Kp)
         {
             try
             {
@@ -595,8 +589,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Delevery.GetDeleverysData();
+                object dt = Delevery.GetDeleverysData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -609,7 +602,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewDelevery")]
-        public ActionResult<string> AddNewDelevery([FromBody] ERP_Data.Database_Models.Deleverys Delv)
+        public ActionResult<string> AddNewDelevery([FromBody] ERP_Data.Database_Models.Delevery Delv)
         {
             try
             {
@@ -624,7 +617,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateDelevery")]
-        public ActionResult<string> UpdateDelevery([FromBody] ERP_Data.Database_Models.Deleverys Delv)
+        public ActionResult<string> UpdateDelevery([FromBody] ERP_Data.Database_Models.Delevery Delv)
         {
             try
             {
@@ -670,8 +663,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = DeleveryAreas.GetDeleveryAreasData();
+                object dt = DeleveryAreas.GetDeleveryAreasData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -684,7 +676,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewArea")]
-        public ActionResult<string> AddNewArea([FromBody] ERP_Data.Database_Models.DeliveryAreas Area)
+        public ActionResult<string> AddNewArea([FromBody] ERP_Data.Database_Models.DeliveryArea Area)
         {
             try
             {
@@ -699,7 +691,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateArea")]
-        public ActionResult<string> UpdateArea([FromBody] ERP_Data.Database_Models.DeliveryAreas Area)
+        public ActionResult<string> UpdateArea([FromBody] ERP_Data.Database_Models.DeliveryArea Area)
         {
             try
             {
@@ -747,8 +739,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Discounts.GetDiscountsData();
+                object dt = Discounts.GetDiscountsData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -761,7 +752,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewDiscount")]
-        public ActionResult<string> AddNewDiscount([FromBody] ERP_Data.Database_Models.Discounts Disc)
+        public ActionResult<string> AddNewDiscount([FromBody] ERP_Data.Database_Models.Discount Disc)
         {
             try
             {
@@ -776,7 +767,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateDiscount")]
-        public ActionResult<string> UpdateDiscount([FromBody] ERP_Data.Database_Models.Discounts Disc)
+        public ActionResult<string> UpdateDiscount([FromBody] ERP_Data.Database_Models.Discount Disc)
         {
             try
             {
@@ -821,8 +812,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Offers.GetOffersData();
+                object dt = Offers.GetOffersData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -835,7 +825,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewOffer")]
-        public ActionResult<string> AddNewOffer([FromBody] ERP_Data.Database_Models.Offers Offer)
+        public ActionResult<string> AddNewOffer([FromBody] ERP_Data.Database_Models.Offer Offer)
         {
             try
             {
@@ -850,7 +840,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateOffer")]
-        public ActionResult<string> UpdateOffer([FromBody] ERP_Data.Database_Models.Offers Offer)
+        public ActionResult<string> UpdateOffer([FromBody] ERP_Data.Database_Models.Offer Offer)
         {
             try
             {
@@ -924,8 +914,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Taxs.GetTaxsData();
+                object dt = Taxs.GetTaxsData();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -938,7 +927,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("AddNewTax")]
-        public ActionResult<string> AddNewTax([FromBody] ERP_Data.Database_Models.Taxs Tax)
+        public ActionResult<string> AddNewTax([FromBody] ERP_Data.Database_Models.Tax Tax)
         {
             try
             {
@@ -953,7 +942,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateTax")]
-        public ActionResult<string> UpdateTax([FromBody] ERP_Data.Database_Models.Taxs Tax)
+        public ActionResult<string> UpdateTax([FromBody] ERP_Data.Database_Models.Tax Tax)
         {
             try
             {
@@ -1038,12 +1027,12 @@ namespace ERP_Api.Controllers
         //}
 
         [HttpGet]
-        [Route("GetItemsAdvancedSearch/{NameItem}/{Match}/{Group}/{Type}/{Unit}/{Barcode}/{AddDate}/{NoBarcode}/{WithNote}")]
-        public ActionResult<string> GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool WithNote)
+        [Route("GetItemsAdvancedSearch/{NameItem}/{Match}/{Group}/{Type}/{Unit}/{Barcode}/{AddDate}/{NoBarcode}/{DuplicateBarcode}/{WithNote}")]
+        public ActionResult<string> GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool DuplicateBarcode, bool WithNote)
         {
             try
             {
-               var Dt = Items.GetItemsAdvancedSearch(NameItem, Match, Group, Type, Unit, Barcode, AddDate, NoBarcode, WithNote);
+               var Dt = Items.GetItemsAdvancedSearch(NameItem, Match, Group, Type, Unit, Barcode, AddDate, NoBarcode, DuplicateBarcode, WithNote);
                return Newtonsoft.Json.JsonConvert.SerializeObject(Dt);
 
             }
@@ -1055,23 +1044,22 @@ namespace ERP_Api.Controllers
         [Route("GetItemsData/{Code}")]
         public ActionResult<string> GetItemsData(int Code)
         {
-            try
-            {
-                object dt = new();
-                dt = Items.GetItemsData(Code);
+            //try
+            //{
+                object dt = Items.GetItemsData(Code);
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
-            }
-            catch
-            {
-                return null;
-            }
+            //}
+            //catch
+            //{
+            //    return null;
+            //}
 
         }
 
 
         [HttpPost]
         [Route("AddNewItem")]
-        public ActionResult<string> AddNewItem([FromBody] ERP_Data.Database_Models.Items Item)
+        public ActionResult<string> AddNewItem([FromBody] ERP_Data.Database_Models.Item Item)
         {
             try
             {
@@ -1086,7 +1074,7 @@ namespace ERP_Api.Controllers
 
         [HttpPost]
         [Route("UpdateItem")]
-        public ActionResult<string> UpdateItem([FromBody] ERP_Data.Database_Models.Items Item)
+        public ActionResult<string> UpdateItem([FromBody] ERP_Data.Database_Models.Item Item)
         {
             try
             {
@@ -1136,8 +1124,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Customer.GetCustomerSearchData(SearchContext);
+                object dt = Customer.GetCustomerSearchData(SearchContext);
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -1155,8 +1142,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = Customer.GetCustomerData(Code);
+                object dt = Customer.GetCustomerData(Code);
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
             catch
@@ -1347,8 +1333,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = ItemsGroups.GetItemsGroups();
+                object dt = ItemsGroups.GetItemsGroups();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -1366,8 +1351,7 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = UnitItems.GetItemsUnits();
+                object  dt = UnitItems.GetItemsUnits();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
@@ -1385,12 +1369,22 @@ namespace ERP_Api.Controllers
         {
             try
             {
-                object dt = new();
-                dt = TypeItems.GetItemsTypes();
+                object dt = TypeItems.GetItemsTypes();
 
                 return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
             }
             catch { return null; }
+
+        }
+
+
+
+        [HttpGet]
+        [Route("GetUnpricedItems")]
+        public ActionResult<int> GetUnpricedItems()
+        {
+            try { return Items.GetUnpricedItems(); }
+            catch { return -1; }
 
         }
 

@@ -12,13 +12,14 @@ namespace ERP_Data.Database_Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Deleverys
+    public partial class User
     {
-        public int id { get; set; }
-        public string D_Name { get; set; }
-        public string D_Phone { get; set; }
-        public string D_Addr { get; set; }
-        public string D_NaID { get; set; }
-        public string Note { get; set; }
+        public int IDUser { get; set; }
+        public string NameUser { get; set; }
+        public string Pass { get; set; }
+        public int Prmession { get; set; }
+        public Nullable<int> LevelUser { get; set; }
+        public int ActiveUser { get; set; }
+        public string DetUser { get; set; }
     }
 }

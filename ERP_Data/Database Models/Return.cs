@@ -12,7 +12,7 @@ namespace ERP_Data.Database_Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Returns
+    public partial class Return
     {
         public int IDMove { get; set; }
         public int IDReturn { get; set; }

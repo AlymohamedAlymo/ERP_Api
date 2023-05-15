@@ -12,13 +12,13 @@ namespace ERP_Data.Database_Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Keepers
+    public partial class Branch
     {
         public int id { get; set; }
-        public string Kp_Name { get; set; }
-        public string Kp_Phone { get; set; }
-        public string Kp_Addr { get; set; }
-        public string Kp_NaID { get; set; }
+        public string B_Name { get; set; }
+        public string B_Phone { get; set; }
+        public string B_Addr { get; set; }
+        public string B_Maneger { get; set; }
         public string Note { get; set; }
     }
 }

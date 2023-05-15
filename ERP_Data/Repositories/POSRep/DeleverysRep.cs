@@ -21,7 +21,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Deleverys Delevery = context.Deleverys.Where(u => u.id == Code).SingleOrDefault();
+                    Delevery Delevery = context.Deleverys.Where(u => u.id == Code).SingleOrDefault();
                     if (Delevery == null)
                     {
                         return 2;
@@ -46,14 +46,14 @@ namespace ERP_Data.Repositories
         }
 
 
-        public int UpdateDelevery(Database_Models.Deleverys Delevery)
+        public int UpdateDelevery(Database_Models.Delevery Delevery)
         {
 
             try
             {
                 using (var context = new ERPEntities())
                 {
-                    Deleverys UpdateDelevery = context.Deleverys.Where(u => u.id == Delevery.id).FirstOrDefault(); ;
+                    Delevery UpdateDelevery = context.Deleverys.Where(u => u.id == Delevery.id).FirstOrDefault(); ;
 
                     UpdateDelevery.Note = Delevery.Note;
                     UpdateDelevery.D_Addr = Delevery.D_Addr;
@@ -75,7 +75,7 @@ namespace ERP_Data.Repositories
 
 
 
-        public int AddNewDelevery(Database_Models.Deleverys Delevery)
+        public int AddNewDelevery(Database_Models.Delevery Delevery)
         {
             try
             {

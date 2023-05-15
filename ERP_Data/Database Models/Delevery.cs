@@ -12,13 +12,13 @@ namespace ERP_Data.Database_Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Branches
+    public partial class Delevery
     {
         public int id { get; set; }
-        public string B_Name { get; set; }
-        public string B_Phone { get; set; }
-        public string B_Addr { get; set; }
-        public string B_Maneger { get; set; }
+        public string D_Name { get; set; }
+        public string D_Phone { get; set; }
+        public string D_Addr { get; set; }
+        public string D_NaID { get; set; }
         public string Note { get; set; }
     }
 }

@@ -11,9 +11,9 @@ namespace ERP_Data.Interfaces
 
         int DeleteBranch(int Code);
 
-        int UpdateBranch(Database_Models.Branches BRN);
+        int UpdateBranch(Database_Models.Branch BRN);
 
-        int AddNewBranch(Database_Models.Branches BRN);
+        int AddNewBranch(Database_Models.Branch BRN);
 
         object GetBranchsData();
 

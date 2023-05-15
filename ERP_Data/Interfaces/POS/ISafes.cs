@@ -11,9 +11,9 @@ namespace ERP_Data.Interfaces
 
         int DeleteSafe(int Code);
 
-        int UpdateSafe(Database_Models.Safes safe);
+        int UpdateSafe(Database_Models.Safe safe);
 
-        int AddNewSafe(Database_Models.Safes safe);
+        int AddNewSafe(Database_Models.Safe safe);
 
         object GetSafesData();
 

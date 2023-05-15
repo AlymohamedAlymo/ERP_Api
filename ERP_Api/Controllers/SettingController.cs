@@ -60,6 +60,14 @@ namespace ERP_Api.Controllers
         }
 
 
+        [HttpGet]
+        [Route("GetPrintingSetting/{IDReport}")]
+        public ActionResult<object> GetPrintingSetting(int IDReport)
+        {
+            try { return Setting.GetPrintingSetting(IDReport); }
+            catch(Exception EX) { return EX.Message; }
+        }
+
 
 
 

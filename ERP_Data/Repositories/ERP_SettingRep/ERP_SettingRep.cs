@@ -15,7 +15,7 @@ namespace ERP_Data.Repositories
     {
 
 
-        public static readonly string ConnectionStrings = "Data Source = 192.168.1.12;Initial Catalog = Doctor_ERP;User ID=sa;Password= Aly4807;";
+        public static readonly string ConnectionStrings = "Data Source = 192.168.1.12\\ALYSQL; Initial Catalog = Doctor_ERP; User ID = sa; Password = Aly4807;";
 
 
 
@@ -62,10 +62,10 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                var DataofQuantitySupply = context.Supply.Where(u => u.ItemID == IDItem)
+                var DataofQuantitySupply = context.Supplies.Where(u => u.ItemID == IDItem)
                                     .Sum(u => u.Amount);
 
-                var DataofQuantityOut = context.OutofStore.Where(u => u.ItemID == IDItem)
+                var DataofQuantityOut = context.OutofStores.Where(u => u.ItemID == IDItem)
                                        .Sum(u => u.Amount);
 
                 var QuantityoftheItem = DataofQuantitySupply - DataofQuantityOut;
@@ -90,7 +90,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    var DataItemsOfGroup = context.Supply.Where(u => u.ItemID == IDItem)
+                    var DataItemsOfGroup = context.Supplies.Where(u => u.ItemID == IDItem)
                                         .Select(u => new
                                         {
                                             u.limitItem,
@@ -113,6 +113,29 @@ namespace ERP_Data.Repositories
             }
         }
 
+
+
+        public object GetPrintingSetting(int IDReport)
+        {
+            try
+            {
+                using (ERPEntities DB = new ERPEntities())
+                {
+                    var Data = DB.PrintSettings.Where(u => u.ID == IDReport)
+                                        .Select(u => new
+                                        {
+                                            u.PaperSize,
+                                            u.ReportName,
+                                            u.PrinterName,
+                                            u.NofCopies
+                                        }).ToList();
+
+                    if (Data == null || Data.Count == 0) { throw new RecordNotFoundException(); }
+                    return Data;
+                }
+            }
+            catch { throw new InvalidDataException(); }
+        }
 
     }
 

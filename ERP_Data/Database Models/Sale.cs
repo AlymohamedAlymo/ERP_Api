@@ -12,7 +12,7 @@ namespace ERP_Data.Database_Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Sales
+    public partial class Sale
     {
         public int IDMove { get; set; }
         public int InvoiceID { get; set; }

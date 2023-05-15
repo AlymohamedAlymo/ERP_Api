@@ -25,28 +25,29 @@ namespace ERP_Data.Database_Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customer> Customer { get; set; }
-        public virtual DbSet<Invoice> Invoice { get; set; }
-        public virtual DbSet<ItemGroup> ItemGroup { get; set; }
-        public virtual DbSet<pricing> pricing { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<WaitInvoice> WaitInvoice { get; set; }
-        public virtual DbSet<OutofStore> OutofStore { get; set; }
-        public virtual DbSet<Supply> Supply { get; set; }
-        public virtual DbSet<ReturnsInvoice> ReturnsInvoice { get; set; }
-        public virtual DbSet<Returns> Returns { get; set; }
-        public virtual DbSet<Stores> Stores { get; set; }
-        public virtual DbSet<Safes> Safes { get; set; }
-        public virtual DbSet<Branches> Branches { get; set; }
-        public virtual DbSet<Deleverys> Deleverys { get; set; }
-        public virtual DbSet<Keepers> Keepers { get; set; }
-        public virtual DbSet<DeliveryAreas> DeliveryAreas { get; set; }
-        public virtual DbSet<Discounts> Discounts { get; set; }
-        public virtual DbSet<Offers> Offers { get; set; }
-        public virtual DbSet<Taxs> Taxs { get; set; }
-        public virtual DbSet<Sales> Sales { get; set; }
-        public virtual DbSet<ItemsType> ItemsType { get; set; }
-        public virtual DbSet<ItemsUnit> ItemsUnit { get; set; }
-        public virtual DbSet<Items> Items { get; set; }
+        public virtual DbSet<Branch> Branches { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Delevery> Deleverys { get; set; }
+        public virtual DbSet<DeliveryArea> DeliveryAreas { get; set; }
+        public virtual DbSet<Discount> Discounts { get; set; }
+        public virtual DbSet<Invoice> Invoices { get; set; }
+        public virtual DbSet<ItemGroup> ItemGroups { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<ItemsType> ItemsTypes { get; set; }
+        public virtual DbSet<ItemsUnit> ItemsUnits { get; set; }
+        public virtual DbSet<Keeper> Keepers { get; set; }
+        public virtual DbSet<Offer> Offers { get; set; }
+        public virtual DbSet<OutofStore> OutofStores { get; set; }
+        public virtual DbSet<pricing> pricings { get; set; }
+        public virtual DbSet<Return> Returns { get; set; }
+        public virtual DbSet<ReturnsInvoice> ReturnsInvoices { get; set; }
+        public virtual DbSet<Safe> Safes { get; set; }
+        public virtual DbSet<Sale> Sales { get; set; }
+        public virtual DbSet<Store> Stores { get; set; }
+        public virtual DbSet<Supply> Supplies { get; set; }
+        public virtual DbSet<Tax> Taxs { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<WaitInvoice> WaitInvoices { get; set; }
+        public virtual DbSet<PrintSetting> PrintSettings { get; set; }
     }
 }

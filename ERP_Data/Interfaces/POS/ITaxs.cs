@@ -11,9 +11,9 @@ namespace ERP_Data.Interfaces
 
         int DeleteTax(int Code);
 
-        int UpdateTax(Database_Models.Taxs Tax);
+        int UpdateTax(Database_Models.Tax Tax);
 
-        int AddNewTax(Database_Models.Taxs Tax);
+        int AddNewTax(Database_Models.Tax Tax);
 
         object GetTaxsData();
 

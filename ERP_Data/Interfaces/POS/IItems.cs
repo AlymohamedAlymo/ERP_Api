@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace ERP_Data.Interfaces
 {
     public interface IItems
@@ -18,12 +12,13 @@ namespace ERP_Data.Interfaces
 
         int DeleteItem(int Code);
 
-        int UpdateItem(Database_Models.Items Item);
+        int UpdateItem(Database_Models.Item Item);
 
-        int AddNewItem(Database_Models.Items Item);
+        int AddNewItem(Database_Models.Item Item);
 
-        object GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool WithNote);
+        object GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool DuplicateBarcode, bool WithNote);
 
+        int GetUnpricedItems();
 
     }
 }

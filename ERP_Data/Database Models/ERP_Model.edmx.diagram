@@ -4,30 +4,31 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e6adc3ac1e8449969b78666d3e6e711d" Name="Diagram1">
-        <EntityTypeShape EntityType="ERPModel.Customer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.Invoice" Width="1.5" PointX="2.625" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.ItemGroup" Width="1.5" PointX="0.5" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.pricing" Width="1.5" PointX="4" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.Users" Width="1.5" PointX="4.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.WaitInvoice" Width="1.5" PointX="5.875" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.OutofStore" Width="1.5" PointX="0.75" PointY="9.75" />
-        <EntityTypeShape EntityType="ERPModel.Supply" Width="1.5" PointX="2.75" PointY="9.75" />
-        <EntityTypeShape EntityType="ERPModel.ReturnsInvoice" Width="1.5" PointX="4.5" PointY="9.75" />
-        <EntityTypeShape EntityType="ERPModel.Returns" Width="1.5" PointX="7.75" PointY="4.875" />
-        <EntityTypeShape EntityType="ERPModel.Stores" Width="1.5" PointX="6.25" PointY="0.75" />
-        <EntityTypeShape EntityType="ERPModel.Safes" Width="1.5" PointX="9.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ERPModel.Branches" Width="1.5" PointX="9.625" PointY="4.875" />
-        <EntityTypeShape EntityType="ERPModel.Deleverys" Width="1.5" PointX="6.375" PointY="9.75" />
-        <EntityTypeShape EntityType="ERPModel.Keepers" Width="1.5" PointX="8.125" PointY="9.75" />
-        <EntityTypeShape EntityType="ERPModel.DeliveryAreas" Width="1.5" PointX="8" PointY="0.75" />
-        <EntityTypeShape EntityType="ERPModel.Discounts" Width="1.5" PointX="0.75" PointY="13.75" />
-        <EntityTypeShape EntityType="ERPModel.Offers" Width="1.5" PointX="11.5" PointY="0.75" />
-        <EntityTypeShape EntityType="ERPModel.Taxs" Width="1.5" PointX="11.375" PointY="4.875" />
-        <EntityTypeShape EntityType="ERPModel.Sales" Width="1.5" PointX="9.875" PointY="9.75" />
-        <EntityTypeShape EntityType="ERPModel.ItemsType" Width="1.5" PointX="12.375" PointY="11.75" />
-        <EntityTypeShape EntityType="ERPModel.ItemsUnit" Width="1.5" PointX="13.375" PointY="4.75" />
-        <EntityTypeShape EntityType="ERPModel.Items" Width="1.5" PointX="12.375" PointY="7.75" />
+      <Diagram DiagramId="1b7a33cf47174974a6221becc8a32696" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="ERPModel.Branch" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Customer" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Delevery" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.DeliveryArea" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Discount" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Invoice" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.ItemGroup" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Item" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.ItemsType" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.ItemsUnit" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Keeper" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Offer" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.OutofStore" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.pricing" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Return" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.ReturnsInvoice" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Safe" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Sale" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Store" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Supply" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.Tax" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.User" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.WaitInvoice" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.PrintSetting" Width="1.5" PointX="9.375" PointY="13.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

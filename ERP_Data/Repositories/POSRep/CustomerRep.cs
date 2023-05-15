@@ -21,12 +21,12 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Customer customer = context.Customer.Where(u => u.IDCust == Code).SingleOrDefault();
+                    Customer customer = context.Customers.Where(u => u.IDCust == Code).SingleOrDefault();
                     if (customer == null)
                     {
                         return 2;
                     }
-                    context.Customer.Remove(customer);
+                    context.Customers.Remove(customer);
                     int res = context.SaveChanges();
                     if (res > 0)
                     {
@@ -53,7 +53,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    Customer UpdateCustomer = context.Customer.Where(u => u.IDCust == customer.IDCust).FirstOrDefault(); ;
+                    Customer UpdateCustomer = context.Customers.Where(u => u.IDCust == customer.IDCust).FirstOrDefault(); ;
 
                     UpdateCustomer.AddrCust = customer.AddrCust;
                     UpdateCustomer.apartCuat = customer.apartCuat;
@@ -86,7 +86,7 @@ namespace ERP_Data.Repositories
             {
                 using (var context = new ERPEntities())
                 {
-                    context.Customer.Add(customer);
+                    context.Customers.Add(customer);
                     int res = context.SaveChanges();
                     if (res > 0)
                     {
@@ -159,9 +159,9 @@ namespace ERP_Data.Repositories
                 var Db = new ERPEntities();
 
                 if (Code == 0)
-                    Dt = Db.Customer.ToList();
+                    Dt = Db.Customers.ToList();
                 else
-                    Dt = Db.Customer.Where(u => u.IDCust == Code).ToList();
+                    Dt = Db.Customers.Where(u => u.IDCust == Code).ToList();
 
                 return Dt;
             }
