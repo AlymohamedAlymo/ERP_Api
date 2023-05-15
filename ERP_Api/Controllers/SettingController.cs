@@ -69,6 +69,18 @@ namespace ERP_Api.Controllers
         }
 
 
+        [HttpPost]
+        [Route("UpdatePrintingSetting")]
+        public ActionResult<int> UpdatePrintingSetting([FromBody] PrintSetting PSetting)
+        {
+            try
+            {
+                return Setting.UpdatePrintingSetting(PSetting);
+            }
+            catch (Exception EX) { return EX.HResult; }
+        }
+
+
 
 
 

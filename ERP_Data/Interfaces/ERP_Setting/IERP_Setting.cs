@@ -22,5 +22,12 @@ namespace ERP_Data.Interfaces
         /// <returns>object</returns>
         PrintSetting GetPrintingSetting(int IDReport);
 
+
+        /// <summary>
+        /// Update Printing Setting
+        /// </summary>
+        /// <param name="PSetting">Updated Setting</param>
+        /// <returns>int</returns>
+        int UpdatePrintingSetting(PrintSetting PSetting);
     }
 }
