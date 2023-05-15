@@ -138,7 +138,7 @@ namespace ERP_Data.Repositories
                 if (Obj == null) { throw new RecordNotFoundException(); }
 
                 /// Update in PrintSetting
-                Utilities.MapProperties.Map(PSetting, Obj, "ID", "PrinterName");
+                Utilities.MapProperties.Map(PSetting, Obj, "ID", "ReportName");
 
                 int Result = DB.SaveChanges();
                 return Result;
