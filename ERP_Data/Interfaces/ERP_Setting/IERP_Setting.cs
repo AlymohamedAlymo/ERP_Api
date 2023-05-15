@@ -20,7 +20,7 @@ namespace ERP_Data.Interfaces
         /// </summary>
         /// <param name="IDReport">Report ID</param>
         /// <returns>object</returns>
-        object GetPrintingSetting(int IDReport);
+        PrintSetting GetPrintingSetting(int IDReport);
 
     }
 }

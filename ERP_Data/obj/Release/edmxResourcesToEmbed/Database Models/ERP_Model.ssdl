@@ -166,6 +166,16 @@
     <Property Name="SellingPr" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="DetMove" Type="text" />
   </EntityType>
+  <EntityType Name="PrintSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ReportName" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="PaperSize" Type="nchar" MaxLength="5" />
+    <Property Name="NofCopies" Type="nchar" MaxLength="3" />
+    <Property Name="PrinterName" Type="nchar" MaxLength="20" />
+  </EntityType>
   <EntityType Name="Returns">
     <Key>
       <PropertyRef Name="IDMove" />
@@ -324,6 +334,7 @@
     <EntitySet Name="Offers" EntityType="Self.Offers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OutofStore" EntityType="Self.OutofStore" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pricing" EntityType="Self.pricing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrintSetting" EntityType="Self.PrintSetting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Returns" EntityType="Self.Returns" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ReturnsInvoice" EntityType="Self.ReturnsInvoice" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Safes" EntityType="Self.Safes" Schema="dbo" store:Type="Tables" />

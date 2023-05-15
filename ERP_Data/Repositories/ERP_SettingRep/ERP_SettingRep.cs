@@ -115,23 +115,14 @@ namespace ERP_Data.Repositories
 
 
 
-        public object GetPrintingSetting(int IDReport)
+        public PrintSetting GetPrintingSetting(int IDReport)
         {
             try
             {
                 using (ERPEntities DB = new ERPEntities())
                 {
-                    var Data = DB.PrintSettings.Where(u => u.ID == IDReport)
-                                        .Select(u => new
-                                        {
-                                            u.PaperSize,
-                                            u.ReportName,
-                                            u.PrinterName,
-                                            u.NofCopies
-                                        }).ToList();
-
-                    if (Data == null || Data.Count == 0) { throw new RecordNotFoundException(); }
-                    return Data;
+                    PrintSetting Data = DB.PrintSettings.FirstOrDefault(u => u.ID == IDReport);
+                    return Data == null ? throw new RecordNotFoundException() : Data;
                 }
             }
             catch { throw new InvalidDataException(); }
