@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ERP_ModelStoreContainer" CdmEntityContainer="ERPDataEntities">
+    <EntitySetMapping Name="addmwzf">
+      <EntityTypeMapping TypeName="ERP_Model.addmwzf">
+        <MappingFragment StoreEntitySet="addmwzf">
+          <ScalarProperty Name="idmwz" ColumnName="idmwz" />
+          <ScalarProperty Name="nmme" ColumnName="nmme" />
+          <ScalarProperty Name="rkmkwmy" ColumnName="rkmkwmy" />
+          <ScalarProperty Name="wzefa" ColumnName="wzefa" />
+          <ScalarProperty Name="addr" ColumnName="addr" />
+          <ScalarProperty Name="tele" ColumnName="tele" />
+          <ScalarProperty Name="mob" ColumnName="mob" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="asnaf">
+      <EntityTypeMapping TypeName="ERP_Model.asnaf">
+        <MappingFragment StoreEntitySet="asnaf">
+          <ScalarProperty Name="idsn" ColumnName="idsn" />
+          <ScalarProperty Name="nmsn" ColumnName="nmsn" />
+          <ScalarProperty Name="crdsnf" ColumnName="crdsnf" />
+          <ScalarProperty Name="tysn" ColumnName="tysn" />
+          <ScalarProperty Name="whdaa" ColumnName="whdaa" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+          <ScalarProperty Name="brcod" ColumnName="brcod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="casher">
+      <EntityTypeMapping TypeName="ERP_Model.casher">
+        <MappingFragment StoreEntitySet="casher">
+          <ScalarProperty Name="cdcas" ColumnName="cdcas" />
+          <ScalarProperty Name="nmcas" ColumnName="nmcas" />
+          <ScalarProperty Name="addrca" ColumnName="addrca" />
+          <ScalarProperty Name="telcas" ColumnName="telcas" />
+          <ScalarProperty Name="rkmkwm" ColumnName="rkmkwm" />
+          <ScalarProperty Name="mobcas" ColumnName="mobcas" />
+          <ScalarProperty Name="mobad" ColumnName="mobad" />
+          <ScalarProperty Name="deta" ColumnName="deta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="crditm">
+      <EntityTypeMapping TypeName="ERP_Model.crditm">
+        <MappingFragment StoreEntitySet="crditm">
+          <ScalarProperty Name="idcrd" ColumnName="idcrd" />
+          <ScalarProperty Name="nmcrd" ColumnName="nmcrd" />
+          <ScalarProperty Name="tycrd" ColumnName="tycrd" />
+          <ScalarProperty Name="deta" ColumnName="deta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="custom">
+      <EntityTypeMapping TypeName="ERP_Model.custom">
+        <MappingFragment StoreEntitySet="custom">
+          <ScalarProperty Name="idcu" ColumnName="idcu" />
+          <ScalarProperty Name="fida" ColumnName="fida" />
+          <ScalarProperty Name="nmcu" ColumnName="nmcu" />
+          <ScalarProperty Name="addr" ColumnName="addr" />
+          <ScalarProperty Name="dorr" ColumnName="dorr" />
+          <ScalarProperty Name="shaa" ColumnName="shaa" />
+          <ScalarProperty Name="tele" ColumnName="tele" />
+          <ScalarProperty Name="teah" ColumnName="teah" />
+          <ScalarProperty Name="tead" ColumnName="tead" />
+          <ScalarProperty Name="tkym" ColumnName="tkym" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="delv">
+      <EntityTypeMapping TypeName="ERP_Model.delv">
+        <MappingFragment StoreEntitySet="delv">
+          <ScalarProperty Name="iddev" ColumnName="iddev" />
+          <ScalarProperty Name="nmdev" ColumnName="nmdev" />
+          <ScalarProperty Name="addrde" ColumnName="addrde" />
+          <ScalarProperty Name="teldev" ColumnName="teldev" />
+          <ScalarProperty Name="rkmkwm" ColumnName="rkmkwm" />
+          <ScalarProperty Name="mobdev" ColumnName="mobdev" />
+          <ScalarProperty Name="mobad" ColumnName="mobad" />
+          <ScalarProperty Name="deta" ColumnName="deta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fatora">
+      <EntityTypeMapping TypeName="ERP_Model.fatora">
+        <MappingFragment StoreEntitySet="fatora">
+          <ScalarProperty Name="idfa" ColumnName="idfa" />
+          <ScalarProperty Name="idwit" ColumnName="idwit" />
+          <ScalarProperty Name="dafat" ColumnName="dafat" />
+          <ScalarProperty Name="telmsh" ColumnName="telmsh" />
+          <ScalarProperty Name="nmmsh" ColumnName="nmmsh" />
+          <ScalarProperty Name="typp" ColumnName="typp" />
+          <ScalarProperty Name="agmly" ColumnName="agmly" />
+          <ScalarProperty Name="mdfo" ColumnName="mdfo" />
+          <ScalarProperty Name="mtb" ColumnName="mtb" />
+          <ScalarProperty Name="khasm" ColumnName="khasm" />
+          <ScalarProperty Name="delv" ColumnName="delv" />
+          <ScalarProperty Name="devmo" ColumnName="devmo" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+          <ScalarProperty Name="mtbty" ColumnName="mtbty" />
+          <ScalarProperty Name="nmtlb" ColumnName="nmtlb" />
+          <ScalarProperty Name="usernm" ColumnName="usernm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fatora2">
+      <EntityTypeMapping TypeName="ERP_Model.fatora2">
+        <MappingFragment StoreEntitySet="fatora2">
+          <ScalarProperty Name="idfa" ColumnName="idfa" />
+          <ScalarProperty Name="nmtlb" ColumnName="nmtlb" />
+          <ScalarProperty Name="usernm" ColumnName="usernm" />
+          <ScalarProperty Name="dafat" ColumnName="dafat" />
+          <ScalarProperty Name="timfat" ColumnName="timfat" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="nmmsh" ColumnName="nmmsh" />
+          <ScalarProperty Name="addr" ColumnName="addr" />
+          <ScalarProperty Name="tb3a" ColumnName="tb3a" />
+          <ScalarProperty Name="typp" ColumnName="typp" />
+          <ScalarProperty Name="agmly" ColumnName="agmly" />
+          <ScalarProperty Name="khasm" ColumnName="khasm" />
+          <ScalarProperty Name="adafy" ColumnName="adafy" />
+          <ScalarProperty Name="mdfo" ColumnName="mdfo" />
+          <ScalarProperty Name="ba2y" ColumnName="ba2y" />
+          <ScalarProperty Name="delv" ColumnName="delv" />
+          <ScalarProperty Name="devmo" ColumnName="devmo" />
+          <ScalarProperty Name="done" ColumnName="done" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fatoramsh">
+      <EntityTypeMapping TypeName="ERP_Model.fatoramsh">
+        <MappingFragment StoreEntitySet="fatoramsh">
+          <ScalarProperty Name="idfa" ColumnName="idfa" />
+          <ScalarProperty Name="idwit" ColumnName="idwit" />
+          <ScalarProperty Name="dafat" ColumnName="dafat" />
+          <ScalarProperty Name="telmsh" ColumnName="telmsh" />
+          <ScalarProperty Name="nmmsh" ColumnName="nmmsh" />
+          <ScalarProperty Name="typp" ColumnName="typp" />
+          <ScalarProperty Name="agmly" ColumnName="agmly" />
+          <ScalarProperty Name="mdfo" ColumnName="mdfo" />
+          <ScalarProperty Name="mtb" ColumnName="mtb" />
+          <ScalarProperty Name="khasm" ColumnName="khasm" />
+          <ScalarProperty Name="delv" ColumnName="delv" />
+          <ScalarProperty Name="devmo" ColumnName="devmo" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+          <ScalarProperty Name="mtbty" ColumnName="mtbty" />
+          <ScalarProperty Name="nmtlb" ColumnName="nmtlb" />
+          <ScalarProperty Name="usernm" ColumnName="usernm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mby3t">
+      <EntityTypeMapping TypeName="ERP_Model.mby3t">
+        <MappingFragment StoreEntitySet="mby3t">
+          <ScalarProperty Name="idsa" ColumnName="idsa" />
+          <ScalarProperty Name="idfat" ColumnName="idfat" />
+          <ScalarProperty Name="idwai" ColumnName="idwai" />
+          <ScalarProperty Name="dafat" ColumnName="dafat" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="telmsh" ColumnName="telmsh" />
+          <ScalarProperty Name="nmmsh" ColumnName="nmmsh" />
+          <ScalarProperty Name="cdsnf" ColumnName="cdsnf" />
+          <ScalarProperty Name="nmsnf" ColumnName="nmsnf" />
+          <ScalarProperty Name="nmbr" ColumnName="nmbr" />
+          <ScalarProperty Name="kmya" ColumnName="kmya" />
+          <ScalarProperty Name="kmst" ColumnName="kmst" />
+          <ScalarProperty Name="whda" ColumnName="whda" />
+          <ScalarProperty Name="tyba" ColumnName="tyba" />
+          <ScalarProperty Name="nzafa" ColumnName="nzafa" />
+          <ScalarProperty Name="zbhaa" ColumnName="zbhaa" />
+          <ScalarProperty Name="nmbzb" ColumnName="nmbzb" />
+          <ScalarProperty Name="khdma" ColumnName="khdma" />
+          <ScalarProperty Name="nmkhd" ColumnName="nmkhd" />
+          <ScalarProperty Name="srzb" ColumnName="srzb" />
+          <ScalarProperty Name="srkhd" ColumnName="srkhd" />
+          <ScalarProperty Name="srkdag" ColumnName="srkdag" />
+          <ScalarProperty Name="srdev" ColumnName="srdev" />
+          <ScalarProperty Name="sawh" ColumnName="sawh" />
+          <ScalarProperty Name="safy" ColumnName="safy" />
+          <ScalarProperty Name="clnn" ColumnName="clnn" />
+          <ScalarProperty Name="agmaly" ColumnName="agmaly" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+          <ScalarProperty Name="brcode" ColumnName="brcode" />
+          <ScalarProperty Name="usernm" ColumnName="usernm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mby3t2">
+      <EntityTypeMapping TypeName="ERP_Model.mby3t2">
+        <MappingFragment StoreEntitySet="mby3t2">
+          <ScalarProperty Name="idsa" ColumnName="idsa" />
+          <ScalarProperty Name="idfat" ColumnName="idfat" />
+          <ScalarProperty Name="usernm" ColumnName="usernm" />
+          <ScalarProperty Name="dafat" ColumnName="dafat" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="nmmsh" ColumnName="nmmsh" />
+          <ScalarProperty Name="brcode" ColumnName="brcode" />
+          <ScalarProperty Name="nmsnf" ColumnName="nmsnf" />
+          <ScalarProperty Name="kmya" ColumnName="kmya" />
+          <ScalarProperty Name="sawh" ColumnName="sawh" />
+          <ScalarProperty Name="safy" ColumnName="safy" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mddev">
+      <EntityTypeMapping TypeName="ERP_Model.mddev">
+        <MappingFragment StoreEntitySet="mddev">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="amld" ColumnName="amld" />
+          <ScalarProperty Name="amldINT" ColumnName="amldINT" />
+          <ScalarProperty Name="tedev" ColumnName="tedev" />
+          <ScalarProperty Name="nmdev" ColumnName="nmdev" />
+          <ScalarProperty Name="cash" ColumnName="cash" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mnsrf">
+      <EntityTypeMapping TypeName="ERP_Model.mnsrf">
+        <MappingFragment StoreEntitySet="mnsrf">
+          <ScalarProperty Name="idam" ColumnName="idam" />
+          <ScalarProperty Name="idsa" ColumnName="idsa" />
+          <ScalarProperty Name="dateint" ColumnName="dateint" />
+          <ScalarProperty Name="usnm" ColumnName="usnm" />
+          <ScalarProperty Name="srdate" ColumnName="srdate" />
+          <ScalarProperty Name="msrnm" ColumnName="msrnm" />
+          <ScalarProperty Name="idsnf" ColumnName="idsnf" />
+          <ScalarProperty Name="nmsnf" ColumnName="nmsnf" />
+          <ScalarProperty Name="wahda" ColumnName="wahda" />
+          <ScalarProperty Name="tyam" ColumnName="tyam" />
+          <ScalarProperty Name="kmya" ColumnName="kmya" />
+          <ScalarProperty Name="kmyst" ColumnName="kmyst" />
+          <ScalarProperty Name="deta" ColumnName="deta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mnsrf2">
+      <EntityTypeMapping TypeName="ERP_Model.mnsrf2">
+        <MappingFragment StoreEntitySet="mnsrf2">
+          <ScalarProperty Name="idam" ColumnName="idam" />
+          <ScalarProperty Name="idsa" ColumnName="idsa" />
+          <ScalarProperty Name="dateint" ColumnName="dateint" />
+          <ScalarProperty Name="usnm" ColumnName="usnm" />
+          <ScalarProperty Name="srdate" ColumnName="srdate" />
+          <ScalarProperty Name="msrnm" ColumnName="msrnm" />
+          <ScalarProperty Name="idsnf" ColumnName="idsnf" />
+          <ScalarProperty Name="nmsnf" ColumnName="nmsnf" />
+          <ScalarProperty Name="tyam" ColumnName="tyam" />
+          <ScalarProperty Name="kmya" ColumnName="kmya" />
+          <ScalarProperty Name="deta" ColumnName="deta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msmwrd">
+      <EntityTypeMapping TypeName="ERP_Model.msmwrd">
+        <MappingFragment StoreEntitySet="msmwrd">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="amlda" ColumnName="amlda" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="idcus" ColumnName="idcus" />
+          <ScalarProperty Name="tecus" ColumnName="tecus" />
+          <ScalarProperty Name="nmcus" ColumnName="nmcus" />
+          <ScalarProperty Name="cash" ColumnName="cash" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msrofkz">
+      <EntityTypeMapping TypeName="ERP_Model.msrofkz">
+        <MappingFragment StoreEntitySet="msrofkz">
+          <ScalarProperty Name="coaml" ColumnName="coaml" />
+          <ScalarProperty Name="amld" ColumnName="amld" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="timal" ColumnName="timal" />
+          <ScalarProperty Name="cashnm" ColumnName="cashnm" />
+          <ScalarProperty Name="nmmn" ColumnName="nmmn" />
+          <ScalarProperty Name="amelty" ColumnName="amelty" />
+          <ScalarProperty Name="cashs" ColumnName="cashs" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mwrd">
+      <EntityTypeMapping TypeName="ERP_Model.mwrd">
+        <MappingFragment StoreEntitySet="mwrd">
+          <ScalarProperty Name="idcu" ColumnName="idcu" />
+          <ScalarProperty Name="fida" ColumnName="fida" />
+          <ScalarProperty Name="nmcu" ColumnName="nmcu" />
+          <ScalarProperty Name="addr" ColumnName="addr" />
+          <ScalarProperty Name="dorr" ColumnName="dorr" />
+          <ScalarProperty Name="shaa" ColumnName="shaa" />
+          <ScalarProperty Name="tele" ColumnName="tele" />
+          <ScalarProperty Name="teah" ColumnName="teah" />
+          <ScalarProperty Name="tead" ColumnName="tead" />
+          <ScalarProperty Name="tkym" ColumnName="tkym" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="ERP_Model.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="idusr" ColumnName="idusr" />
+          <ScalarProperty Name="usnam" ColumnName="usnam" />
+          <ScalarProperty Name="pswrd" ColumnName="pswrd" />
+          <ScalarProperty Name="ck1" ColumnName="ck1" />
+          <ScalarProperty Name="ck2" ColumnName="ck2" />
+          <ScalarProperty Name="ck3" ColumnName="ck3" />
+          <ScalarProperty Name="ck4" ColumnName="ck4" />
+          <ScalarProperty Name="ck5" ColumnName="ck5" />
+          <ScalarProperty Name="ck6" ColumnName="ck6" />
+          <ScalarProperty Name="ck7" ColumnName="ck7" />
+          <ScalarProperty Name="ck8" ColumnName="ck8" />
+          <ScalarProperty Name="ck9" ColumnName="ck9" />
+          <ScalarProperty Name="ck10" ColumnName="ck10" />
+          <ScalarProperty Name="ck11" ColumnName="ck11" />
+          <ScalarProperty Name="ck12" ColumnName="ck12" />
+          <ScalarProperty Name="ck13" ColumnName="ck13" />
+          <ScalarProperty Name="ck14" ColumnName="ck14" />
+          <ScalarProperty Name="ck15" ColumnName="ck15" />
+          <ScalarProperty Name="ck16" ColumnName="ck16" />
+          <ScalarProperty Name="ck17" ColumnName="ck17" />
+          <ScalarProperty Name="ck18" ColumnName="ck18" />
+          <ScalarProperty Name="ck19" ColumnName="ck19" />
+          <ScalarProperty Name="ck20" ColumnName="ck20" />
+          <ScalarProperty Name="ck21" ColumnName="ck21" />
+          <ScalarProperty Name="ck22" ColumnName="ck22" />
+          <ScalarProperty Name="ck23" ColumnName="ck23" />
+          <ScalarProperty Name="ck24" ColumnName="ck24" />
+          <ScalarProperty Name="ck25" ColumnName="ck25" />
+          <ScalarProperty Name="ck26" ColumnName="ck26" />
+          <ScalarProperty Name="ck27" ColumnName="ck27" />
+          <ScalarProperty Name="ck28" ColumnName="ck28" />
+          <ScalarProperty Name="ck29" ColumnName="ck29" />
+          <ScalarProperty Name="ck30" ColumnName="ck30" />
+          <ScalarProperty Name="ck31" ColumnName="ck31" />
+          <ScalarProperty Name="ck32" ColumnName="ck32" />
+          <ScalarProperty Name="ck33" ColumnName="ck33" />
+          <ScalarProperty Name="ck34" ColumnName="ck34" />
+          <ScalarProperty Name="ck35" ColumnName="ck35" />
+          <ScalarProperty Name="ck36" ColumnName="ck36" />
+          <ScalarProperty Name="ck37" ColumnName="ck37" />
+          <ScalarProperty Name="ck38" ColumnName="ck38" />
+          <ScalarProperty Name="ck39" ColumnName="ck39" />
+          <ScalarProperty Name="ck40" ColumnName="ck40" />
+          <ScalarProperty Name="ck41" ColumnName="ck41" />
+          <ScalarProperty Name="ck42" ColumnName="ck42" />
+          <ScalarProperty Name="ck43" ColumnName="ck43" />
+          <ScalarProperty Name="ck44" ColumnName="ck44" />
+          <ScalarProperty Name="ck45" ColumnName="ck45" />
+          <ScalarProperty Name="ck46" ColumnName="ck46" />
+          <ScalarProperty Name="ck47" ColumnName="ck47" />
+          <ScalarProperty Name="ck48" ColumnName="ck48" />
+          <ScalarProperty Name="ck49" ColumnName="ck49" />
+          <ScalarProperty Name="ck50" ColumnName="ck50" />
+          <ScalarProperty Name="ck51" ColumnName="ck51" />
+          <ScalarProperty Name="ck52" ColumnName="ck52" />
+          <ScalarProperty Name="ck53" ColumnName="ck53" />
+          <ScalarProperty Name="ck54" ColumnName="ck54" />
+          <ScalarProperty Name="ck55" ColumnName="ck55" />
+          <ScalarProperty Name="ck56" ColumnName="ck56" />
+          <ScalarProperty Name="ck57" ColumnName="ck57" />
+          <ScalarProperty Name="ck58" ColumnName="ck58" />
+          <ScalarProperty Name="ck59" ColumnName="ck59" />
+          <ScalarProperty Name="ck60" ColumnName="ck60" />
+          <ScalarProperty Name="ck61" ColumnName="ck61" />
+          <ScalarProperty Name="ck62" ColumnName="ck62" />
+          <ScalarProperty Name="ck63" ColumnName="ck63" />
+          <ScalarProperty Name="ck64" ColumnName="ck64" />
+          <ScalarProperty Name="ck65" ColumnName="ck65" />
+          <ScalarProperty Name="ck66" ColumnName="ck66" />
+          <ScalarProperty Name="ck67" ColumnName="ck67" />
+          <ScalarProperty Name="ck68" ColumnName="ck68" />
+          <ScalarProperty Name="ck69" ColumnName="ck69" />
+          <ScalarProperty Name="ck70" ColumnName="ck70" />
+          <ScalarProperty Name="ck71" ColumnName="ck71" />
+          <ScalarProperty Name="ck72" ColumnName="ck72" />
+          <ScalarProperty Name="ck73" ColumnName="ck73" />
+          <ScalarProperty Name="ck74" ColumnName="ck74" />
+          <ScalarProperty Name="ck75" ColumnName="ck75" />
+          <ScalarProperty Name="ck76" ColumnName="ck76" />
+          <ScalarProperty Name="ck77" ColumnName="ck77" />
+          <ScalarProperty Name="ck78" ColumnName="ck78" />
+          <ScalarProperty Name="ck79" ColumnName="ck79" />
+          <ScalarProperty Name="ck80" ColumnName="ck80" />
+          <ScalarProperty Name="ck81" ColumnName="ck81" />
+          <ScalarProperty Name="ck82" ColumnName="ck82" />
+          <ScalarProperty Name="ck83" ColumnName="ck83" />
+          <ScalarProperty Name="ck84" ColumnName="ck84" />
+          <ScalarProperty Name="ck85" ColumnName="ck85" />
+          <ScalarProperty Name="ck86" ColumnName="ck86" />
+          <ScalarProperty Name="ck87" ColumnName="ck87" />
+          <ScalarProperty Name="ck88" ColumnName="ck88" />
+          <ScalarProperty Name="ck89" ColumnName="ck89" />
+          <ScalarProperty Name="ck90" ColumnName="ck90" />
+          <ScalarProperty Name="ck91" ColumnName="ck91" />
+          <ScalarProperty Name="ck92" ColumnName="ck92" />
+          <ScalarProperty Name="block" ColumnName="block" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="adkhal">
+      <EntityTypeMapping TypeName="ERP_Model.adkhal">
+        <MappingFragment StoreEntitySet="adkhal">
+          <ScalarProperty Name="twdate" ColumnName="twdate" />
+          <ScalarProperty Name="dateint" ColumnName="dateint" />
+          <ScalarProperty Name="cofat" ColumnName="cofat" />
+          <ScalarProperty Name="msnm" ColumnName="msnm" />
+          <ScalarProperty Name="tyam" ColumnName="tyam" />
+          <ScalarProperty Name="idsnf" ColumnName="idsnf" />
+          <ScalarProperty Name="crditm" ColumnName="crditm" />
+          <ScalarProperty Name="nmsnf" ColumnName="nmsnf" />
+          <ScalarProperty Name="whda" ColumnName="whda" />
+          <ScalarProperty Name="tysnf" ColumnName="tysnf" />
+          <ScalarProperty Name="kaym" ColumnName="kaym" />
+          <ScalarProperty Name="trod" ColumnName="trod" />
+          <ScalarProperty Name="farkh" ColumnName="farkh" />
+          <ScalarProperty Name="kmmd5" ColumnName="kmmd5" />
+          <ScalarProperty Name="kmstr" ColumnName="kmstr" />
+          <ScalarProperty Name="shrpr" ColumnName="shrpr" />
+          <ScalarProperty Name="hdtlb" ColumnName="hdtlb" />
+          <ScalarProperty Name="hdtlbstr" ColumnName="hdtlbstr" />
+          <ScalarProperty Name="twrpr" ColumnName="twrpr" />
+          <ScalarProperty Name="clnn" ColumnName="clnn" />
+          <ScalarProperty Name="oksr" ColumnName="oksr" />
+          <ScalarProperty Name="gmlapr" ColumnName="gmlapr" />
+          <ScalarProperty Name="hagmpr" ColumnName="hagmpr" />
+          <ScalarProperty Name="msthlkpr" ColumnName="msthlkpr" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mdcust">
+      <EntityTypeMapping TypeName="ERP_Model.mdcust">
+        <MappingFragment StoreEntitySet="mdcust">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="amld" ColumnName="amld" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="idcus" ColumnName="idcus" />
+          <ScalarProperty Name="tecus" ColumnName="tecus" />
+          <ScalarProperty Name="nmcus" ColumnName="nmcus" />
+          <ScalarProperty Name="cash" ColumnName="cash" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mdfokz">
+      <EntityTypeMapping TypeName="ERP_Model.mdfokz">
+        <MappingFragment StoreEntitySet="mdfokz">
+          <ScalarProperty Name="coaml" ColumnName="coaml" />
+          <ScalarProperty Name="daaml" ColumnName="daaml" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="timal" ColumnName="timal" />
+          <ScalarProperty Name="cashnm" ColumnName="cashnm" />
+          <ScalarProperty Name="nmmn" ColumnName="nmmn" />
+          <ScalarProperty Name="amelty" ColumnName="amelty" />
+          <ScalarProperty Name="cashm" ColumnName="cashm" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mdmwrd">
+      <EntityTypeMapping TypeName="ERP_Model.mdmwrd">
+        <MappingFragment StoreEntitySet="mdmwrd">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="amld" ColumnName="amld" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="idcus" ColumnName="idcus" />
+          <ScalarProperty Name="tecus" ColumnName="tecus" />
+          <ScalarProperty Name="nmcus" ColumnName="nmcus" />
+          <ScalarProperty Name="cash" ColumnName="cash" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mrtg3">
+      <EntityTypeMapping TypeName="ERP_Model.mrtg3">
+        <MappingFragment StoreEntitySet="mrtg3">
+          <ScalarProperty Name="mrdate" ColumnName="mrdate" />
+          <ScalarProperty Name="datint" ColumnName="datint" />
+          <ScalarProperty Name="nmmrt" ColumnName="nmmrt" />
+          <ScalarProperty Name="cdsnf" ColumnName="cdsnf" />
+          <ScalarProperty Name="nmsnf" ColumnName="nmsnf" />
+          <ScalarProperty Name="whda" ColumnName="whda" />
+          <ScalarProperty Name="cdfat" ColumnName="cdfat" />
+          <ScalarProperty Name="kmmsh" ColumnName="kmmsh" />
+          <ScalarProperty Name="kmmrtko" ColumnName="kmmrtko" />
+          <ScalarProperty Name="kmmrtstr" ColumnName="kmmrtstr" />
+          <ScalarProperty Name="kymrt" ColumnName="kymrt" />
+          <ScalarProperty Name="samrt" ColumnName="samrt" />
+          <ScalarProperty Name="tfacel" ColumnName="tfacel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mrtg3msh">
+      <EntityTypeMapping TypeName="ERP_Model.mrtg3msh">
+        <MappingFragment StoreEntitySet="mrtg3msh">
+          <ScalarProperty Name="mrdate" ColumnName="mrdate" />
+          <ScalarProperty Name="datint" ColumnName="datint" />
+          <ScalarProperty Name="nmmrt" ColumnName="nmmrt" />
+          <ScalarProperty Name="cdsnf" ColumnName="cdsnf" />
+          <ScalarProperty Name="nmsnf" ColumnName="nmsnf" />
+          <ScalarProperty Name="whda" ColumnName="whda" />
+          <ScalarProperty Name="cdfat" ColumnName="cdfat" />
+          <ScalarProperty Name="kmmsh" ColumnName="kmmsh" />
+          <ScalarProperty Name="kmmrtko" ColumnName="kmmrtko" />
+          <ScalarProperty Name="kmmrtstr" ColumnName="kmmrtstr" />
+          <ScalarProperty Name="kymrt" ColumnName="kymrt" />
+          <ScalarProperty Name="samrt" ColumnName="samrt" />
+          <ScalarProperty Name="tfacel" ColumnName="tfacel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mscust">
+      <EntityTypeMapping TypeName="ERP_Model.mscust">
+        <MappingFragment StoreEntitySet="mscust">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="amlda" ColumnName="amlda" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="idcus" ColumnName="idcus" />
+          <ScalarProperty Name="tecus" ColumnName="tecus" />
+          <ScalarProperty Name="nmcus" ColumnName="nmcus" />
+          <ScalarProperty Name="cash" ColumnName="cash" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msdelv">
+      <EntityTypeMapping TypeName="ERP_Model.msdelv">
+        <MappingFragment StoreEntitySet="msdelv">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="amlda" ColumnName="amlda" />
+          <ScalarProperty Name="amldINT" ColumnName="amldINT" />
+          <ScalarProperty Name="tedev" ColumnName="tedev" />
+          <ScalarProperty Name="nmdev" ColumnName="nmdev" />
+          <ScalarProperty Name="cash" ColumnName="cash" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mshtryat">
+      <EntityTypeMapping TypeName="ERP_Model.mshtryat">
+        <MappingFragment StoreEntitySet="mshtryat">
+          <ScalarProperty Name="idfat" ColumnName="idfat" />
+          <ScalarProperty Name="idwai" ColumnName="idwai" />
+          <ScalarProperty Name="dafat" ColumnName="dafat" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="telmsh" ColumnName="telmsh" />
+          <ScalarProperty Name="nmmsh" ColumnName="nmmsh" />
+          <ScalarProperty Name="cdsnf" ColumnName="cdsnf" />
+          <ScalarProperty Name="nmsnf" ColumnName="nmsnf" />
+          <ScalarProperty Name="nmbr" ColumnName="nmbr" />
+          <ScalarProperty Name="kmya" ColumnName="kmya" />
+          <ScalarProperty Name="kmst" ColumnName="kmst" />
+          <ScalarProperty Name="whda" ColumnName="whda" />
+          <ScalarProperty Name="tyba" ColumnName="tyba" />
+          <ScalarProperty Name="nzafa" ColumnName="nzafa" />
+          <ScalarProperty Name="zbhaa" ColumnName="zbhaa" />
+          <ScalarProperty Name="nmbzb" ColumnName="nmbzb" />
+          <ScalarProperty Name="khdma" ColumnName="khdma" />
+          <ScalarProperty Name="nmkhd" ColumnName="nmkhd" />
+          <ScalarProperty Name="srzb" ColumnName="srzb" />
+          <ScalarProperty Name="srkhd" ColumnName="srkhd" />
+          <ScalarProperty Name="srkdag" ColumnName="srkdag" />
+          <ScalarProperty Name="srdev" ColumnName="srdev" />
+          <ScalarProperty Name="sawh" ColumnName="sawh" />
+          <ScalarProperty Name="safy" ColumnName="safy" />
+          <ScalarProperty Name="clnn" ColumnName="clnn" />
+          <ScalarProperty Name="agmaly" ColumnName="agmaly" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+          <ScalarProperty Name="brcode" ColumnName="brcode" />
+          <ScalarProperty Name="usernm" ColumnName="usernm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shakl">
+      <EntityTypeMapping TypeName="ERP_Model.shakl">
+        <MappingFragment StoreEntitySet="shakl">
+          <ScalarProperty Name="ck1" ColumnName="ck1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tnbeh">
+      <EntityTypeMapping TypeName="ERP_Model.tnbeh">
+        <MappingFragment StoreEntitySet="tnbeh">
+          <ScalarProperty Name="datetn" ColumnName="datetn" />
+          <ScalarProperty Name="daint" ColumnName="daint" />
+          <ScalarProperty Name="timtn" ColumnName="timtn" />
+          <ScalarProperty Name="timint" ColumnName="timint" />
+          <ScalarProperty Name="tntyp" ColumnName="tntyp" />
+          <ScalarProperty Name="tntex" ColumnName="tntex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ts3er">
+      <EntityTypeMapping TypeName="ERP_Model.ts3er">
+        <MappingFragment StoreEntitySet="ts3er">
+          <ScalarProperty Name="idsn" ColumnName="idsn" />
+          <ScalarProperty Name="nmsn" ColumnName="nmsn" />
+          <ScalarProperty Name="crdsnf" ColumnName="crdsnf" />
+          <ScalarProperty Name="whdaa" ColumnName="whdaa" />
+          <ScalarProperty Name="twrprc" ColumnName="twrprc" />
+          <ScalarProperty Name="prdate" ColumnName="prdate" />
+          <ScalarProperty Name="gmla" ColumnName="gmla" />
+          <ScalarProperty Name="halfgmla" ColumnName="halfgmla" />
+          <ScalarProperty Name="custpr" ColumnName="custpr" />
+          <ScalarProperty Name="clnn" ColumnName="clnn" />
+          <ScalarProperty Name="okra" ColumnName="okra" />
+          <ScalarProperty Name="srok" ColumnName="srok" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="waitr">
+      <EntityTypeMapping TypeName="ERP_Model.waitr">
+        <MappingFragment StoreEntitySet="waitr">
+          <ScalarProperty Name="idwit" ColumnName="idwit" />
+          <ScalarProperty Name="idfat" ColumnName="idfat" />
+          <ScalarProperty Name="dafa" ColumnName="dafa" />
+          <ScalarProperty Name="telmsh" ColumnName="telmsh" />
+          <ScalarProperty Name="nmmsh" ColumnName="nmmsh" />
+          <ScalarProperty Name="addcu" ColumnName="addcu" />
+          <ScalarProperty Name="typp" ColumnName="typp" />
+          <ScalarProperty Name="devty" ColumnName="devty" />
+          <ScalarProperty Name="devnm" ColumnName="devnm" />
+          <ScalarProperty Name="devmo" ColumnName="devmo" />
+          <ScalarProperty Name="khdma" ColumnName="khdma" />
+          <ScalarProperty Name="safy" ColumnName="safy" />
+          <ScalarProperty Name="mdfo" ColumnName="mdfo" />
+          <ScalarProperty Name="baya" ColumnName="baya" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+          <ScalarProperty Name="khasm" ColumnName="khasm" />
+          <ScalarProperty Name="nmtlb" ColumnName="nmtlb" />
+          <ScalarProperty Name="usernm" ColumnName="usernm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="waitrmsh">
+      <EntityTypeMapping TypeName="ERP_Model.waitrmsh">
+        <MappingFragment StoreEntitySet="waitrmsh">
+          <ScalarProperty Name="idwit" ColumnName="idwit" />
+          <ScalarProperty Name="idfat" ColumnName="idfat" />
+          <ScalarProperty Name="dafa" ColumnName="dafa" />
+          <ScalarProperty Name="telmsh" ColumnName="telmsh" />
+          <ScalarProperty Name="nmmsh" ColumnName="nmmsh" />
+          <ScalarProperty Name="addcu" ColumnName="addcu" />
+          <ScalarProperty Name="typp" ColumnName="typp" />
+          <ScalarProperty Name="devty" ColumnName="devty" />
+          <ScalarProperty Name="devnm" ColumnName="devnm" />
+          <ScalarProperty Name="devmo" ColumnName="devmo" />
+          <ScalarProperty Name="khdma" ColumnName="khdma" />
+          <ScalarProperty Name="safy" ColumnName="safy" />
+          <ScalarProperty Name="mdfo" ColumnName="mdfo" />
+          <ScalarProperty Name="baya" ColumnName="baya" />
+          <ScalarProperty Name="mlhz" ColumnName="mlhz" />
+          <ScalarProperty Name="khasm" ColumnName="khasm" />
+          <ScalarProperty Name="nmtlb" ColumnName="nmtlb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

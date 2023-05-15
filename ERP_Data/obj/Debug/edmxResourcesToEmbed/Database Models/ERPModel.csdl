@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ERP_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="addmwzf">
+    <Key>
+      <PropertyRef Name="idmwz" />
+    </Key>
+    <Property Name="idmwz" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nmme" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rkmkwmy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wzefa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tele" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mob" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="asnaf">
+    <Key>
+      <PropertyRef Name="idsn" />
+    </Key>
+    <Property Name="idsn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nmsn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="crdsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tysn" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="whdaa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="brcod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="casher">
+    <Key>
+      <PropertyRef Name="cdcas" />
+    </Key>
+    <Property Name="cdcas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nmcas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addrca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telcas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rkmkwm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mobcas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mobad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="crditm">
+    <Key>
+      <PropertyRef Name="idcrd" />
+    </Key>
+    <Property Name="idcrd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nmcrd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tycrd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="custom">
+    <Key>
+      <PropertyRef Name="idcu" />
+    </Key>
+    <Property Name="idcu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmcu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dorr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="shaa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tele" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="teah" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tead" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tkym" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="delv">
+    <Key>
+      <PropertyRef Name="iddev" />
+    </Key>
+    <Property Name="iddev" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nmdev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addrde" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="teldev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rkmkwm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mobdev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mobad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fatora">
+    <Key>
+      <PropertyRef Name="idfa" />
+    </Key>
+    <Property Name="idfa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idwit" Type="Int32" Nullable="false" />
+    <Property Name="dafat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="typp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="agmly" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mdfo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mtb" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="khasm" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="delv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devmo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mtbty" Type="Int32" Nullable="false" />
+    <Property Name="nmtlb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usernm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fatora2">
+    <Key>
+      <PropertyRef Name="idfa" />
+    </Key>
+    <Property Name="idfa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nmtlb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usernm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dafat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="timfat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="Int32" Nullable="false" />
+    <Property Name="nmmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tb3a" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="typp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="agmly" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="khasm" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="adafy" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mdfo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ba2y" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="delv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devmo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="done" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fatoramsh">
+    <Key>
+      <PropertyRef Name="idfa" />
+    </Key>
+    <Property Name="idfa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idwit" Type="Int32" Nullable="false" />
+    <Property Name="dafat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="typp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="agmly" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mdfo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mtb" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="khasm" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="delv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devmo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mtbty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmtlb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usernm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mby3t">
+    <Key>
+      <PropertyRef Name="idsa" />
+    </Key>
+    <Property Name="idsa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idfat" Type="Int32" Nullable="false" />
+    <Property Name="idwai" Type="Int32" Nullable="false" />
+    <Property Name="dafat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="Int32" Nullable="false" />
+    <Property Name="telmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cdsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmbr" Type="Int32" Nullable="false" />
+    <Property Name="kmya" Type="Double" Nullable="false" />
+    <Property Name="kmst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="whda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tyba" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nzafa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="zbhaa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmbzb" Type="Int32" Nullable="false" />
+    <Property Name="khdma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmkhd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="srzb" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="srkhd" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="srkdag" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="srdev" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="sawh" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="safy" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="clnn" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="agmaly" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="brcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usernm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mby3t2">
+    <Key>
+      <PropertyRef Name="idsa" />
+    </Key>
+    <Property Name="idsa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idfat" Type="Int32" Nullable="false" />
+    <Property Name="usernm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dafat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="Int32" Nullable="false" />
+    <Property Name="nmmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="brcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kmya" Type="Double" Nullable="false" />
+    <Property Name="sawh" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="safy" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mddev">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="amld" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="amldINT" Type="Int32" Nullable="false" />
+    <Property Name="tedev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmdev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cash" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mnsrf">
+    <Key>
+      <PropertyRef Name="idam" />
+    </Key>
+    <Property Name="idam" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idsa" Type="Int32" Nullable="false" />
+    <Property Name="dateint" Type="Int32" Nullable="false" />
+    <Property Name="usnm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="srdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="msrnm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wahda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tyam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kmya" Type="Double" Nullable="false" />
+    <Property Name="kmyst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mnsrf2">
+    <Key>
+      <PropertyRef Name="idam" />
+    </Key>
+    <Property Name="idam" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idsa" Type="Int32" Nullable="false" />
+    <Property Name="dateint" Type="Int32" Nullable="false" />
+    <Property Name="usnm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="srdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="msrnm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tyam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kmya" Type="Double" Nullable="false" />
+    <Property Name="deta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msmwrd">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="amlda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idcus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tecus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmcus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cash" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msrofkz">
+    <Key>
+      <PropertyRef Name="coaml" />
+    </Key>
+    <Property Name="coaml" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="amld" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="Int32" Nullable="false" />
+    <Property Name="timal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cashnm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmmn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="amelty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cashs" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mwrd">
+    <Key>
+      <PropertyRef Name="idcu" />
+    </Key>
+    <Property Name="idcu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmcu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dorr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="shaa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tele" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="teah" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tead" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tkym" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="idusr" />
+    </Key>
+    <Property Name="idusr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usnam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pswrd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck12" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck13" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck15" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck16" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck18" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck19" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck20" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck21" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck22" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck23" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck24" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck25" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck26" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck27" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck28" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck29" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck30" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck31" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck32" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck33" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck34" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck35" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck36" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck37" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck38" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck39" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck40" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck41" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck42" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck43" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck44" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck45" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck46" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck47" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck48" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck49" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck50" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck51" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck52" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck53" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck54" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck55" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck56" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck57" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck58" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck59" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck60" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck61" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck62" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck63" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck64" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck65" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck66" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck67" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck68" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck69" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck70" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck71" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck72" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck73" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck74" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck75" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck76" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck77" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck78" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck79" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck80" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck81" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck82" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck83" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck84" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck85" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck86" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck87" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck88" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck89" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck90" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck91" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ck92" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="block" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="adkhal">
+    <Key>
+      <PropertyRef Name="twdate" />
+      <PropertyRef Name="dateint" />
+      <PropertyRef Name="cofat" />
+      <PropertyRef Name="msnm" />
+      <PropertyRef Name="tyam" />
+      <PropertyRef Name="idsnf" />
+      <PropertyRef Name="crditm" />
+      <PropertyRef Name="nmsnf" />
+      <PropertyRef Name="whda" />
+      <PropertyRef Name="tysnf" />
+      <PropertyRef Name="kaym" />
+      <PropertyRef Name="trod" />
+      <PropertyRef Name="farkh" />
+      <PropertyRef Name="kmmd5" />
+      <PropertyRef Name="kmstr" />
+      <PropertyRef Name="shrpr" />
+      <PropertyRef Name="hdtlb" />
+      <PropertyRef Name="hdtlbstr" />
+      <PropertyRef Name="twrpr" />
+      <PropertyRef Name="clnn" />
+      <PropertyRef Name="oksr" />
+      <PropertyRef Name="gmlapr" />
+      <PropertyRef Name="hagmpr" />
+      <PropertyRef Name="msthlkpr" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="twdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dateint" Type="Int32" Nullable="false" />
+    <Property Name="cofat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="msnm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tyam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="crditm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="whda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tysnf" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kaym" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="trod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="farkh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kmmd5" Type="Double" Nullable="false" />
+    <Property Name="kmstr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="shrpr" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="hdtlb" Type="Int32" Nullable="false" />
+    <Property Name="hdtlbstr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="twrpr" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="clnn" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="oksr" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="gmlapr" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="hagmpr" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="msthlkpr" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mdcust">
+    <Key>
+      <PropertyRef Name="code" />
+      <PropertyRef Name="amld" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="idcus" />
+      <PropertyRef Name="tecus" />
+      <PropertyRef Name="nmcus" />
+      <PropertyRef Name="cash" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="code" Type="Int32" Nullable="false" />
+    <Property Name="amld" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="Int32" Nullable="false" />
+    <Property Name="idcus" Type="Int32" Nullable="false" />
+    <Property Name="tecus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmcus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cash" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mdfokz">
+    <Key>
+      <PropertyRef Name="coaml" />
+      <PropertyRef Name="daaml" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="timal" />
+      <PropertyRef Name="cashnm" />
+      <PropertyRef Name="nmmn" />
+      <PropertyRef Name="amelty" />
+      <PropertyRef Name="cashm" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="coaml" Type="Int32" Nullable="false" />
+    <Property Name="daaml" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="Int32" Nullable="false" />
+    <Property Name="timal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cashnm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmmn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="amelty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cashm" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mdmwrd">
+    <Key>
+      <PropertyRef Name="code" />
+      <PropertyRef Name="amld" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="idcus" />
+      <PropertyRef Name="tecus" />
+      <PropertyRef Name="nmcus" />
+      <PropertyRef Name="cash" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="code" Type="Int32" Nullable="false" />
+    <Property Name="amld" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idcus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tecus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmcus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cash" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mrtg3">
+    <Key>
+      <PropertyRef Name="mrdate" />
+      <PropertyRef Name="datint" />
+      <PropertyRef Name="nmmrt" />
+      <PropertyRef Name="cdsnf" />
+      <PropertyRef Name="nmsnf" />
+      <PropertyRef Name="whda" />
+      <PropertyRef Name="cdfat" />
+      <PropertyRef Name="kmmsh" />
+      <PropertyRef Name="kmmrtko" />
+      <PropertyRef Name="kmmrtstr" />
+      <PropertyRef Name="kymrt" />
+      <PropertyRef Name="samrt" />
+      <PropertyRef Name="tfacel" />
+    </Key>
+    <Property Name="mrdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datint" Type="Int32" Nullable="false" />
+    <Property Name="nmmrt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cdsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="whda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cdfat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kmmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kmmrtko" Type="Double" Nullable="false" />
+    <Property Name="kmmrtstr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kymrt" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="samrt" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="tfacel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mrtg3msh">
+    <Key>
+      <PropertyRef Name="mrdate" />
+      <PropertyRef Name="datint" />
+      <PropertyRef Name="nmmrt" />
+      <PropertyRef Name="cdsnf" />
+      <PropertyRef Name="nmsnf" />
+      <PropertyRef Name="whda" />
+      <PropertyRef Name="cdfat" />
+      <PropertyRef Name="kmmsh" />
+      <PropertyRef Name="kmmrtko" />
+      <PropertyRef Name="kmmrtstr" />
+      <PropertyRef Name="kymrt" />
+      <PropertyRef Name="samrt" />
+      <PropertyRef Name="tfacel" />
+    </Key>
+    <Property Name="mrdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datint" Type="Int32" Nullable="false" />
+    <Property Name="nmmrt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cdsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="whda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cdfat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kmmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kmmrtko" Type="Double" Nullable="false" />
+    <Property Name="kmmrtstr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kymrt" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="samrt" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="tfacel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mscust">
+    <Key>
+      <PropertyRef Name="code" />
+      <PropertyRef Name="amlda" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="idcus" />
+      <PropertyRef Name="tecus" />
+      <PropertyRef Name="nmcus" />
+      <PropertyRef Name="cash" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="code" Type="Int32" Nullable="false" />
+    <Property Name="amlda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="Int32" Nullable="false" />
+    <Property Name="idcus" Type="Int32" Nullable="false" />
+    <Property Name="tecus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmcus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cash" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msdelv">
+    <Key>
+      <PropertyRef Name="code" />
+      <PropertyRef Name="amlda" />
+      <PropertyRef Name="amldINT" />
+      <PropertyRef Name="tedev" />
+      <PropertyRef Name="nmdev" />
+      <PropertyRef Name="cash" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="code" Type="Int32" Nullable="false" />
+    <Property Name="amlda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="amldINT" Type="Int32" Nullable="false" />
+    <Property Name="tedev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmdev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cash" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mshtryat">
+    <Key>
+      <PropertyRef Name="idfat" />
+      <PropertyRef Name="idwai" />
+      <PropertyRef Name="dafat" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="telmsh" />
+      <PropertyRef Name="nmmsh" />
+      <PropertyRef Name="cdsnf" />
+      <PropertyRef Name="nmsnf" />
+      <PropertyRef Name="nmbr" />
+      <PropertyRef Name="kmya" />
+      <PropertyRef Name="kmst" />
+      <PropertyRef Name="whda" />
+      <PropertyRef Name="tyba" />
+      <PropertyRef Name="nzafa" />
+      <PropertyRef Name="zbhaa" />
+      <PropertyRef Name="nmbzb" />
+      <PropertyRef Name="khdma" />
+      <PropertyRef Name="nmkhd" />
+      <PropertyRef Name="srzb" />
+      <PropertyRef Name="srkhd" />
+      <PropertyRef Name="srkdag" />
+      <PropertyRef Name="srdev" />
+      <PropertyRef Name="sawh" />
+      <PropertyRef Name="safy" />
+      <PropertyRef Name="clnn" />
+      <PropertyRef Name="agmaly" />
+      <PropertyRef Name="mlhz" />
+      <PropertyRef Name="brcode" />
+      <PropertyRef Name="usernm" />
+    </Key>
+    <Property Name="idfat" Type="Int32" Nullable="false" />
+    <Property Name="idwai" Type="Int32" Nullable="false" />
+    <Property Name="dafat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="Int32" Nullable="false" />
+    <Property Name="telmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cdsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmbr" Type="Int32" Nullable="false" />
+    <Property Name="kmya" Type="Double" Nullable="false" />
+    <Property Name="kmst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="whda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tyba" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nzafa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="zbhaa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmbzb" Type="Int32" Nullable="false" />
+    <Property Name="khdma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmkhd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="srzb" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="srkhd" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="srkdag" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="srdev" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="sawh" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="safy" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="clnn" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="agmaly" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="brcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usernm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="shakl">
+    <Key>
+      <PropertyRef Name="ck1" />
+    </Key>
+    <Property Name="ck1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tnbeh">
+    <Key>
+      <PropertyRef Name="datetn" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="timtn" />
+      <PropertyRef Name="timint" />
+      <PropertyRef Name="tntyp" />
+      <PropertyRef Name="tntex" />
+    </Key>
+    <Property Name="datetn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="daint" Type="Int32" Nullable="false" />
+    <Property Name="timtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="timint" Type="Int32" Nullable="false" />
+    <Property Name="tntyp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tntex" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ts3er">
+    <Key>
+      <PropertyRef Name="idsn" />
+      <PropertyRef Name="nmsn" />
+      <PropertyRef Name="crdsnf" />
+      <PropertyRef Name="whdaa" />
+      <PropertyRef Name="twrprc" />
+      <PropertyRef Name="prdate" />
+      <PropertyRef Name="gmla" />
+      <PropertyRef Name="halfgmla" />
+      <PropertyRef Name="custpr" />
+      <PropertyRef Name="clnn" />
+      <PropertyRef Name="okra" />
+      <PropertyRef Name="srok" />
+    </Key>
+    <Property Name="idsn" Type="Int32" Nullable="false" />
+    <Property Name="nmsn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="crdsnf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="whdaa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="twrprc" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="prdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gmla" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="halfgmla" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="custpr" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="clnn" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="okra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="srok" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="waitr">
+    <Key>
+      <PropertyRef Name="idwit" />
+      <PropertyRef Name="idfat" />
+      <PropertyRef Name="dafa" />
+      <PropertyRef Name="telmsh" />
+      <PropertyRef Name="nmmsh" />
+      <PropertyRef Name="addcu" />
+      <PropertyRef Name="typp" />
+      <PropertyRef Name="devty" />
+      <PropertyRef Name="devnm" />
+      <PropertyRef Name="devmo" />
+      <PropertyRef Name="khdma" />
+      <PropertyRef Name="safy" />
+      <PropertyRef Name="mdfo" />
+      <PropertyRef Name="baya" />
+      <PropertyRef Name="mlhz" />
+      <PropertyRef Name="khasm" />
+      <PropertyRef Name="nmtlb" />
+      <PropertyRef Name="usernm" />
+    </Key>
+    <Property Name="idwit" Type="Int32" Nullable="false" />
+    <Property Name="idfat" Type="Int32" Nullable="false" />
+    <Property Name="dafa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addcu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="typp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devnm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devmo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="khdma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="safy" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mdfo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="baya" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="khasm" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="nmtlb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usernm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="waitrmsh">
+    <Key>
+      <PropertyRef Name="idwit" />
+      <PropertyRef Name="idfat" />
+      <PropertyRef Name="dafa" />
+      <PropertyRef Name="telmsh" />
+      <PropertyRef Name="nmmsh" />
+      <PropertyRef Name="addcu" />
+      <PropertyRef Name="typp" />
+      <PropertyRef Name="devty" />
+      <PropertyRef Name="devnm" />
+      <PropertyRef Name="devmo" />
+      <PropertyRef Name="khdma" />
+      <PropertyRef Name="safy" />
+      <PropertyRef Name="mdfo" />
+      <PropertyRef Name="baya" />
+      <PropertyRef Name="mlhz" />
+      <PropertyRef Name="khasm" />
+      <PropertyRef Name="nmtlb" />
+    </Key>
+    <Property Name="idwit" Type="Int32" Nullable="false" />
+    <Property Name="idfat" Type="Int32" Nullable="false" />
+    <Property Name="dafa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nmmsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addcu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="typp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devnm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="devmo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="khdma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="safy" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mdfo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="baya" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mlhz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="khasm" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="nmtlb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ERPDataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="addmwzf" EntityType="Self.addmwzf" />
+    <EntitySet Name="asnaf" EntityType="Self.asnaf" />
+    <EntitySet Name="casher" EntityType="Self.casher" />
+    <EntitySet Name="crditm" EntityType="Self.crditm" />
+    <EntitySet Name="custom" EntityType="Self.custom" />
+    <EntitySet Name="delv" EntityType="Self.delv" />
+    <EntitySet Name="fatora" EntityType="Self.fatora" />
+    <EntitySet Name="fatora2" EntityType="Self.fatora2" />
+    <EntitySet Name="fatoramsh" EntityType="Self.fatoramsh" />
+    <EntitySet Name="mby3t" EntityType="Self.mby3t" />
+    <EntitySet Name="mby3t2" EntityType="Self.mby3t2" />
+    <EntitySet Name="mddev" EntityType="Self.mddev" />
+    <EntitySet Name="mnsrf" EntityType="Self.mnsrf" />
+    <EntitySet Name="mnsrf2" EntityType="Self.mnsrf2" />
+    <EntitySet Name="msmwrd" EntityType="Self.msmwrd" />
+    <EntitySet Name="msrofkz" EntityType="Self.msrofkz" />
+    <EntitySet Name="mwrd" EntityType="Self.mwrd" />
+    <EntitySet Name="users" EntityType="Self.users" />
+    <EntitySet Name="adkhal" EntityType="Self.adkhal" />
+    <EntitySet Name="mdcust" EntityType="Self.mdcust" />
+    <EntitySet Name="mdfokz" EntityType="Self.mdfokz" />
+    <EntitySet Name="mdmwrd" EntityType="Self.mdmwrd" />
+    <EntitySet Name="mrtg3" EntityType="Self.mrtg3" />
+    <EntitySet Name="mrtg3msh" EntityType="Self.mrtg3msh" />
+    <EntitySet Name="mscust" EntityType="Self.mscust" />
+    <EntitySet Name="msdelv" EntityType="Self.msdelv" />
+    <EntitySet Name="mshtryat" EntityType="Self.mshtryat" />
+    <EntitySet Name="shakl" EntityType="Self.shakl" />
+    <EntitySet Name="tnbeh" EntityType="Self.tnbeh" />
+    <EntitySet Name="ts3er" EntityType="Self.ts3er" />
+    <EntitySet Name="waitr" EntityType="Self.waitr" />
+    <EntitySet Name="waitrmsh" EntityType="Self.waitrmsh" />
+  </EntityContainer>
+</Schema>

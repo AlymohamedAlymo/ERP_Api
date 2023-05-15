@@ -1,0 +1,1069 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ERP_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="addmwzf">
+    <Key>
+      <PropertyRef Name="idmwz" />
+    </Key>
+    <Property Name="idmwz" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nmme" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rkmkwmy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="wzefa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="addr" Type="text" Nullable="false" />
+    <Property Name="tele" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mob" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.adkhal' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="adkhal">
+    <Key>
+      <PropertyRef Name="twdate" />
+      <PropertyRef Name="dateint" />
+      <PropertyRef Name="cofat" />
+      <PropertyRef Name="msnm" />
+      <PropertyRef Name="tyam" />
+      <PropertyRef Name="idsnf" />
+      <PropertyRef Name="crditm" />
+      <PropertyRef Name="nmsnf" />
+      <PropertyRef Name="whda" />
+      <PropertyRef Name="tysnf" />
+      <PropertyRef Name="kaym" />
+      <PropertyRef Name="trod" />
+      <PropertyRef Name="farkh" />
+      <PropertyRef Name="kmmd5" />
+      <PropertyRef Name="kmstr" />
+      <PropertyRef Name="shrpr" />
+      <PropertyRef Name="hdtlb" />
+      <PropertyRef Name="hdtlbstr" />
+      <PropertyRef Name="twrpr" />
+      <PropertyRef Name="clnn" />
+      <PropertyRef Name="oksr" />
+      <PropertyRef Name="gmlapr" />
+      <PropertyRef Name="hagmpr" />
+      <PropertyRef Name="msthlkpr" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="twdate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateint" Type="int" Nullable="false" />
+    <Property Name="cofat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="msnm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tyam" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="crditm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="whda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tysnf" Type="text" Nullable="false" />
+    <Property Name="kaym" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="trod" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="farkh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kmmd5" Type="float" Nullable="false" />
+    <Property Name="kmstr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="shrpr" Type="money" Nullable="false" />
+    <Property Name="hdtlb" Type="int" Nullable="false" />
+    <Property Name="hdtlbstr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="twrpr" Type="money" Nullable="false" />
+    <Property Name="clnn" Type="money" Nullable="false" />
+    <Property Name="oksr" Type="money" Nullable="false" />
+    <Property Name="gmlapr" Type="money" Nullable="false" />
+    <Property Name="hagmpr" Type="money" Nullable="false" />
+    <Property Name="msthlkpr" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="asnaf">
+    <Key>
+      <PropertyRef Name="idsn" />
+    </Key>
+    <Property Name="idsn" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nmsn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="crdsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tysn" Type="text" Nullable="false" />
+    <Property Name="whdaa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+    <Property Name="brcod" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="casher">
+    <Key>
+      <PropertyRef Name="cdcas" />
+    </Key>
+    <Property Name="cdcas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nmcas" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="addrca" Type="text" Nullable="false" />
+    <Property Name="telcas" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rkmkwm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobcas" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="deta" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="crditm">
+    <Key>
+      <PropertyRef Name="idcrd" />
+    </Key>
+    <Property Name="idcrd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nmcrd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tycrd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="deta" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="custom">
+    <Key>
+      <PropertyRef Name="idcu" />
+    </Key>
+    <Property Name="idcu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fida" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmcu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="addr" Type="text" Nullable="false" />
+    <Property Name="dorr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="shaa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tele" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="teah" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tead" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tkym" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="delv">
+    <Key>
+      <PropertyRef Name="iddev" />
+    </Key>
+    <Property Name="iddev" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nmdev" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="addrde" Type="text" Nullable="false" />
+    <Property Name="teldev" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rkmkwm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobdev" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="deta" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fatora">
+    <Key>
+      <PropertyRef Name="idfa" />
+    </Key>
+    <Property Name="idfa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idwit" Type="int" Nullable="false" />
+    <Property Name="dafat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="typp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="agmly" Type="money" Nullable="false" />
+    <Property Name="mdfo" Type="money" Nullable="false" />
+    <Property Name="mtb" Type="money" Nullable="false" />
+    <Property Name="khasm" Type="money" Nullable="false" />
+    <Property Name="delv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="devmo" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+    <Property Name="mtbty" Type="int" Nullable="false" />
+    <Property Name="nmtlb" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usernm" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fatora2">
+    <Key>
+      <PropertyRef Name="idfa" />
+    </Key>
+    <Property Name="idfa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nmtlb" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usernm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dafat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="timfat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="int" Nullable="false" />
+    <Property Name="nmmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="addr" Type="text" Nullable="false" />
+    <Property Name="tb3a" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="typp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="agmly" Type="money" Nullable="false" />
+    <Property Name="khasm" Type="money" Nullable="false" />
+    <Property Name="adafy" Type="money" Nullable="false" />
+    <Property Name="mdfo" Type="money" Nullable="false" />
+    <Property Name="ba2y" Type="money" Nullable="false" />
+    <Property Name="delv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="devmo" Type="money" Nullable="false" />
+    <Property Name="done" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fatoramsh">
+    <Key>
+      <PropertyRef Name="idfa" />
+    </Key>
+    <Property Name="idfa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idwit" Type="int" Nullable="false" />
+    <Property Name="dafat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="typp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="agmly" Type="money" Nullable="false" />
+    <Property Name="mdfo" Type="money" Nullable="false" />
+    <Property Name="mtb" Type="money" Nullable="false" />
+    <Property Name="khasm" Type="money" Nullable="false" />
+    <Property Name="delv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="devmo" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+    <Property Name="mtbty" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmtlb" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usernm" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mby3t">
+    <Key>
+      <PropertyRef Name="idsa" />
+    </Key>
+    <Property Name="idsa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idfat" Type="int" Nullable="false" />
+    <Property Name="idwai" Type="int" Nullable="false" />
+    <Property Name="dafat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="int" Nullable="false" />
+    <Property Name="telmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cdsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmbr" Type="int" Nullable="false" />
+    <Property Name="kmya" Type="float" Nullable="false" />
+    <Property Name="kmst" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="whda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tyba" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nzafa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="zbhaa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmbzb" Type="int" Nullable="false" />
+    <Property Name="khdma" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmkhd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="srzb" Type="money" Nullable="false" />
+    <Property Name="srkhd" Type="money" Nullable="false" />
+    <Property Name="srkdag" Type="money" Nullable="false" />
+    <Property Name="srdev" Type="money" Nullable="false" />
+    <Property Name="sawh" Type="money" Nullable="false" />
+    <Property Name="safy" Type="money" Nullable="false" />
+    <Property Name="clnn" Type="money" Nullable="false" />
+    <Property Name="agmaly" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+    <Property Name="brcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usernm" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mby3t2">
+    <Key>
+      <PropertyRef Name="idsa" />
+    </Key>
+    <Property Name="idsa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idfat" Type="int" Nullable="false" />
+    <Property Name="usernm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dafat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="int" Nullable="false" />
+    <Property Name="nmmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="brcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kmya" Type="float" Nullable="false" />
+    <Property Name="sawh" Type="money" Nullable="false" />
+    <Property Name="safy" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.mdcust' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mdcust">
+    <Key>
+      <PropertyRef Name="code" />
+      <PropertyRef Name="amld" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="idcus" />
+      <PropertyRef Name="tecus" />
+      <PropertyRef Name="nmcus" />
+      <PropertyRef Name="cash" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="code" Type="int" Nullable="false" />
+    <Property Name="amld" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="int" Nullable="false" />
+    <Property Name="idcus" Type="int" Nullable="false" />
+    <Property Name="tecus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmcus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cash" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mddev">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="amld" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="amldINT" Type="int" Nullable="false" />
+    <Property Name="tedev" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmdev" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cash" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.mdfokz' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mdfokz">
+    <Key>
+      <PropertyRef Name="coaml" />
+      <PropertyRef Name="daaml" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="timal" />
+      <PropertyRef Name="cashnm" />
+      <PropertyRef Name="nmmn" />
+      <PropertyRef Name="amelty" />
+      <PropertyRef Name="cashm" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="coaml" Type="int" Nullable="false" />
+    <Property Name="daaml" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="int" Nullable="false" />
+    <Property Name="timal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cashnm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmmn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="amelty" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cashm" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.mdmwrd' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mdmwrd">
+    <Key>
+      <PropertyRef Name="code" />
+      <PropertyRef Name="amld" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="idcus" />
+      <PropertyRef Name="tecus" />
+      <PropertyRef Name="nmcus" />
+      <PropertyRef Name="cash" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="code" Type="int" Nullable="false" />
+    <Property Name="amld" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idcus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tecus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmcus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cash" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mnsrf">
+    <Key>
+      <PropertyRef Name="idam" />
+    </Key>
+    <Property Name="idam" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idsa" Type="int" Nullable="false" />
+    <Property Name="dateint" Type="int" Nullable="false" />
+    <Property Name="usnm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="srdate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="msrnm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="wahda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tyam" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kmya" Type="float" Nullable="false" />
+    <Property Name="kmyst" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="deta" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mnsrf2">
+    <Key>
+      <PropertyRef Name="idam" />
+    </Key>
+    <Property Name="idam" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idsa" Type="int" Nullable="false" />
+    <Property Name="dateint" Type="int" Nullable="false" />
+    <Property Name="usnm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="srdate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="msrnm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tyam" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kmya" Type="float" Nullable="false" />
+    <Property Name="deta" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.mrtg3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mrtg3">
+    <Key>
+      <PropertyRef Name="mrdate" />
+      <PropertyRef Name="datint" />
+      <PropertyRef Name="nmmrt" />
+      <PropertyRef Name="cdsnf" />
+      <PropertyRef Name="nmsnf" />
+      <PropertyRef Name="whda" />
+      <PropertyRef Name="cdfat" />
+      <PropertyRef Name="kmmsh" />
+      <PropertyRef Name="kmmrtko" />
+      <PropertyRef Name="kmmrtstr" />
+      <PropertyRef Name="kymrt" />
+      <PropertyRef Name="samrt" />
+      <PropertyRef Name="tfacel" />
+    </Key>
+    <Property Name="mrdate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="datint" Type="int" Nullable="false" />
+    <Property Name="nmmrt" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cdsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="whda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cdfat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kmmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kmmrtko" Type="float" Nullable="false" />
+    <Property Name="kmmrtstr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kymrt" Type="money" Nullable="false" />
+    <Property Name="samrt" Type="money" Nullable="false" />
+    <Property Name="tfacel" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.mrtg3msh' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mrtg3msh">
+    <Key>
+      <PropertyRef Name="mrdate" />
+      <PropertyRef Name="datint" />
+      <PropertyRef Name="nmmrt" />
+      <PropertyRef Name="cdsnf" />
+      <PropertyRef Name="nmsnf" />
+      <PropertyRef Name="whda" />
+      <PropertyRef Name="cdfat" />
+      <PropertyRef Name="kmmsh" />
+      <PropertyRef Name="kmmrtko" />
+      <PropertyRef Name="kmmrtstr" />
+      <PropertyRef Name="kymrt" />
+      <PropertyRef Name="samrt" />
+      <PropertyRef Name="tfacel" />
+    </Key>
+    <Property Name="mrdate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="datint" Type="int" Nullable="false" />
+    <Property Name="nmmrt" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cdsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="whda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cdfat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kmmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kmmrtko" Type="float" Nullable="false" />
+    <Property Name="kmmrtstr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kymrt" Type="money" Nullable="false" />
+    <Property Name="samrt" Type="money" Nullable="false" />
+    <Property Name="tfacel" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.mscust' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mscust">
+    <Key>
+      <PropertyRef Name="code" />
+      <PropertyRef Name="amlda" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="idcus" />
+      <PropertyRef Name="tecus" />
+      <PropertyRef Name="nmcus" />
+      <PropertyRef Name="cash" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="code" Type="int" Nullable="false" />
+    <Property Name="amlda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="int" Nullable="false" />
+    <Property Name="idcus" Type="int" Nullable="false" />
+    <Property Name="tecus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmcus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cash" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.msdelv' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="msdelv">
+    <Key>
+      <PropertyRef Name="code" />
+      <PropertyRef Name="amlda" />
+      <PropertyRef Name="amldINT" />
+      <PropertyRef Name="tedev" />
+      <PropertyRef Name="nmdev" />
+      <PropertyRef Name="cash" />
+      <PropertyRef Name="mlhz" />
+    </Key>
+    <Property Name="code" Type="int" Nullable="false" />
+    <Property Name="amlda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="amldINT" Type="int" Nullable="false" />
+    <Property Name="tedev" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmdev" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cash" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.mshtryat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mshtryat">
+    <Key>
+      <PropertyRef Name="idfat" />
+      <PropertyRef Name="idwai" />
+      <PropertyRef Name="dafat" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="telmsh" />
+      <PropertyRef Name="nmmsh" />
+      <PropertyRef Name="cdsnf" />
+      <PropertyRef Name="nmsnf" />
+      <PropertyRef Name="nmbr" />
+      <PropertyRef Name="kmya" />
+      <PropertyRef Name="kmst" />
+      <PropertyRef Name="whda" />
+      <PropertyRef Name="tyba" />
+      <PropertyRef Name="nzafa" />
+      <PropertyRef Name="zbhaa" />
+      <PropertyRef Name="nmbzb" />
+      <PropertyRef Name="khdma" />
+      <PropertyRef Name="nmkhd" />
+      <PropertyRef Name="srzb" />
+      <PropertyRef Name="srkhd" />
+      <PropertyRef Name="srkdag" />
+      <PropertyRef Name="srdev" />
+      <PropertyRef Name="sawh" />
+      <PropertyRef Name="safy" />
+      <PropertyRef Name="clnn" />
+      <PropertyRef Name="agmaly" />
+      <PropertyRef Name="mlhz" />
+      <PropertyRef Name="brcode" />
+      <PropertyRef Name="usernm" />
+    </Key>
+    <Property Name="idfat" Type="int" Nullable="false" />
+    <Property Name="idwai" Type="int" Nullable="false" />
+    <Property Name="dafat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="int" Nullable="false" />
+    <Property Name="telmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cdsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmbr" Type="int" Nullable="false" />
+    <Property Name="kmya" Type="float" Nullable="false" />
+    <Property Name="kmst" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="whda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tyba" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nzafa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="zbhaa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmbzb" Type="int" Nullable="false" />
+    <Property Name="khdma" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmkhd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="srzb" Type="money" Nullable="false" />
+    <Property Name="srkhd" Type="money" Nullable="false" />
+    <Property Name="srkdag" Type="money" Nullable="false" />
+    <Property Name="srdev" Type="money" Nullable="false" />
+    <Property Name="sawh" Type="money" Nullable="false" />
+    <Property Name="safy" Type="money" Nullable="false" />
+    <Property Name="clnn" Type="money" Nullable="false" />
+    <Property Name="agmaly" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+    <Property Name="brcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usernm" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msmwrd">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="amlda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idcus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tecus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmcus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cash" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msrofkz">
+    <Key>
+      <PropertyRef Name="coaml" />
+    </Key>
+    <Property Name="coaml" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="amld" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="int" Nullable="false" />
+    <Property Name="timal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cashnm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmmn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="amelty" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cashs" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mwrd">
+    <Key>
+      <PropertyRef Name="idcu" />
+    </Key>
+    <Property Name="idcu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fida" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmcu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="addr" Type="text" Nullable="false" />
+    <Property Name="dorr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="shaa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tele" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="teah" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tead" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tkym" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.shakl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="shakl">
+    <Key>
+      <PropertyRef Name="ck1" />
+    </Key>
+    <Property Name="ck1" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.tnbeh' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tnbeh">
+    <Key>
+      <PropertyRef Name="datetn" />
+      <PropertyRef Name="daint" />
+      <PropertyRef Name="timtn" />
+      <PropertyRef Name="timint" />
+      <PropertyRef Name="tntyp" />
+      <PropertyRef Name="tntex" />
+    </Key>
+    <Property Name="datetn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="daint" Type="int" Nullable="false" />
+    <Property Name="timtn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="timint" Type="int" Nullable="false" />
+    <Property Name="tntyp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tntex" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.ts3er' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ts3er">
+    <Key>
+      <PropertyRef Name="idsn" />
+      <PropertyRef Name="nmsn" />
+      <PropertyRef Name="crdsnf" />
+      <PropertyRef Name="whdaa" />
+      <PropertyRef Name="twrprc" />
+      <PropertyRef Name="prdate" />
+      <PropertyRef Name="gmla" />
+      <PropertyRef Name="halfgmla" />
+      <PropertyRef Name="custpr" />
+      <PropertyRef Name="clnn" />
+      <PropertyRef Name="okra" />
+      <PropertyRef Name="srok" />
+    </Key>
+    <Property Name="idsn" Type="int" Nullable="false" />
+    <Property Name="nmsn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="crdsnf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="whdaa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="twrprc" Type="money" Nullable="false" />
+    <Property Name="prdate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="gmla" Type="money" Nullable="false" />
+    <Property Name="halfgmla" Type="money" Nullable="false" />
+    <Property Name="custpr" Type="money" Nullable="false" />
+    <Property Name="clnn" Type="money" Nullable="false" />
+    <Property Name="okra" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="srok" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="idusr" />
+    </Key>
+    <Property Name="idusr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usnam" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pswrd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck3" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck4" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck5" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck6" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck7" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck8" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck9" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck10" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck11" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck12" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck13" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck14" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck15" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck16" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck17" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck18" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck19" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck20" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck21" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck22" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck23" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck24" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck25" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck26" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck27" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck28" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck29" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck30" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck31" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck32" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck33" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck34" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck35" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck36" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck37" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck38" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck39" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck40" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck41" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck42" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck43" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck44" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck45" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck46" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck47" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck48" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck49" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck50" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck51" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck52" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck53" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck54" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck55" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck56" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck57" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck58" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck59" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck60" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck61" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck62" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck63" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck64" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck65" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck66" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck67" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck68" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck69" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck70" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck71" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck72" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck73" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck74" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck75" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck76" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck77" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck78" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck79" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck80" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck81" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck82" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck83" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck84" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck85" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck86" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck87" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck88" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck89" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck90" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck91" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ck92" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="block" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.waitr' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="waitr">
+    <Key>
+      <PropertyRef Name="idwit" />
+      <PropertyRef Name="idfat" />
+      <PropertyRef Name="dafa" />
+      <PropertyRef Name="telmsh" />
+      <PropertyRef Name="nmmsh" />
+      <PropertyRef Name="addcu" />
+      <PropertyRef Name="typp" />
+      <PropertyRef Name="devty" />
+      <PropertyRef Name="devnm" />
+      <PropertyRef Name="devmo" />
+      <PropertyRef Name="khdma" />
+      <PropertyRef Name="safy" />
+      <PropertyRef Name="mdfo" />
+      <PropertyRef Name="baya" />
+      <PropertyRef Name="mlhz" />
+      <PropertyRef Name="khasm" />
+      <PropertyRef Name="nmtlb" />
+      <PropertyRef Name="usernm" />
+    </Key>
+    <Property Name="idwit" Type="int" Nullable="false" />
+    <Property Name="idfat" Type="int" Nullable="false" />
+    <Property Name="dafa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="addcu" Type="text" Nullable="false" />
+    <Property Name="typp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="devty" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="devnm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="devmo" Type="money" Nullable="false" />
+    <Property Name="khdma" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="safy" Type="money" Nullable="false" />
+    <Property Name="mdfo" Type="money" Nullable="false" />
+    <Property Name="baya" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+    <Property Name="khasm" Type="money" Nullable="false" />
+    <Property Name="nmtlb" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usernm" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'el3mary.dbo.waitrmsh' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="waitrmsh">
+    <Key>
+      <PropertyRef Name="idwit" />
+      <PropertyRef Name="idfat" />
+      <PropertyRef Name="dafa" />
+      <PropertyRef Name="telmsh" />
+      <PropertyRef Name="nmmsh" />
+      <PropertyRef Name="addcu" />
+      <PropertyRef Name="typp" />
+      <PropertyRef Name="devty" />
+      <PropertyRef Name="devnm" />
+      <PropertyRef Name="devmo" />
+      <PropertyRef Name="khdma" />
+      <PropertyRef Name="safy" />
+      <PropertyRef Name="mdfo" />
+      <PropertyRef Name="baya" />
+      <PropertyRef Name="mlhz" />
+      <PropertyRef Name="khasm" />
+      <PropertyRef Name="nmtlb" />
+    </Key>
+    <Property Name="idwit" Type="int" Nullable="false" />
+    <Property Name="idfat" Type="int" Nullable="false" />
+    <Property Name="dafa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nmmsh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="addcu" Type="text" Nullable="false" />
+    <Property Name="typp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="devty" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="devnm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="devmo" Type="money" Nullable="false" />
+    <Property Name="khdma" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="safy" Type="money" Nullable="false" />
+    <Property Name="mdfo" Type="money" Nullable="false" />
+    <Property Name="baya" Type="money" Nullable="false" />
+    <Property Name="mlhz" Type="text" Nullable="false" />
+    <Property Name="khasm" Type="money" Nullable="false" />
+    <Property Name="nmtlb" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ERP_ModelStoreContainer">
+    <EntitySet Name="addmwzf" EntityType="Self.addmwzf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="asnaf" EntityType="Self.asnaf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="casher" EntityType="Self.casher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="crditm" EntityType="Self.crditm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="custom" EntityType="Self.custom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="delv" EntityType="Self.delv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fatora" EntityType="Self.fatora" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fatora2" EntityType="Self.fatora2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fatoramsh" EntityType="Self.fatoramsh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mby3t" EntityType="Self.mby3t" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mby3t2" EntityType="Self.mby3t2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mddev" EntityType="Self.mddev" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mnsrf" EntityType="Self.mnsrf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mnsrf2" EntityType="Self.mnsrf2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="msmwrd" EntityType="Self.msmwrd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="msrofkz" EntityType="Self.msrofkz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mwrd" EntityType="Self.mwrd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="adkhal" EntityType="Self.adkhal" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [adkhal].[twdate] AS [twdate], 
+    [adkhal].[dateint] AS [dateint], 
+    [adkhal].[cofat] AS [cofat], 
+    [adkhal].[msnm] AS [msnm], 
+    [adkhal].[tyam] AS [tyam], 
+    [adkhal].[idsnf] AS [idsnf], 
+    [adkhal].[crditm] AS [crditm], 
+    [adkhal].[nmsnf] AS [nmsnf], 
+    [adkhal].[whda] AS [whda], 
+    [adkhal].[tysnf] AS [tysnf], 
+    [adkhal].[kaym] AS [kaym], 
+    [adkhal].[trod] AS [trod], 
+    [adkhal].[farkh] AS [farkh], 
+    [adkhal].[kmmd5] AS [kmmd5], 
+    [adkhal].[kmstr] AS [kmstr], 
+    [adkhal].[shrpr] AS [shrpr], 
+    [adkhal].[hdtlb] AS [hdtlb], 
+    [adkhal].[hdtlbstr] AS [hdtlbstr], 
+    [adkhal].[twrpr] AS [twrpr], 
+    [adkhal].[clnn] AS [clnn], 
+    [adkhal].[oksr] AS [oksr], 
+    [adkhal].[gmlapr] AS [gmlapr], 
+    [adkhal].[hagmpr] AS [hagmpr], 
+    [adkhal].[msthlkpr] AS [msthlkpr], 
+    [adkhal].[mlhz] AS [mlhz]
+    FROM [dbo].[adkhal] AS [adkhal]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mdcust" EntityType="Self.mdcust" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mdcust].[code] AS [code], 
+    [mdcust].[amld] AS [amld], 
+    [mdcust].[daint] AS [daint], 
+    [mdcust].[idcus] AS [idcus], 
+    [mdcust].[tecus] AS [tecus], 
+    [mdcust].[nmcus] AS [nmcus], 
+    [mdcust].[cash] AS [cash], 
+    [mdcust].[mlhz] AS [mlhz]
+    FROM [dbo].[mdcust] AS [mdcust]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mdfokz" EntityType="Self.mdfokz" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mdfokz].[coaml] AS [coaml], 
+    [mdfokz].[daaml] AS [daaml], 
+    [mdfokz].[daint] AS [daint], 
+    [mdfokz].[timal] AS [timal], 
+    [mdfokz].[cashnm] AS [cashnm], 
+    [mdfokz].[nmmn] AS [nmmn], 
+    [mdfokz].[amelty] AS [amelty], 
+    [mdfokz].[cashm] AS [cashm], 
+    [mdfokz].[mlhz] AS [mlhz]
+    FROM [dbo].[mdfokz] AS [mdfokz]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mdmwrd" EntityType="Self.mdmwrd" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mdmwrd].[code] AS [code], 
+    [mdmwrd].[amld] AS [amld], 
+    [mdmwrd].[daint] AS [daint], 
+    [mdmwrd].[idcus] AS [idcus], 
+    [mdmwrd].[tecus] AS [tecus], 
+    [mdmwrd].[nmcus] AS [nmcus], 
+    [mdmwrd].[cash] AS [cash], 
+    [mdmwrd].[mlhz] AS [mlhz]
+    FROM [dbo].[mdmwrd] AS [mdmwrd]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mrtg3" EntityType="Self.mrtg3" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mrtg3].[mrdate] AS [mrdate], 
+    [mrtg3].[datint] AS [datint], 
+    [mrtg3].[nmmrt] AS [nmmrt], 
+    [mrtg3].[cdsnf] AS [cdsnf], 
+    [mrtg3].[nmsnf] AS [nmsnf], 
+    [mrtg3].[whda] AS [whda], 
+    [mrtg3].[cdfat] AS [cdfat], 
+    [mrtg3].[kmmsh] AS [kmmsh], 
+    [mrtg3].[kmmrtko] AS [kmmrtko], 
+    [mrtg3].[kmmrtstr] AS [kmmrtstr], 
+    [mrtg3].[kymrt] AS [kymrt], 
+    [mrtg3].[samrt] AS [samrt], 
+    [mrtg3].[tfacel] AS [tfacel]
+    FROM [dbo].[mrtg3] AS [mrtg3]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mrtg3msh" EntityType="Self.mrtg3msh" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mrtg3msh].[mrdate] AS [mrdate], 
+    [mrtg3msh].[datint] AS [datint], 
+    [mrtg3msh].[nmmrt] AS [nmmrt], 
+    [mrtg3msh].[cdsnf] AS [cdsnf], 
+    [mrtg3msh].[nmsnf] AS [nmsnf], 
+    [mrtg3msh].[whda] AS [whda], 
+    [mrtg3msh].[cdfat] AS [cdfat], 
+    [mrtg3msh].[kmmsh] AS [kmmsh], 
+    [mrtg3msh].[kmmrtko] AS [kmmrtko], 
+    [mrtg3msh].[kmmrtstr] AS [kmmrtstr], 
+    [mrtg3msh].[kymrt] AS [kymrt], 
+    [mrtg3msh].[samrt] AS [samrt], 
+    [mrtg3msh].[tfacel] AS [tfacel]
+    FROM [dbo].[mrtg3msh] AS [mrtg3msh]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mscust" EntityType="Self.mscust" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mscust].[code] AS [code], 
+    [mscust].[amlda] AS [amlda], 
+    [mscust].[daint] AS [daint], 
+    [mscust].[idcus] AS [idcus], 
+    [mscust].[tecus] AS [tecus], 
+    [mscust].[nmcus] AS [nmcus], 
+    [mscust].[cash] AS [cash], 
+    [mscust].[mlhz] AS [mlhz]
+    FROM [dbo].[mscust] AS [mscust]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="msdelv" EntityType="Self.msdelv" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [msdelv].[code] AS [code], 
+    [msdelv].[amlda] AS [amlda], 
+    [msdelv].[amldINT] AS [amldINT], 
+    [msdelv].[tedev] AS [tedev], 
+    [msdelv].[nmdev] AS [nmdev], 
+    [msdelv].[cash] AS [cash], 
+    [msdelv].[mlhz] AS [mlhz]
+    FROM [dbo].[msdelv] AS [msdelv]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mshtryat" EntityType="Self.mshtryat" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mshtryat].[idfat] AS [idfat], 
+    [mshtryat].[idwai] AS [idwai], 
+    [mshtryat].[dafat] AS [dafat], 
+    [mshtryat].[daint] AS [daint], 
+    [mshtryat].[telmsh] AS [telmsh], 
+    [mshtryat].[nmmsh] AS [nmmsh], 
+    [mshtryat].[cdsnf] AS [cdsnf], 
+    [mshtryat].[nmsnf] AS [nmsnf], 
+    [mshtryat].[nmbr] AS [nmbr], 
+    [mshtryat].[kmya] AS [kmya], 
+    [mshtryat].[kmst] AS [kmst], 
+    [mshtryat].[whda] AS [whda], 
+    [mshtryat].[tyba] AS [tyba], 
+    [mshtryat].[nzafa] AS [nzafa], 
+    [mshtryat].[zbhaa] AS [zbhaa], 
+    [mshtryat].[nmbzb] AS [nmbzb], 
+    [mshtryat].[khdma] AS [khdma], 
+    [mshtryat].[nmkhd] AS [nmkhd], 
+    [mshtryat].[srzb] AS [srzb], 
+    [mshtryat].[srkhd] AS [srkhd], 
+    [mshtryat].[srkdag] AS [srkdag], 
+    [mshtryat].[srdev] AS [srdev], 
+    [mshtryat].[sawh] AS [sawh], 
+    [mshtryat].[safy] AS [safy], 
+    [mshtryat].[clnn] AS [clnn], 
+    [mshtryat].[agmaly] AS [agmaly], 
+    [mshtryat].[mlhz] AS [mlhz], 
+    [mshtryat].[brcode] AS [brcode], 
+    [mshtryat].[usernm] AS [usernm]
+    FROM [dbo].[mshtryat] AS [mshtryat]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="shakl" EntityType="Self.shakl" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [shakl].[ck1] AS [ck1]
+    FROM [dbo].[shakl] AS [shakl]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tnbeh" EntityType="Self.tnbeh" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tnbeh].[datetn] AS [datetn], 
+    [tnbeh].[daint] AS [daint], 
+    [tnbeh].[timtn] AS [timtn], 
+    [tnbeh].[timint] AS [timint], 
+    [tnbeh].[tntyp] AS [tntyp], 
+    [tnbeh].[tntex] AS [tntex]
+    FROM [dbo].[tnbeh] AS [tnbeh]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ts3er" EntityType="Self.ts3er" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ts3er].[idsn] AS [idsn], 
+    [ts3er].[nmsn] AS [nmsn], 
+    [ts3er].[crdsnf] AS [crdsnf], 
+    [ts3er].[whdaa] AS [whdaa], 
+    [ts3er].[twrprc] AS [twrprc], 
+    [ts3er].[prdate] AS [prdate], 
+    [ts3er].[gmla] AS [gmla], 
+    [ts3er].[halfgmla] AS [halfgmla], 
+    [ts3er].[custpr] AS [custpr], 
+    [ts3er].[clnn] AS [clnn], 
+    [ts3er].[okra] AS [okra], 
+    [ts3er].[srok] AS [srok]
+    FROM [dbo].[ts3er] AS [ts3er]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="waitr" EntityType="Self.waitr" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [waitr].[idwit] AS [idwit], 
+    [waitr].[idfat] AS [idfat], 
+    [waitr].[dafa] AS [dafa], 
+    [waitr].[telmsh] AS [telmsh], 
+    [waitr].[nmmsh] AS [nmmsh], 
+    [waitr].[addcu] AS [addcu], 
+    [waitr].[typp] AS [typp], 
+    [waitr].[devty] AS [devty], 
+    [waitr].[devnm] AS [devnm], 
+    [waitr].[devmo] AS [devmo], 
+    [waitr].[khdma] AS [khdma], 
+    [waitr].[safy] AS [safy], 
+    [waitr].[mdfo] AS [mdfo], 
+    [waitr].[baya] AS [baya], 
+    [waitr].[mlhz] AS [mlhz], 
+    [waitr].[khasm] AS [khasm], 
+    [waitr].[nmtlb] AS [nmtlb], 
+    [waitr].[usernm] AS [usernm]
+    FROM [dbo].[waitr] AS [waitr]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="waitrmsh" EntityType="Self.waitrmsh" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [waitrmsh].[idwit] AS [idwit], 
+    [waitrmsh].[idfat] AS [idfat], 
+    [waitrmsh].[dafa] AS [dafa], 
+    [waitrmsh].[telmsh] AS [telmsh], 
+    [waitrmsh].[nmmsh] AS [nmmsh], 
+    [waitrmsh].[addcu] AS [addcu], 
+    [waitrmsh].[typp] AS [typp], 
+    [waitrmsh].[devty] AS [devty], 
+    [waitrmsh].[devnm] AS [devnm], 
+    [waitrmsh].[devmo] AS [devmo], 
+    [waitrmsh].[khdma] AS [khdma], 
+    [waitrmsh].[safy] AS [safy], 
+    [waitrmsh].[mdfo] AS [mdfo], 
+    [waitrmsh].[baya] AS [baya], 
+    [waitrmsh].[mlhz] AS [mlhz], 
+    [waitrmsh].[khasm] AS [khasm], 
+    [waitrmsh].[nmtlb] AS [nmtlb]
+    FROM [dbo].[waitrmsh] AS [waitrmsh]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ERPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Branches">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="B_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="B_Phone" Type="varchar" MaxLength="50" />
+    <Property Name="B_Addr" Type="varchar" MaxLength="250" />
+    <Property Name="B_Maneger" Type="varchar" MaxLength="50" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="IDCust" />
+    </Key>
+    <Property Name="IDCust" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateFi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NameCust" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddrCust" Type="text" Nullable="false" />
+    <Property Name="FloorCust" Type="varchar" MaxLength="50" />
+    <Property Name="apartCuat" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneCust" Type="varchar" MaxLength="50" />
+    <Property Name="MobileCust" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MobilePlus" Type="varchar" MaxLength="50" />
+    <Property Name="TypeCust" Type="varchar" MaxLength="50" />
+    <Property Name="DetailsCust" Type="text" />
+  </EntityType>
+  <EntityType Name="Deleverys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="D_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="D_Phone" Type="varchar" MaxLength="50" />
+    <Property Name="D_Addr" Type="varchar" MaxLength="250" />
+    <Property Name="D_NaID" Type="varchar" MaxLength="50" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <EntityType Name="DeliveryAreas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="A_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="A_Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <EntityType Name="Discounts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dis_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dis_Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="IDInvoice" />
+    </Key>
+    <Property Name="IDInvoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateInv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustID" Type="int" Nullable="false" />
+    <Property Name="TypInv" Type="varchar" MaxLength="50" />
+    <Property Name="NetBill" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="additional" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ShipPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalInvo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Paid" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TherRest" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DelvID" Type="varchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="DetailsBill" Type="text" />
+    <Property Name="Return" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemGroup">
+    <Key>
+      <PropertyRef Name="IDGr" />
+    </Key>
+    <Property Name="IDGr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameGr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TypGr" Type="varchar" MaxLength="50" />
+    <Property Name="GrDet" Type="text" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="IDItem" />
+    </Key>
+    <Property Name="IDItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddDate" Type="int" Nullable="false" />
+    <Property Name="Imag" Type="varbinary(max)" />
+    <Property Name="NameIt" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GroupIt" Type="int" Nullable="false" />
+    <Property Name="TypiT" Type="int" Nullable="false" />
+    <Property Name="UnitIt" Type="int" Nullable="false" />
+    <Property Name="BrcoIt" Type="int" />
+    <Property Name="ItDet" Type="text" />
+  </EntityType>
+  <EntityType Name="ItemsType">
+    <Key>
+      <PropertyRef Name="IdType" />
+    </Key>
+    <Property Name="IdType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Details" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ItemsUnit">
+    <Key>
+      <PropertyRef Name="Idunit" />
+    </Key>
+    <Property Name="Idunit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameUnit" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Details" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Keepers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kp_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kp_Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Kp_Addr" Type="varchar" MaxLength="250" />
+    <Property Name="Kp_NaID" Type="varchar" MaxLength="50" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <EntityType Name="Offers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="O_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="P_Quantity" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="F_Quantity" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IsFree" Type="bit" Nullable="false" />
+    <Property Name="CashBack" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <EntityType Name="OutofStore">
+    <Key>
+      <PropertyRef Name="IDMove" />
+    </Key>
+    <Property Name="IDMove" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDSell" Type="int" />
+    <Property Name="DateMove" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="CustID" Type="int" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TypeMove" Type="varchar" MaxLength="50" />
+    <Property Name="DetailsMove" Type="text" />
+  </EntityType>
+  <EntityType Name="pricing">
+    <Key>
+      <PropertyRef Name="IDMove" />
+    </Key>
+    <Property Name="IDMove" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDItem" Type="int" Nullable="false" />
+    <Property Name="DateMove" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SupplyPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="WholesPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="HalfWhoPr" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SellingPr" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DetMove" Type="text" />
+  </EntityType>
+  <EntityType Name="Returns">
+    <Key>
+      <PropertyRef Name="IDMove" />
+    </Key>
+    <Property Name="IDMove" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDReturn" Type="int" Nullable="false" />
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="WaitID" Type="int" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="CustID" Type="int" />
+    <Property Name="DateMove" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DaINT" Type="float" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="Quant" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UnitItem" Type="varchar" MaxLength="50" />
+    <Property Name="UnitPrice" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DetiMove" Type="text" />
+  </EntityType>
+  <EntityType Name="ReturnsInvoice">
+    <Key>
+      <PropertyRef Name="IDReturn" />
+    </Key>
+    <Property Name="IDReturn" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDInvoice" Type="int" Nullable="false" />
+    <Property Name="DateInv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustID" Type="int" Nullable="false" />
+    <Property Name="TypInv" Type="varchar" MaxLength="50" />
+    <Property Name="NetBill" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="additional" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ShipPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalInvo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Paid" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TherRest" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DelvID" Type="varchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="DetailsBill" Type="text" />
+  </EntityType>
+  <EntityType Name="Safes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="K_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="K_Phone" Type="varchar" MaxLength="50" />
+    <Property Name="K_Addr" Type="varchar" MaxLength="250" />
+    <Property Name="K_Keeper" Type="varchar" MaxLength="50" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <EntityType Name="Sales">
+    <Key>
+      <PropertyRef Name="IDMove" />
+    </Key>
+    <Property Name="IDMove" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="WaitID" Type="int" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="CustID" Type="int" />
+    <Property Name="DateMove" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DaINT" Type="float" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="Quant" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UnitItem" Type="varchar" MaxLength="50" />
+    <Property Name="UnitPrice" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DetiMove" Type="text" />
+    <Property Name="Return" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stores">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="S_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="S_Phone" Type="varchar" MaxLength="50" />
+    <Property Name="S_Addr" Type="varchar" MaxLength="250" />
+    <Property Name="S_Keeper" Type="varchar" MaxLength="50" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <EntityType Name="Supply">
+    <Key>
+      <PropertyRef Name="IDMove" />
+    </Key>
+    <Property Name="IDMove" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateMove" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDBill" Type="int" />
+    <Property Name="IDSupplier" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="TypMove" Type="varchar" MaxLength="50" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PurPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="validity" Type="int" />
+    <Property Name="limitItem" Type="int" />
+    <Property Name="DetailsMove" Type="text" />
+  </EntityType>
+  <EntityType Name="Taxs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="IDUser" />
+    </Key>
+    <Property Name="IDUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameUser" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pass" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prmession" Type="int" Nullable="false" />
+    <Property Name="LevelUser" Type="int" />
+    <Property Name="ActiveUser" Type="int" Nullable="false" />
+    <Property Name="DetUser" Type="text" />
+  </EntityType>
+  <EntityType Name="WaitInvoice">
+    <Key>
+      <PropertyRef Name="IDWait" />
+    </Key>
+    <Property Name="IDWait" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="DateInv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustID" Type="int" />
+    <Property Name="TypInv" Type="varchar" MaxLength="50" />
+    <Property Name="NetBill" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="additional" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ShipPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalInvo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TherRest" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DelvID" Type="int" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="DetailsBill" Type="text" />
+  </EntityType>
+  <EntityContainer Name="ERPModelStoreContainer">
+    <EntitySet Name="Branches" EntityType="Self.Branches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deleverys" EntityType="Self.Deleverys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeliveryAreas" EntityType="Self.DeliveryAreas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Discounts" EntityType="Self.Discounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemGroup" EntityType="Self.ItemGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemsType" EntityType="Self.ItemsType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemsUnit" EntityType="Self.ItemsUnit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Keepers" EntityType="Self.Keepers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Offers" EntityType="Self.Offers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OutofStore" EntityType="Self.OutofStore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pricing" EntityType="Self.pricing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Returns" EntityType="Self.Returns" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReturnsInvoice" EntityType="Self.ReturnsInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Safes" EntityType="Self.Safes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stores" EntityType="Self.Stores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supply" EntityType="Self.Supply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Taxs" EntityType="Self.Taxs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WaitInvoice" EntityType="Self.WaitInvoice" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

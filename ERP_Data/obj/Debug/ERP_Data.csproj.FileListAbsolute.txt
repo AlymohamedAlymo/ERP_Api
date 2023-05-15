@@ -1,0 +1,45 @@
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\bin\Debug\ERP_Data.dll.config
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\bin\Debug\ERP_Data.dll
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\bin\Debug\ERP_Data.pdb
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\bin\Debug\EntityFramework.dll
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\bin\Debug\EntityFramework.xml
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.AssemblyReference.cache
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.CoreCompileInputs.cache
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.CopyComplete
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\obj\Debug\ERP_Data.dll
+C:\Users\alimo\Desktop\ERP_Api\ERP_Data\obj\Debug\ERP_Data.pdb
+E:\مشاريع\C#\ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.CoreCompileInputs.cache
+E:\مشاريع\C#\ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.dll
+E:\مشاريع\C#\ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.pdb
+E:\مشاريع\C#\ERP\ERP_Api\ERP_Data\bin\Debug\ERP_Data.dll.config
+E:\مشاريع\C#\ERP\ERP_Api\ERP_Data\bin\Debug\ERP_Data.dll
+E:\مشاريع\C#\ERP\ERP_Api\ERP_Data\bin\Debug\ERP_Data.pdb
+E:\مشاريع\C#\ERP\ERP_Api\ERP_Data\bin\Debug\EntityFramework.dll
+E:\مشاريع\C#\ERP\ERP_Api\ERP_Data\bin\Debug\EntityFramework.xml
+E:\مشاريع\C#\ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.CopyComplete
+E:\مشاريع\C#\ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.AssemblyReference.cache
+E:\مشاريع\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\ERP_Data.dll.config
+E:\مشاريع\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\ERP_Data.dll
+E:\مشاريع\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\ERP_Data.pdb
+E:\مشاريع\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\EntityFramework.dll
+E:\مشاريع\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\EntityFramework.xml
+E:\مشاريع\C#\Doctor ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.CoreCompileInputs.cache
+E:\مشاريع\C#\Doctor ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.CopyComplete
+E:\مشاريع\C#\Doctor ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.dll
+E:\مشاريع\C#\Doctor ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.pdb
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\ERP_Data.dll.config
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\ERP_Data.dll
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\ERP_Data.pdb
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\EntityFramework.dll
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\EntityFramework.xml
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.CopyComplete
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.dll
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.pdb
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.AssemblyReference.cache
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\obj\Debug\ERP_Data.csproj.CoreCompileInputs.cache
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\Newtonsoft.Json.dll
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\التطوير\C#\Doctor ERP\ERP_Api\ERP_Data\bin\Debug\Newtonsoft.Json.xml
