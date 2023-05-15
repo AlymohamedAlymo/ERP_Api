@@ -184,6 +184,7 @@
     <Compile Include="Repositories\POSRep\TaxsRep.cs" />
     <Compile Include="Repositories\POSRep\TypeItemsRep.cs" />
     <Compile Include="Repositories\POSRep\UnitItemsRep.cs" />
+    <Compile Include="Utilities\MapProperties.cs" />
     <Compile Include="ViewModels\InvoiceData.cs" />
   </ItemGroup>
   <ItemGroup>

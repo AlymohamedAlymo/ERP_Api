@@ -128,6 +128,26 @@ namespace ERP_Data.Repositories
             catch { throw new InvalidDataException(); }
         }
 
+
+        public int UpdatePrintingSetting(PrintSetting PSetting)
+        {
+            using (ERPEntities DB = new ERPEntities())
+            {
+                PrintSetting Obj = DB.PrintSettings.FirstOrDefault(u => u.ID == PSetting.ID);
+
+                if (Obj == null) { throw new RecordNotFoundException(); }
+
+                /// Update in PrintSetting
+                Utilities.MapProperties.Map(PSetting, Obj, "ID", "PrinterName");
+
+                int Result = DB.SaveChanges();
+                return Result;
+
+            }
+        }
+
+
+
     }
 
 }

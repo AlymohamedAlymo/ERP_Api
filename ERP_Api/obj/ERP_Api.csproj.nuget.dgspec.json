@@ -89,23 +89,11 @@
         "projectUniqueName": "D:\\التطوير\\C#\\Doctor ERP\\ERP_Api\\ERP_Data\\ERP_Data.csproj",
         "projectName": "ERP_Data",
         "projectPath": "D:\\التطوير\\C#\\Doctor ERP\\ERP_Api\\ERP_Data\\ERP_Data.csproj",
-        "packagesPath": "C:\\Users\\alimo\\.nuget\\packages\\",
-        "projectStyle": "PackagesConfig",
-        "configFilePaths": [
-          "C:\\Users\\alimo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
         "frameworks": {
           "net48": {
             "projectReferences": {}
           }
-        },
-        "packagesConfigPath": "D:\\التطوير\\C#\\Doctor ERP\\ERP_Api\\ERP_Data\\packages.config"
+        }
       },
       "frameworks": {
         "net48": {}
