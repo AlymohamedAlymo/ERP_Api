@@ -1003,6 +1003,7 @@ namespace ERP_Api.Controllers
             }
             catch { return null; }
         }
+
         /// <summary>
         /// Items Data
         /// </summary>
@@ -1044,6 +1045,7 @@ namespace ERP_Api.Controllers
             try { return Newtonsoft.Json.JsonConvert.SerializeObject(Items.UpdateItem(Item)); }
             catch (Exception EX) { return EX.Message; }
         }
+
         /// <summary>
         /// Delete Item
         /// </summary>
