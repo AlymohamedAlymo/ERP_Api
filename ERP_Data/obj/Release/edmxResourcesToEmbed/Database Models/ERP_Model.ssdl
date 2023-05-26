@@ -171,10 +171,10 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="ReportName" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="PaperSize" Type="nchar" MaxLength="5" />
-    <Property Name="NofCopies" Type="nchar" MaxLength="3" />
-    <Property Name="PrinterName" Type="nchar" MaxLength="20" />
+    <Property Name="ReportName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaperSize" Type="varchar" MaxLength="50" />
+    <Property Name="NofCopies" Type="varchar" MaxLength="5" />
+    <Property Name="PrinterName" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Returns">
     <Key>

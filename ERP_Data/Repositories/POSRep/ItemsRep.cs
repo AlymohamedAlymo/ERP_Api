@@ -47,17 +47,26 @@ namespace ERP_Data.Repositories
         //    }
         //}
 
-        public object GetItemsData(int Code)
+        public object GetItemsData(int Code, int RowIndex)
         {
-            //try
-            //{
+            try
+            {
                 object Dt = null;
-                var Db = new ERPEntities();
-                if (Code == 0) Dt = Db.Items.ToList();
-                else Dt = Db.Items.Where(u => u.IDItem == Code).ToList();
+                ERPEntities Db = new ERPEntities();
+                if (Code == 0) { Dt = Db.Items.Skip(RowIndex).Take(50).ToList(); }
+                else { Dt = Db.Items.Where(u => u.IDItem == Code).ToList(); }
                 return Dt;
-            //}
-            //catch { return null; }
+            }
+            catch { return null; }
+        }
+        public int GetCountItemsData()
+        {
+            try
+            {
+                ERPEntities Db = new ERPEntities();
+                return Db.Items.Count();
+            }
+            catch { return 0; }
         }
 
         //public object GetItemsSearchData(string SearchContext)

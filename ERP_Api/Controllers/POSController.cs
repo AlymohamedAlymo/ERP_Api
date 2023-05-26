@@ -1041,19 +1041,23 @@ namespace ERP_Api.Controllers
         }
 
         [HttpGet]
-        [Route("GetItemsData/{Code}")]
-        public ActionResult<string> GetItemsData(int Code)
+        [Route("GetItemsData/{Code}/{RowIndex}")]
+        public ActionResult<string> GetItemsData(int Code, int RowIndex)
         {
-            //try
-            //{
-                object dt = Items.GetItemsData(Code);
-                return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
-            //}
-            //catch
-            //{
-            //    return null;
-            //}
+            try
+            {
+                object Dt = Items.GetItemsData(Code, RowIndex);
+                return Newtonsoft.Json.JsonConvert.SerializeObject(Dt);
+            }
+            catch { return null; }
 
+        }
+        [HttpGet]
+        [Route("GetCountItemsData")]
+        public ActionResult<int> GetCountItemsData()
+        {
+            try { return Items.GetCountItemsData(); }
+            catch { return 0; }
         }
 
 

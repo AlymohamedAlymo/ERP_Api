@@ -3,8 +3,8 @@ namespace ERP_Data.Interfaces
 {
     public interface IItems
     {
-
-        object GetItemsData(int Code);
+        int GetCountItemsData();
+        object GetItemsData(int Code, int RowIndex);
 
         //object GetItemsSearchData(string SearchContext);
 

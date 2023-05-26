@@ -340,9 +340,9 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="ReportName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="PaperSize" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
-    <Property Name="NofCopies" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-    <Property Name="PrinterName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="ReportName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PaperSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NofCopies" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PrinterName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>
