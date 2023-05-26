@@ -973,137 +973,109 @@ namespace ERP_Api.Controllers
 
 
 
-
-
-
-
+        #region Items
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////// Items /////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>
-        /// Items Control
+        /// Advances Search
         /// </summary>
-        /// <param name="SearchContext"></param>
+        /// <param name="NameItem"></param>
+        /// <param name="Match">Name Is Match ?</param>
+        /// <param name="Group"></param>
+        /// <param name="Type"></param>
+        /// <param name="Unit"></param>
+        /// <param name="Barcode"></param>
+        /// <param name="AddDate"></param>
+        /// <param name="NoBarcode"></param>
+        /// <param name="DuplicateBarcode"></param>
+        /// <param name="WithNote"></param>
         /// <returns></returns>
-
-
-
-
-
-
-        //[HttpGet]
-        //[Route("GetItemsOfGroupData/{ItemsGroupID}")]
-        //public ActionResult<string> GetItemsOfGroupData(int ItemsGroupID)
-        //{
-        //    try
-        //    {
-        //        object dt = new();
-        //        dt = Items.GetItemsOfGroupData(ItemsGroupID);
-
-        //        return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-
-        //}
-
-
-        //[HttpGet]
-        //[Route("GetItemsSearchData/{SearchContext}")]
-        //public ActionResult<string> GetItemsData(string SearchContext)
-        //{
-        //    try
-        //    {
-        //        object dt = new();
-        //        dt = Items.GetItemsSearchData(SearchContext);
-
-        //        return Newtonsoft.Json.JsonConvert.SerializeObject(dt);
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-
-        //}
-
         [HttpGet]
         [Route("GetItemsAdvancedSearch/{NameItem}/{Match}/{Group}/{Type}/{Unit}/{Barcode}/{AddDate}/{NoBarcode}/{DuplicateBarcode}/{WithNote}")]
         public ActionResult<string> GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool DuplicateBarcode, bool WithNote)
         {
             try
             {
-               var Dt = Items.GetItemsAdvancedSearch(NameItem, Match, Group, Type, Unit, Barcode, AddDate, NoBarcode, DuplicateBarcode, WithNote);
+               object Dt = Items.GetItemsAdvancedSearch(NameItem, Match, Group, Type, Unit, Barcode, AddDate, NoBarcode, DuplicateBarcode, WithNote);
                return Newtonsoft.Json.JsonConvert.SerializeObject(Dt);
-
             }
             catch { return null; }
-
         }
-
+        /// <summary>
+        /// Items Data
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        [Route("GetItemsData/{Code}/{RowIndex}")]
-        public ActionResult<string> GetItemsData(int Code, int RowIndex)
+        [Route("GetItemsData")]
+        public ActionResult<string> GetItemsData()
         {
             try
             {
-                object Dt = Items.GetItemsData(Code, RowIndex);
+                object Dt = Items.GetItemsData();
                 return Newtonsoft.Json.JsonConvert.SerializeObject(Dt);
             }
             catch { return null; }
-
-        }
-        [HttpGet]
-        [Route("GetCountItemsData")]
-        public ActionResult<int> GetCountItemsData()
-        {
-            try { return Items.GetCountItemsData(); }
-            catch { return 0; }
         }
 
-
+        /// <summary>
+        /// Add New Item
+        /// </summary>
+        /// <param name="Item"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("AddNewItem")]
-        public ActionResult<string> AddNewItem([FromBody] ERP_Data.Database_Models.Item Item)
+        public ActionResult<string> AddNewItem([FromBody] Item Item)
         {
-            try
-            {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(Items.AddNewItem(Item));
-            }
-            catch
-            {
-                return "حدث خطأ";
-            }
+            try { return Newtonsoft.Json.JsonConvert.SerializeObject(Items.AddNewItem(Item)); }
+            catch(Exception EX) { return EX.Message; }
         }
 
-
+        /// <summary>
+        /// Update Item Data
+        /// </summary>
+        /// <param name="Item"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("UpdateItem")]
-        public ActionResult<string> UpdateItem([FromBody] ERP_Data.Database_Models.Item Item)
+        public ActionResult<string> UpdateItem([FromBody] Item Item)
         {
-            try
-            {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(Items.UpdateItem(Item));
-            }
-            catch
-            {
-                return "حدث خطأ";
-            }
+            try { return Newtonsoft.Json.JsonConvert.SerializeObject(Items.UpdateItem(Item)); }
+            catch (Exception EX) { return EX.Message; }
         }
-
+        /// <summary>
+        /// Delete Item
+        /// </summary>
+        /// <param name="Code"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("DeleteItem/{Code}")]
         public ActionResult<string> DeleteItem(int Code)
         {
-            try
-            {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(Items.DeleteItem(Code));
-            }
-            catch
-            {
-
-                return "حدث خطأ";
-            }
+            try { return Newtonsoft.Json.JsonConvert.SerializeObject(Items.DeleteItem(Code)); }
+            catch (Exception EX) { return EX.Message; }
         }
+
+        /// <summary>
+        /// Get Count of Item Is No Priced
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetCountOfUnpricedItems")]
+        public ActionResult<int> GetCountOfUnpricedItems()
+        {
+            try { return Items.GetCountOfUnpricedItems(); }
+            catch (Exception EX) { return EX.HResult; }
+        }
+
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////// End Of Items //////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        #endregion
+
 
 
 
@@ -1382,15 +1354,6 @@ namespace ERP_Api.Controllers
         }
 
 
-
-        [HttpGet]
-        [Route("GetUnpricedItems")]
-        public ActionResult<int> GetUnpricedItems()
-        {
-            try { return Items.GetUnpricedItems(); }
-            catch { return -1; }
-
-        }
 
 
 

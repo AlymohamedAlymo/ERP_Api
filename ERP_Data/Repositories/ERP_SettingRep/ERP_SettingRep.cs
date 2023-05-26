@@ -8,6 +8,7 @@ using ERP_Data.Database_Models;
 using System.Data;
 using System.Data.SqlClient;
 using ERP_Data.CustomExceptions;
+using System.Runtime.ConstrainedExecution;
 
 namespace ERP_Data.Repositories
 {
@@ -29,28 +30,19 @@ namespace ERP_Data.Repositories
 
         public static string GetMatchName(string SearchContext)
         {
-            string cstname = "";
-            for (int a = 0; a < SearchContext.Length; a++)
+            string Str = "";
+            for (int i = 0; i < SearchContext.Length; i++)
             {
-                string chr = SearchContext.Substring(a, 1);
-                if (chr == "ا" || chr == "أ" || chr == "آ" || chr == "إ")
-                    cstname += "[اأآإ]";
-                else if (chr == "ه" || chr == "ة")
-                    cstname += "[ةه]";
-                else if (chr == "لأ" || chr == "لا" || chr == "لآ" || chr == "لإ")
-                    cstname += "[لإلالألآ]";
-                else if (chr == "ى" || chr == "ي" || chr == "ئ")
-                    cstname += "[ىيئ]";
-                else if (chr == "ء" || chr == "ئ")
-                    cstname += "[ءئ]";
-                else if (chr == "ء" || chr == "ؤ" || chr == "و")
-                    cstname += "[ءؤو]";
-                else
-                    cstname += chr;
-
+                string Chr = SearchContext.Substring(i, 1);
+                if (Chr == "ا" || Chr == "أ" || Chr == "آ" || Chr == "إ") { Str += "[اأآإ]"; }
+                else if (Chr == "ه" || Chr == "ة") { Str += "[ةه]"; }
+                else if (Chr == "لأ" || Chr == "لا" || Chr == "لآ" || Chr == "لإ") { Str += "[لإلالألآ]"; }
+                else if (Chr == "ى" || Chr == "ي" || Chr == "ئ") { Str += "[ىيئ]"; }
+                else if (Chr == "ء" || Chr == "ئ") { Str += "[ءئ]"; }
+                else if (Chr == "ء" || Chr == "ؤ" || Chr == "و") { Str += "[ءؤو]"; }
+                else { Str += Chr; }
             }
-
-            return cstname;
+            return Str;
         }
 
 
