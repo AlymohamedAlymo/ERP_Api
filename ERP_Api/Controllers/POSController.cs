@@ -993,12 +993,12 @@ namespace ERP_Api.Controllers
         /// <param name="WithNote"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("GetItemsAdvancedSearch/{NameItem}/{Match}/{Group}/{Type}/{Unit}/{Barcode}/{AddDate}/{NoBarcode}/{DuplicateBarcode}/{WithNote}")]
-        public ActionResult<string> GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool DuplicateBarcode, bool WithNote)
+        [Route("GetItemsAdvancedSearch/{NameItem}/{NoMatch}/{Group}/{Type}/{Unit}/{Barcode}/{AddDate}/{NoBarcode}/{DuplicateBarcode}/{WithNote}/{UnPricing}")]
+        public ActionResult<string> GetItemsAdvancedSearch(string NameItem, bool NoMatch, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool DuplicateBarcode, bool WithNote, bool UnPricing)
         {
             try
             {
-               object Dt = Items.GetItemsAdvancedSearch(NameItem, Match, Group, Type, Unit, Barcode, AddDate, NoBarcode, DuplicateBarcode, WithNote);
+               object Dt = Items.GetItemsAdvancedSearch(NameItem, NoMatch, Group, Type, Unit, Barcode, AddDate, NoBarcode, DuplicateBarcode, WithNote, UnPricing);
                return Newtonsoft.Json.JsonConvert.SerializeObject(Dt);
             }
             catch { return null; }
@@ -1058,19 +1058,6 @@ namespace ERP_Api.Controllers
             try { return Newtonsoft.Json.JsonConvert.SerializeObject(Items.DeleteItem(Code)); }
             catch (Exception EX) { return EX.Message; }
         }
-
-        /// <summary>
-        /// Get Count of Item Is No Priced
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("GetCountOfUnpricedItems")]
-        public ActionResult<int> GetCountOfUnpricedItems()
-        {
-            try { return Items.GetCountOfUnpricedItems(); }
-            catch (Exception EX) { return EX.HResult; }
-        }
-
 
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

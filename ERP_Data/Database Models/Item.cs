@@ -23,5 +23,6 @@ namespace ERP_Data.Database_Models
         public int UnitIt { get; set; }
         public Nullable<int> BrcoIt { get; set; }
         public string ItDet { get; set; }
+        public bool IsPricing { get; set; }
     }
 }

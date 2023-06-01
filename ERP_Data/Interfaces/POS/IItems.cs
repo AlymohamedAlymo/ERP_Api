@@ -43,14 +43,9 @@
         /// <param name="DuplicateBarcode"></param>
         /// <param name="WithNote"></param>
         /// <returns></returns>
-        object GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate,
-            bool NoBarcode, bool DuplicateBarcode, bool WithNote);
+        object GetItemsAdvancedSearch(string NameItem, bool NoMatch, int Group, int Type, int Unit, int Barcode, int AddDate,
+            bool NoBarcode, bool DuplicateBarcode, bool WithNote, bool UnPricing);
 
-        /// <summary>
-        /// Get Count of Item Is No Priced
-        /// </summary>
-        /// <returns></returns>
-        int GetCountOfUnpricedItems();
 
     }
 }

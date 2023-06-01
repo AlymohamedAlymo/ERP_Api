@@ -103,6 +103,7 @@
           <Property Name="UnitIt" Type="int" Nullable="false" />
           <Property Name="BrcoIt" Type="int" />
           <Property Name="ItDet" Type="text" />
+          <Property Name="IsPricing" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="ItemsType">
           <Key>
@@ -452,6 +453,7 @@
           <Property Name="UnitIt" Type="Int32" Nullable="false" />
           <Property Name="BrcoIt" Type="Int32" />
           <Property Name="ItDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsPricing" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="ItemsType">
           <Key>
@@ -800,6 +802,7 @@
           <EntitySetMapping Name="Items">
             <EntityTypeMapping TypeName="ERPModel.Item">
               <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="IsPricing" ColumnName="IsPricing" />
                 <ScalarProperty Name="IDItem" ColumnName="IDItem" />
                 <ScalarProperty Name="AddDate" ColumnName="AddDate" />
                 <ScalarProperty Name="Imag" ColumnName="Imag" />

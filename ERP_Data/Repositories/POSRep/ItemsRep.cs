@@ -51,6 +51,7 @@ namespace ERP_Data.Repositories
                     UpdateItem.TypiT = Item.TypiT;
                     UpdateItem.UnitIt = Item.UnitIt;
                     UpdateItem.Imag = Item.Imag;
+                    UpdateItem.IsPricing = Item.IsPricing;
                     return DB.SaveChanges();
                 }
             }
@@ -72,26 +73,8 @@ namespace ERP_Data.Repositories
             catch { throw new InvalidDataException(); }
         }
 
-        public int GetCountOfUnpricedItems()
-        {
-            try
-            {
-                string CNString = ERP_SettingRep.ConnectionStrings;
-                SqlConnection CN = new SqlConnection(CNString);
-                CN.Open();
-                string Query = " SELECT COUNT(IDItem) FROM Items WHERE NOT EXISTS (SELECT IDItem FROM pricing WHERE Items.IDItem = pricing.IDItem) ";
-                SqlCommand Cmd = new SqlCommand(Query, CN);
-                SqlDataReader RD = Cmd.ExecuteReader();
-                RD.Read();
-                int ItemsCount = int.Parse(RD[0].ToString());
-                RD.Close(); CN.Close();
-                return ItemsCount;
-
-            }
-            catch { throw new InvalidDataException(); }
-        }
-
-        public object GetItemsAdvancedSearch(string NameItem, bool Match, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool DuplicateBarcode, bool WithNote)
+        public object GetItemsAdvancedSearch(string NameItem, bool NoMatch, int Group, int Type, int Unit, int Barcode, int AddDate,
+            bool NoBarcode, bool DuplicateBarcode, bool WithNote, bool UnPricing)
         {
             try
             {
@@ -104,12 +87,12 @@ namespace ERP_Data.Repositories
                 bool ANDCase = false;
                 if (NameItem != "-1")
                 {
-                    if (!Match)
+                    if (NoMatch)
                     {
                         NameItem = NameItem.Replace(" ", "%");
                         Query += " NameIt like '%" + ERP_SettingRep.GetMatchName(NameItem) + "%' ";
                     }
-                    else if (Match) { Query += " NameIt = '" + NameItem + "' "; }
+                    else if (!NoMatch) { Query += " NameIt = '" + NameItem + "' "; }
                     ANDCase = true;
                 }
                 if (Group != 0)
@@ -158,6 +141,12 @@ namespace ERP_Data.Repositories
                 {
                     if (ANDCase) { Query += " AND "; }
                     Query += " BrcoIt in(" + GetDublicateBarcode(Query) + ") ";
+                    ANDCase = true;
+                }
+                if (UnPricing)
+                {
+                    if (ANDCase) { Query += " AND "; }
+                    Query += " IsPricing = 0 ";
                 }
 
                 Query += " ORDER BY IDItem ";
