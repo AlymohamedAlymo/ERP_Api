@@ -42,9 +42,11 @@
         /// <param name="NoBarcode"></param>
         /// <param name="DuplicateBarcode"></param>
         /// <param name="WithNote"></param>
+        /// <param name="UnPricing"></param>
+        /// <param name="DuplicateItems"></param>
         /// <returns></returns>
         object GetItemsAdvancedSearch(string NameItem, bool NoMatch, int Group, int Type, int Unit, int Barcode, int AddDate,
-            bool NoBarcode, bool DuplicateBarcode, bool WithNote, bool UnPricing);
+            bool NoBarcode, bool DuplicateBarcode, bool WithNote, bool UnPricing, bool DuplicateItems);
 
 
     }

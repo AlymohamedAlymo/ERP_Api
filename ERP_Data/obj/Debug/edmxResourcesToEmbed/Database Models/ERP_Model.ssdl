@@ -98,6 +98,7 @@
     <Property Name="UnitIt" Type="int" Nullable="false" />
     <Property Name="BrcoIt" Type="int" />
     <Property Name="ItDet" Type="text" />
+    <Property Name="IsPricing" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="ItemsType">
     <Key>

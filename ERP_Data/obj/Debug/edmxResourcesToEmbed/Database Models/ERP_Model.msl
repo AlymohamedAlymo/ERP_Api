@@ -96,6 +96,7 @@
     <EntitySetMapping Name="Items">
       <EntityTypeMapping TypeName="ERPModel.Item">
         <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="IsPricing" ColumnName="IsPricing" />
           <ScalarProperty Name="IDItem" ColumnName="IDItem" />
           <ScalarProperty Name="AddDate" ColumnName="AddDate" />
           <ScalarProperty Name="Imag" ColumnName="Imag" />

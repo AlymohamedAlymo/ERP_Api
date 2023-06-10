@@ -74,7 +74,7 @@ namespace ERP_Data.Repositories
         }
 
         public object GetItemsAdvancedSearch(string NameItem, bool NoMatch, int Group, int Type, int Unit, int Barcode, int AddDate,
-            bool NoBarcode, bool DuplicateBarcode, bool WithNote, bool UnPricing)
+            bool NoBarcode, bool DuplicateBarcode, bool WithNote, bool UnPricing, bool DuplicateItems)
         {
             try
             {
@@ -137,16 +137,22 @@ namespace ERP_Data.Repositories
                     Query += " ItDet IS NOT NULL ";
                     ANDCase = true;
                 }
+                if (UnPricing)
+                {
+                    if (ANDCase) { Query += " AND "; }
+                    Query += " IsPricing = 0 ";
+                    ANDCase = true;
+                }
                 if (DuplicateBarcode)
                 {
                     if (ANDCase) { Query += " AND "; }
                     Query += " BrcoIt in(" + GetDublicateBarcode(Query) + ") ";
                     ANDCase = true;
                 }
-                if (UnPricing)
+                if (DuplicateItems)
                 {
                     if (ANDCase) { Query += " AND "; }
-                    Query += " IsPricing = 0 ";
+                    Query += " NameIt in(" + GetDublicateItems(Query) + ") ";
                 }
 
                 Query += " ORDER BY IDItem ";
@@ -194,6 +200,38 @@ namespace ERP_Data.Repositories
             catch (Exception EX) { return EX.Message; throw new InvalidDataException(); }
         }
 
+        private string GetDublicateItems(string Query)
+        {
+            try
+            {
+                string CNString = ERP_SettingRep.ConnectionStrings;
+                SqlConnection CN = new SqlConnection(CNString);
+                CN.Open();
+
+                Query = Query.Substring(Query.IndexOf("FROM"));
+
+                string DuplicateBarcode_Query = " SELECT NameIt " + Query + " NameIt IS NOT NULL GROUP BY NameIt HAVING COUNT(*) > 1 ";
+
+                SqlCommand Cmd = new SqlCommand(DuplicateBarcode_Query, CN);
+                SqlDataReader RD = Cmd.ExecuteReader();
+
+                List<string> Items = new List<string>();
+
+                if (RD.HasRows) { while (RD.Read()) { Items.Add(RD[0].ToString()); } }
+
+                RD.Close(); CN.Close();
+
+                string str = "";
+
+                for (int i = 0; i < Items.Count(); i++)
+                {
+                    str += "'" + Items[i].ToString() + "'";
+                    if (Items.Count() != i + 1) { str += " , "; }
+                }
+                return str;
+            }
+            catch (Exception EX) { return EX.Message; throw new InvalidDataException(); }
+        }
 
     }
 }

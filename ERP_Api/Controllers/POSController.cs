@@ -993,12 +993,15 @@ namespace ERP_Api.Controllers
         /// <param name="WithNote"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("GetItemsAdvancedSearch/{NameItem}/{NoMatch}/{Group}/{Type}/{Unit}/{Barcode}/{AddDate}/{NoBarcode}/{DuplicateBarcode}/{WithNote}/{UnPricing}")]
-        public ActionResult<string> GetItemsAdvancedSearch(string NameItem, bool NoMatch, int Group, int Type, int Unit, int Barcode, int AddDate, bool NoBarcode, bool DuplicateBarcode, bool WithNote, bool UnPricing)
+        [Route("GetItemsAdvancedSearch/{NameItem}/{NoMatch}/{Group}/{Type}/{Unit}/{Barcode}/{AddDate}/{NoBarcode}/" +
+            "{DuplicateBarcode}/{WithNote}/{UnPricing}/{DuplicateItems}")]
+        public ActionResult<string> GetItemsAdvancedSearch(string NameItem, bool NoMatch, int Group, int Type, int Unit, int Barcode, 
+            int AddDate, bool NoBarcode, bool DuplicateBarcode, bool WithNote, bool UnPricing, bool DuplicateItems)
         {
             try
             {
-               object Dt = Items.GetItemsAdvancedSearch(NameItem, NoMatch, Group, Type, Unit, Barcode, AddDate, NoBarcode, DuplicateBarcode, WithNote, UnPricing);
+               object Dt = Items.GetItemsAdvancedSearch(NameItem, NoMatch, Group, Type, Unit, Barcode, AddDate, NoBarcode, DuplicateBarcode,
+                   WithNote, UnPricing, DuplicateItems);
                return Newtonsoft.Json.JsonConvert.SerializeObject(Dt);
             }
             catch { return null; }

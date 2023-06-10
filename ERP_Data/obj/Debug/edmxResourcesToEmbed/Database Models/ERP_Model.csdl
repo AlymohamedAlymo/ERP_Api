@@ -98,6 +98,7 @@
     <Property Name="UnitIt" Type="Int32" Nullable="false" />
     <Property Name="BrcoIt" Type="Int32" />
     <Property Name="ItDet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsPricing" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="ItemsType">
     <Key>
